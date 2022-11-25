@@ -1,0 +1,3 @@
+c- trên mobile
+m- trên tablet
+l- trên pc

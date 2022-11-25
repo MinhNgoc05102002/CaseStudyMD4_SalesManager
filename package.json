@@ -1,0 +1,22 @@
+{
+  "name": "thiet-ke-web-nhom1",
+  "version": "1.0.0",
+  "description": "Duc: index.html\r Ngoc:categoryIndoor.html\r Sy: home.html\r Thinh: product.html\r Nam: sign_in.html",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MinhNgoc05102002/thiet-ke-web-nhom1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MinhNgoc05102002/thiet-ke-web-nhom1/issues"
+  },
+  "homepage": "https://github.com/MinhNgoc05102002/thiet-ke-web-nhom1#readme",
+  "dependencies": {
+    "aos": "^2.3.4"
+  }
+}

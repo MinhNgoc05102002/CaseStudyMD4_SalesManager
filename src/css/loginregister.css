@@ -1,0 +1,139 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.login{
+    text-align: center;
+}
+.container{
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid rgb(210, 210, 210);
+}
+.container ul li{
+    display: inline;
+}
+.container ul li a{
+    font-size: 1.8em;
+    text-decoration: none;
+    color: #777777;
+}
+.start{
+    margin-top: 10px;
+    font-size: 30px;
+    border-bottom: 1px solid rgb(210, 210, 210);
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    font-weight: 900;
+} 
+.icon{
+    margin-top: 10px;
+}
+.fix{
+    max-width: 100%;
+    display: flex;
+    margin-bottom: 2px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.control{
+    margin-bottom: 30px;
+    margin: 10px;
+}
+.control input {
+    font-size: 16px;
+}
+.Email-input,.Password-input,.Surname-input,.Name-input{
+    width: 100%;
+    min-height: 40px;
+    padding: 0 10px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    transition: 0.25s ease;
+}
+.massage{
+    display: flex;
+    bottom: 0;
+    font-size: 1.6em;
+    visibility: hidden;
+}
+.control.success input{
+    border-color: #2ecc71;
+} 
+.control.error input{
+    border-color: #e74c3c;
+}
+.control.success .massage{
+    visibility: hidden;
+    color: #2ecc71;
+}
+.control.error .massage{
+    visibility: visible;
+    color: #e74c3c;
+}
+.required{
+    color: red;
+}
+.button__submit{
+    background: transparent;
+    color: #49b14d;
+    position: relative;
+    outline: none;
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 14px;
+    border-radius: 100px;
+    border: 1px solid;
+    border-color: #49b14d;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.45s ease-in-out;
+}
+.button__submit:hover{
+    background-color: #49b14d;
+    color: #ffff;
+}
+.link{
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+.link-style{
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #49b14d;
+    display: inline-block;
+    text-decoration: none;
+}
+.style-link{
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #49b14d;
+    display: inline-block;
+    margin-left: 20px;
+}
+.text-login{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+.text-login p a{
+    color: #777777;
+    text-decoration: none;
+    
+}
+.text-login p{
+    font-size: 1.3em;
+}
+.content{
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+@media (max-width: 740px) {
+    .accout{
+        margin: 0 10px;
+    }
+}

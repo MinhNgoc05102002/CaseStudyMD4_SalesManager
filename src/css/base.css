@@ -1,0 +1,87 @@
+:root{
+    --lighter-green: #d5e6d2;
+    --light-green:#abd373;
+    --white-text:white;
+    --black-text: #3c3c3c;
+    --yellow: #ffdd20;
+    --green: #6dc171;
+    --animation-hover: all .3s ease;
+    --pink-pastel:#f9efe9;
+    --green-pastel:#f2f8f4;
+    --pink-pastel: #f6edee;
+}
+
+*{  
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Zen Old Mincho', serif;
+}
+
+
+@keyframes fadeInUp{
+    from{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fadeInDown{
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fadeInLeft
+{
+    from{
+        opacity: 0;
+        transform: translateX(0%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes fadeOut
+{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn
+{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes loader {
+    0%,100%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,229 @@
+
+/* home - services */
+.home a{
+    text-decoration: none;
+    color: black;
+}
+.home__product-banner__img{
+    position: relative;
+    border: 1px solid #abd373;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 60%;
+    margin-top: 10px;
+}
+.home__product-banner__title {
+    font-size: 34px;
+    position: absolute;
+    left: 15%;
+    top: 10%;
+}
+.home__product-banner__content{
+    position: absolute;
+    font-size: 20px;
+    left: 25%;
+    top: 30%;
+}
+.home_product {
+    margin: 10px auto;
+}
+.home_product a{
+    color: black;
+}
+.home__product-banner__now{
+    font-size: 18px;
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    border-bottom: 1px solid #abd373;
+}
+
+.home_services_item{
+    border: 1px dashed #abd373;
+    display: flex;
+    padding: 10px;
+}
+.home_sevices_item-content {
+    margin: 0px 10px 10px 10px;
+}
+.home_services_item_title{
+    font-size: 18px;
+    font-weight: bold;
+}
+.home_services_item_info{
+    font-size: 16px;
+}
+.home_services{
+    margin: 10px auto;
+}
+
+/* new product items, sale off items*/
+.new_product-item, 
+.sale_off-item, 
+.best_seller-item{
+    text-align: center;
+    margin-top: 15px;
+    transform: (0);
+    transition: all 0.5s;
+}
+.new_product-item:hover, 
+.sale_off-item:hover, 
+.best_seller-item:hover{
+    transform: translateY(-10px);
+}
+
+.new_product-item__img, 
+.sale_off-item__img, 
+.best_seller-item__img{
+    border: 1px solid #abd373;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 100%;
+}
+#new_product h1,
+#sale_off h1,
+#best_seller h1{
+    margin-top: 20px;
+    font-size: 30px;
+}
+#new_product p,
+#sale_off p,
+#best_seller{
+    font-size: 18px;
+}
+.new_product-item__price {
+    font-size: 20px;
+    color: #91b959;
+}
+.new_product-item span{
+    font-size: 16px;
+}
+hr{
+    width: 15%;
+    height: 5px;
+    color: #504d4d; 
+    background-color: #504d4d;
+}
+
+/* sale off */
+.sale_off-item__price{
+    font-size: 18px;
+}
+span.sale_off-item__price{
+    color: #91b959;
+    font-weight: bold;
+}
+.sale_off-item__percent{
+    color: brown;
+    font-weight: bolder;
+    display: inline-block;
+    
+}
+/* best seller */
+.best_seller-item__price{
+    font-size: 18px;
+}
+span.best_seller-item__price{
+    color: #91b959;
+    font-weight: bold;
+}
+.best_seller-item__number{
+    font-size: 14px;
+    color: darkgreen;
+}
+
+/* feedback of customers */
+.feedback{
+    margin: 10px auto;
+}
+.feedback_title h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+.feedback_item_img_{
+    overflow: hidden;
+}
+.feedback_item{
+    overflow: hidden;
+}
+.feedback_item_img{
+    border: 1px solid #abd373;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 100%;
+    margin: 20px auto;
+    transition: all 1s;
+}
+.feedback_item_img:hover{
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+}
+.feedback_item_info_name{
+    color: brown;
+    font-size: 20px;
+    font-weight: bold;
+}
+.feedback_item_info_comment{
+    font-size: 16px;
+    text-align: justify;
+}
+
+/* responsive */
+/* Mobile & table */
+@media (max-width: 1023px) {
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .hide-on-tablet {
+        display: none;
+    }
+    .home__product-banner__title{
+        font-size: 22px;
+    }
+    .home__product-banner__content{
+        font-size: 16px;
+    }
+    .home__product-banner__now{
+        font-size: 14px;
+    }
+    .home_services_item_info{
+        display: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    :root{
+        --height-slider:600px;
+    }
+    
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .home{
+        top: var(--height-slider);
+        position: relative;
+    }
+
+    .home__product-banner__title{
+        font-size: 14px;
+    }
+    .home__product-banner__content{
+        font-size: 10px;
+    }
+    .home__product-banner__now{
+        font-size: 10px;
+    }
+    p.last_p{
+        margin-bottom: 700px;
+    }
+}
+

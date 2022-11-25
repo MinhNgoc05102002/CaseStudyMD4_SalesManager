@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh mục sản phẩm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../font/fontawesome-free-5.15.2-web/css/all.min.css">
+    <link rel="icon" href="../img/home/logo.png">
+    <link rel="stylesheet" href="../Grid layout/grid.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../src/css/footer.css">
+    <!-- <link rel="stylesheet" href="../src/css/category.css">  -->
+    <link rel="stylesheet" href="../src/css/admin.css">
+</head>
+<body>
+    <div class="app">
+        <div class="loader__wrap">
+            <i class="loader">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </i>
+        </div>
+
+        <!-- Header start -->
+        <div class="header">
+            <div class="header__top grid">
+                <div class="header__top-head hide-on-mobile-tablet row">
+                    <div class="header__logo col l-2">
+                        <a href="home.html" class="header__logo-link"><img src="../img/logo.webp" alt=""></a>
+                    </div>
+                    <div class="header__user col ">
+                        <div class="header__user-login">
+                            <a href="login.html" class="header__user-link"><span>Login</span><i class="fas fa-sign-in-alt"></i></a>
+                        </div>
+
+                        <div class="header__user-register">
+                            <a href="register.html" class="header__user-link"><span>Register</span><i class="fas fa-user-plus"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+        
+        <!-- Header end -->
+
+
+        <div class="container">
+            <div class="manager grid">
+
+                <!-- category & product -->
+                <div class="row">
+                    <!-- navbar -->
+                    <div class="left__nav-container col l-2 hide-on-mobile-tablet">
+                        <div class="left__nav">
+                            
+                            <ul class="left__nav-menu">                       
+                                <li class="left__nav-item">
+                                    <a href="categoryAll.html" class="left__nav-link now">
+                                        <i class="fas fa-leaf"></i>
+                                        Product
+                                    </a>
+                                </li>
+                                <li class="left__nav-item">
+                                    <a href="categoryIndoor.html" class="left__nav-link">
+                                        <i class="fas fa-table"></i>
+                                        Category
+                                    </a>
+                                </li>
+                                <li class="left__nav-item">
+                                    <a href="categoryPerennials.html" class="left__nav-link">
+                                        <i class="fas fa-users"></i>
+                                        Account
+                                    </a>
+                                </li>
+                                <li class="left__nav-item">
+                                    <a href="categoryGift.html" class="left__nav-link">
+                                        <i class="fas fa-wallet"></i>
+                                        Order
+                                    </a>
+                                </li>
+                                <li class="left__nav-item">
+                                    <a href="" class="left__nav-link">
+                                        <i class="fas fa-plus"></i>
+                                        More
+                                    </a>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+
+                    <!-- product -->
+                    <div class="right__content col l-10 m-12 c-12">
+
+                        <div class="manager__header">
+                            <div class="manager__header-title">
+                                Filter product
+                            </div>
+                            <div class="manager__header-body">
+                                <div class="manager__header-choice">
+                                    <p class="choice-title">Category</p>
+                                    <select name="Category" id="Category">
+                                        <option value="volvo">All</option>
+                                        <option value="volvo">Volvo</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="mercedes">Mercedes</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="manager__header-price">
+                                    <div class="price-filter">
+                                        <p class="choice-title">Price from</p>
+                                        <input type="text" id="price-from">
+                                    </div>
+                                        
+                                    <div class="price-filter">
+                                        <p class="choice-title">to</p>
+                                        <input type="text" id="price-to">
+                                    </div>    
+                                    
+                                </div>
+
+                                <div class="manager__header-search">
+                                    <p class="choice-title">Or search by name</p>
+                                    <input type="text" placeholder="Search here...">
+                                    <button>
+                                        Filter product
+                                        <!-- <a href="" class="header__search-link"><i class="header__search-icon fas fa-search"></i></a> -->
+                                    </button>
+                                </div>
+
+                                <div class="manager__header-add">
+                                    <button class="addnew">Add new</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="manager__area">
+                            <div class="product__manager">
+                                <!-- <div class="manager_title">Blog manager</div> -->
+                                <table class="table">
+                                    <tr class="heading_table">
+                                        <th style="border-radius: 5px 0 0 0;">BlogID</th>
+                                        <th>AccountID</th>
+                                        <th>Create At</th>
+                                        <th>Title</th>
+                                        <th>Content</th>
+                                        <th>Category</th>
+                                        <th>Image</th>
+                                        <th>Status</th>
+                                        <th style="border-radius: 0 5px 0 0;"> </th>
+                                    </tr>
+                                    <tr class="body_table">
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>2022-10-07 22:57:09</td>
+                                        <td>What is a list of skills that are amazing if you learn them?</td>
+                                        <td>Writing. I've never looked at writing as a skill. If I had started writing at a young age I feel I would have had significant advantages growing up. So, don’t be me, think, write and grow with it.</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td style="text-align: center"><a class="eye-icon" href=""><i class="fas fa-eye"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                    </tr>
+                                    <tr class="body_table">
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>2022-10-07 22:57:09</td>
+                                        <td>What is a list of skills that are amazing if you learn them?</td>
+                                        <td>Writing. I've never looked at writing as a skill. If I had started writing at a young age I feel I would have had significant advantages growing up. So, don’t be me, think, write and grow with it.</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td style="text-align: center"><a class="eye-icon" href=""><i class="fas fa-eye-slash"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                    </tr>
+                                    <tr class="body_table">
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>2022-10-07 22:57:09</td>
+                                        <td>What is a list of skills that are amazing if you learn them?</td>
+                                        <td>Writing. I've never looked at writing as a skill. If I had started writing at a young age I feel I would have had significant advantages growing up. So, don’t be me, think, write and grow with it.</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td style="text-align: center"><a class="eye-icon" href=""><i class="fas fa-eye-slash"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                    </tr>
+                                    <tr class="body_table">
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>2022-10-07 22:57:09</td>
+                                        <td>What is a list of skills that are amazing if you learn them?</td>
+                                        <td>Writing. I've never looked at writing as a skill. If I had started writing at a young age I feel I would have had significant advantages growing up. So, don’t be me, think, write and grow with it.</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td style="text-align: center"><a class="eye-icon" href=""><i class="fas fa-eye-slash"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                    </tr>
+                                    <tr class="body_table">
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>2022-10-07 22:57:09</td>
+                                        <td>What is a list of skills that are amazing if you learn them?</td>
+                                        <td>Writing. I've never looked at writing as a skill. If I had started writing at a young age I feel I would have had significant advantages growing up. So, don’t be me, think, write and grow with it.</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td style="text-align: center"><a class="eye-icon" href=""><i class="fas fa-eye-slash"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                    </tr>
+                                    <tr class="body_table">
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>2022-10-07 22:57:09</td>
+                                        <td>What is a list of skills that are amazing if you learn them?</td>
+                                        <td>Writing. I've never looked at writing as a skill. If I had started writing at a young age I feel I would have had significant advantages growing up. So, don’t be me, think, write and grow with it.</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td style="text-align: center"><a class="eye-icon" href=""><i class="fas fa-eye-slash"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                    </tr>
+                                    <tr class="body_table">
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>2022-10-07 22:57:09</td>
+                                        <td>What is a list of skills that are amazing if you learn them?</td>
+                                        <td>Writing. I've never looked at writing as a skill. If I had started writing at a young age I feel I would have had significant advantages growing up. So, don’t be me, think, write and grow with it.</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td style="text-align: center"><a class="eye-icon" href=""><i class="fas fa-eye-slash"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <button href="" class="back-to-top active">
+                    <i class="back-to-top-icon fa fa-angle-double-up"></i>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="./js/category.js"></script>    
+</body>
+</html>

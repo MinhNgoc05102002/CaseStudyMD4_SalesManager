@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../font/fontawesome-free-5.15.2-web/css/all.min.css">
+    <link rel="stylesheet" href="../Grid layout/grid.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" href="../img/home/logo.png">
+    <title>Trồng cây</title>
+</head>
+<body>
+    
+    <div class="app">
+        <div class="loader__wrap">
+            <i class="loader">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </i>
+        </div>
+
+        <!-- Header start -->
+        <div class="header">
+            <div class="grid wide">
+                <div class="header__top">
+                    <div class="header__top-head hide-on-mobile-tablet">
+                        <div class="header__social">
+                            <span>Follow us:</span>
+                            <a href="" class="header__social-link"><i class="fab fa-facebook"></i></a>
+                            <a href="" class="header__social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="" class="header__social-link"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                        <div class="header__user">
+                            <div class="header__user-login">
+                                <a href="" class="header__user-link"><span>Login</span><i class="fas fa-sign-in-alt"></i></a>
+                            </div>
+
+                            <div class="header__user-register">
+                                <a href="" class="header__user-link"><span>Register</span><i class="fas fa-user-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="header__top-body">
+                        <div class="header__logo">
+                                    <a href="" class="header__logo-link"><img src="../img/logo.webp" alt=""></a>
+                                </div>
+        
+                                <div class="header__search hide-on-mobile-tablet">
+                                    <input type="text" placeholder="Search here...">
+                                    <button>
+                                        <a href="" class="header__search-link"><i class="header__search-icon fas fa-search"></i></a>
+                                    </button>
+                                </div>
+        
+                                <div class="header__cart"> 
+                                    <div class="header__search-on-tablet">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    
+                                    <button class=""><a href=""><i class="header__cart-icon fas fa-cart-plus"></i></a></button>
+                                    
+                                    <label for="nav-mobile-input" class="nav__bars-btn">
+                                        <i class="fas fa-bars"></i>
+                                    </label>
+
+                                    <input type="checkbox" hidden name="" class="nav__input" id="nav-mobile-input">
+                                    
+
+                                    <label for="nav-mobile-input" class="nav__overlay"></label>
+
+                                    <div class="navbar__mobile">
+                                        <label for="nav-mobile-input" class="nav__mobile-close">
+                                            <i class="fas fa-times"></i>
+                                        </label>
+
+                                        <ul class="nav__mobile-list">
+                                            <li class="nav__mobile-item"><a class="nav__mobile-link" href="home.html">Home</a></li>
+                                            <li class="nav__mobile-item"><a class="nav__mobile-link" href="aboutus.html">About us</a></li>
+                                            <li class="nav__mobile-item">
+                                                <input type="checkbox" hidden class="nav__input-product" id="nav__product-id">
+                                                <label for="nav__product-id" class="nav__mobile-link">
+                                                    <span>Product</span>
+                                                    <i class="nav__mobile-icon fas fa-chevron-down"></i>
+                                                </label>
+                                                <div class="nav__mobile-product">
+                                                    <ul class="nav__mobile-product-list">
+                                                        <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryAll.html">All</a></li>
+                                                        <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryIndoor.html">Indoor Living</a></li>
+                                                        <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryPerennials.html">Perennials</a></li>
+                                                        <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryGift.html">Plant for Gift</a></li>
+                                                        <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryAll.html">Garden Tools</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="nav__mobile-item"><a class="nav__mobile-link" href="">News</a></li>
+                                            <li class="nav__mobile-item"><a class="nav__mobile-link" href="">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header__bottom hide-on-mobile-tablet">
+            <div class="grid wide">
+                <div class="navbar">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="home.html" class="nav__item-link">Home</a></li>
+                        <li class="nav__item"><a href="aboutus.html" class="nav__item-link">About us</a></li>
+                        <li class="nav__item">
+                            <a href="" class="nav__item-link">Product<i class="fas fa-chevron-down" id="nav__produce-icon"></i></a>
+                            
+                            <div class="nav__produce">
+                                <ul class="nav__produce-list">
+                                    <li class="nav__produce-item"><a href="categoryAll.html" class="nav__produce-link">All</a></li>
+                                    <li class="nav__produce-item"><a href="categoryIndoor.html" class="nav__produce-link">Indoor Living</a></li>
+                                    <li class="nav__produce-item"><a href="categoryPerennials.html" class="nav__produce-link">Perennials</a></li>
+                                    <li class="nav__produce-item"><a href="categoryGift.html" class="nav__produce-link">Plant for Gift</a></li>
+                                    <li class="nav__produce-item"><a href="categoryAll.html" class="nav__produce-link">Garden Tools</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav__item"><a href="" class="nav__item-link">News</a></li>
+                        <li class="nav__item"><a href="" class="nav__item-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Header end -->
+
+
+
+        <!-- slider start -->
+        <div class="grid wide">
+                <div class="slider__img">
+                    <div class="slide active" id="slide1">
+                        <div class="info active">
+                            <h1>65% OFF</h1>
+                            <h2>NEW PLANT</h2>
+                            <span>Lorem ipsum dolor sit</span>
+                            <a href="">DISCOVER NOW</a> 
+                        </div>
+                        <img src="../img/slider 1.webp" data-speed="-5" class="slider_img" alt="">
+                    </div>
+
+                    <div class="slide" id="slide2">
+                        <div class="info">
+                            <h1>65% OFF</h1>
+                            <h2>NEW PLANT</h2>
+                            <span>Lorem ipsum dolor sit</span>
+                            <a href="#">DISCOVER NOW</a>
+                        </div>
+                        <img src="../img/slider 2.webp" data-speed="-5" class="slider_img" alt="">
+                    </div>
+
+                    <div class="slide" id="slide3">
+                        <div class="info">
+                            <h1>65% OFF</h1>
+                            <h2>NEW PLANT</h2>
+                            <span>Lorem ipsum dolor sit</span>
+                            <a href="">DISCOVER NOW</a> 
+                        </div>
+                        <img src="../img/slider 1.webp" data-speed="-5" class="slider_img" alt="">
+                    </div>
+
+                    <div class="slide" id="slide4">
+                        <div class="info">
+                            <h1>65% OFF</h1>
+                            <h2>NEW PLANT</h2>
+                            <span>Lorem ipsum dolor sit</span>
+                            <a href="">DISCOVER NOW</a> 
+                        </div>
+                        <img src="../img/slider 2.webp" data-speed="-5" class="slider_img" alt="">
+                    </div>
+
+                    <div class="slide" id="slide5">
+                        <div class="info">
+                            <h1>65% OFF</h1>
+                            <h2>NEW PLANT</h2>
+                            <span>Lorem ipsum dolor sit</span>
+                            <a href="">DISCOVER NOW</a> 
+                        </div>
+                        <img src="../img/slider 1.webp" data-speed="-5" class="slider_img" alt="">
+                    </div>
+
+                    <div class="slider__navigation">
+                        <div class="slider__btn active"></div>
+                        <div class="slider__btn"></div>
+                        <div class="slider__btn"></div>
+                        <div class="slider__btn"></div>
+                        <div class="slider__btn"></div>
+                    </div>
+                </div>
+        </div> 
+        <!-- slider end -->    
+
+        <button href="" class="back-to-top active">
+            <i class="back-to-top-icon fa fa-angle-double-up"></i>
+        </button>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>

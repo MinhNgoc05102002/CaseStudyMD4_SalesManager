@@ -1,0 +1,437 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../font/fontawesome-free-5.15.2-web/css/all.min.css">
+    <link rel="icon" href="../img/home/logo.png">
+
+    <link rel="stylesheet" href="../Grid layout/grid.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../src/css/footer.css">
+    <link rel="stylesheet" href="../src/css/product.css">
+
+</head>
+<body>
+    
+    <div class="app">
+
+        <!-- Header start -->
+        <div class="header">
+            <div class="grid wide">
+                <div class="header__top">
+                    <div class="header__top-head hide-on-mobile-tablet">
+                        <div class="header__social">
+                            <span>Follow us:</span>
+                            <a href="" class="header__social-link"><i class="fab fa-facebook"></i></a>
+                            <a href="" class="header__social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="" class="header__social-link"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                        <div class="header__user">
+                            <div class="header__user-login">
+                                <a href="login.html" class="header__user-link"><span>Login</span><i class="fas fa-sign-in-alt"></i></a>
+                            </div>
+
+                            <div class="header__user-register">
+                                <a href="register.html" class="header__user-link"><span>Register</span><i class="fas fa-user-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="header__top-body">
+                        <div class="header__logo">
+                                    <a href="home.html" class="header__logo-link"><img src="../img/logo.webp" alt=""></a>
+                                </div>
+        
+                                <div class="header__search hide-on-mobile-tablet">
+                                    <input type="text" placeholder="Search here...">
+                                    <button>
+                                        <a href="" class="header__search-link"><i class="header__search-icon fas fa-search"></i></a>
+                                    </button>
+                                </div>
+        
+                                <div class="header__cart"> 
+                                    <div class="header__search-on-tablet">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    
+                                    <button class=""><a href=""><i class="header__cart-icon fas fa-cart-plus"></i></a></button>
+                                    
+                                    <label for="nav-mobile-input" class="nav__bars-btn">
+                                        <i class="fas fa-bars"></i>
+                                    </label>
+
+                                    <input type="checkbox" hidden name="" class="nav__input" id="nav-mobile-input">
+                                    
+
+                                    <label for="nav-mobile-input" class="nav__overlay"></label>
+
+                                    <div class="navbar__mobile">
+                                        <label for="nav-mobile-input" class="nav__mobile-close">
+                                            <i class="fas fa-times"></i>
+                                        </label>
+
+                                        <ul class="nav__mobile-list">
+                                            <li class="nav__mobile-item"><a class="nav__mobile-link" href="home.html">Home</a></li>
+                                            <li class="nav__mobile-item"><a class="nav__mobile-link" href="aboutus.html">About us</a></li>
+                                            <li class="nav__mobile-item">
+                                                <input type="checkbox" hidden class="nav__input-product" id="nav__product-id">
+                                                <label for="nav__product-id" class="nav__mobile-link">
+                                                    <span>Product</span>
+                                                    <i class="nav__mobile-icon fas fa-chevron-down"></i>
+                                                </label>
+                                                <div class="nav__mobile-product">
+                                                    <ul class="nav__mobile-product-list">
+                                                        <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryAll.html">All</a></li>
+                                                        <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryIndoor.html">Indoor Living</a></li>
+                                                        <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryPerennials.html">Perennials</a></li>
+                                                        <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryGift.html">Plant for Gift</a></li>
+                                                        <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryAll.html">Garden Tools</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="nav__mobile-item"><a class="nav__mobile-link" href="">News</a></li>
+                                            <li class="nav__mobile-item"><a class="nav__mobile-link" href="">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header__bottom hide-on-mobile-tablet">
+            <div class="grid wide">
+                <div class="navbar">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="home.html" class="nav__item-link">Home</a></li>
+                        <li class="nav__item"><a href="aboutus.html" class="nav__item-link">About us</a></li>
+                        <li class="nav__item">
+                            <a href="" class="nav__item-link">Product<i class="fas fa-chevron-down" id="nav__produce-icon"></i></a>
+                            
+                            <div class="nav__produce">
+                                <ul class="nav__produce-list">
+                                    <li class="nav__produce-item"><a href="categoryAll.html" class="nav__produce-link">All</a></li>
+                                    <li class="nav__produce-item"><a href="categoryIndoor.html" class="nav__produce-link">Indoor Living</a></li>
+                                    <li class="nav__produce-item"><a href="categoryPerennials.html" class="nav__produce-link">Perennials</a></li>
+                                    <li class="nav__produce-item"><a href="categoryGift.html" class="nav__produce-link">Plant for Gift</a></li>
+                                    <li class="nav__produce-item"><a href="categoryAll.html" class="nav__produce-link">Garden Tools</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav__item"><a href="" class="nav__item-link">News</a></li>
+                        <li class="nav__item"><a href="" class="nav__item-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Header end -->
+            
+        <div class="container grid wide"> 
+            <!--product start-->
+            <div class="product__title">
+                <a href="categoryAll.html" class="product__title-link">Category</a> 
+                <!-- thêm link sang category trang chủ (trang chủ là all product) -->
+                <i class="fas fa-chevron-right product__title-icon"></i>
+                <a href="categoryAll.html" class="product__title-link">All</a>
+                <i class="fas fa-chevron-right product__title-icon"></i>
+                Daisy
+            </div>
+            <div class="product"> 
+                <div class="row">
+                    <div class="product__right col l-6 m-6 c-12">
+                        <div class="product__right-img">
+                            <div class="big__img" style="background-image: url(../img/AllProduct/Tochiotome.jpg);">
+
+                            </div>
+                            <div class="small__img row">
+                                <img src="../img/AllProduct/Tochiotome (2).jpg" alt="" class="small__img-detail col l-3 m-3 c-3">
+                                <img src="../img/AllProduct/Tochiotome (3).jpg" alt="" class="small__img-detail col l-3 m-3 c-3">
+                                <img src="../img/AllProduct/Tochiotome.jpg" alt="" class="small__img-detail col l-3 m-3 c-3">
+                                <img src="../img/AllProduct/daisy.jpg" alt="" class="small__img-detail col l-3 m-3 c-3">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product__left col l-6 m-6 c-12">
+                        <div class="product__left-content">
+                            <h2 class="product__left-content-name">Daisy</h2>
+                            <div class="product__left__action">
+                                <div class="product__left__rating">
+                                    <input type="radio" name="produce1" id="1__star5" value="5">
+                                    <label for="1__star5" class="fas fa-star"></label>
+                                    <input type="radio" name="produce1" id="1__star4" value="4">
+                                    <label for="1__star4" class="fas fa-star"></label>
+                                    <input type="radio" name="produce1" id="1__star3" value="3">
+                                    <label for="1__star3" class="fas fa-star"></label>
+                                    <input type="radio" name="produce1" id="1__star2" value="2">
+                                    <label for="1__star2" class="fas fa-star"></label>
+                                    <input type="radio" name="produce1" id="1__star1" value="1">
+                                    <label for="1__star1" class="fas fa-star"></label>
+                                </div>
+                            </div>
+                            <div class="product__left-content-info">
+                                <p class="product__left-content-code">Code: <b>A61043</b></p>
+                                <p class="product__left-content-status">Status: <b>Best Seller</b></p>
+                            </div>
+                            <div class="product__left-price">
+                                <span class="product__left-price-current">$20.34</span>
+                                <span class="product__left-price-old">$24.45</span>                 
+                            </div>
+                            <div class="product__left-content-text">
+                                <p>Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl. Donec ac tempus ante. Fusce ultricies massa massa.</p>
+                            </div>
+                            <div class="product__left-content-option row">
+                                <div class="product__left-content-option-choose col l-5 m-5 c-5">
+                                    <p class="choose-title">SIZE</p>
+                                    <form action="">
+                                        <select class="choose-box" name="" id="">
+                                            <option value="">Small</option>
+                                            <option value="">Medium </option>
+                                            <option value="">Big</option>
+                                            <option value="">Random</option>
+                                        </select>
+                                    </form>
+                                </div>
+                                <div class="product__left-content-option-choose col l-5 l-o-2 m-5 c-5">
+                                    <p class="choose-title">QUANTITY</p>
+                                    <form action="">
+                                        <select class="choose-box" name="" id="">
+                                            <option value="">1</option>
+                                            <option value="">2 </option>
+                                            <option value="">3</option>
+                                            <option value="">4</option>
+                                            <option value="">5</option>
+                                            <option value="">6 </option>
+                                            <option value="">7</option>
+                                            <option value="">8</option>
+                                        </select>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="product__left-content-add row">
+                                <a class="col l-6 m-12 c-12">
+                                    <div class="product__left-content-buy">
+                                        ADD TO CART
+                                    </div>
+                                </a>
+                                <a class="col l-6 m-12 c-12">
+                                    <div class="product__left-content-buy">
+                                        BUY NOW
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product__left-detail">
+                                <div class="product__left-detail-title">
+                                    
+                                    <label class="product-info" for="product-info">product information <i class="fas fa-chevron-down"></i></label>    
+                                </div>
+                                <input type="checkbox" id="product-info">
+                                <div class="product__left-detail__content">
+                                    
+                                    <div class="product__left-detail__content-info">
+                                        Available: 120
+                                    </div>
+                                    <div class="product__left-detail__content-info">
+                                        Category: Indoor, Plant for gift
+                                    </div>
+                                    <div class="product__left-detail__content-info">
+                                        Payment: Cash on delivery
+                                    </div>
+                                    <div class="product__left-detail__content-info">
+                                        Share:   
+                                            <a href="" class="product__left-detail__content-info-icon"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="" class="product__left-detail__content-info-icon"><i class="fab fa-twitter"></i></a>
+                                            <a href="" class="product__left-detail__content-info-icon"><i class="fab fa-instagram"></i></a>
+                                            <a href="" class="product__left-detail__content-info-icon"><i class="fab fa-pinterest"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product__left-detail">
+                                <div class="product__left-detail-title">
+                                    
+                                    <label class="exchange-policy" for="exchange-policy">exchange policy <i class="fas fa-chevron-down"></i> </label>
+                                </div>
+                                <input type="checkbox" id="exchange-policy">
+                                <div class="product__left-detail__content">
+                                    <div class="product__left-detail__content-info">
+                                        Exchange only 1 time, please consider carefully before deciding.
+                                        The time limit for exchanging products when buying directly at the store is 07 days from the date of purchase. Product exchange when purchased online is 14 days from the date of receipt.
+                                        Exchange products must be accompanied by an invoice. Must have original stamps, boxes and labels.
+                                        The exchanged product has no signs of being used, not washed, soiled, or deformed.
+                                        Ananas only prioritizes support for size change. In case the product is out of size and needs to be exchanged, you can exchange it for another product:
+                                    </div>
+                                    <div class="product__left-change__content-info">
+                                        - If the product you want to exchange is of equal value or of a higher value, you will need to compensate the difference at the time of exchange (if any).
+                                    </div>
+                                    <div class="product__left-change__content-info">
+                                        - If you wish to exchange for a product of a lower value, we will not issue a refund. In case the product - size you want to exchange is out of stock in the system. Please choose another product.
+                                    </div>
+                                    <div class="product__left-change__content-info">
+                                        - No cash refund under any circumstances. Wish you sympathize. to exchange for a product of a lower value, we will not issue a refund. In case the product - size you want to exchange is out of stock in the system. Please choose another product.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <!--product end-->
+
+            <!--Same Product Start-->
+            <div class="relative-product">
+                <div class="relative-product__title">Relative Product</div>
+                <div class="relative-product__list row">
+                    <a class="relative-product__item col l-3 m-3 c-6" href="product.html" >                                   
+                        <div class="relative-product__item__img" style="background-image: url(../img//AllProduct/Fittonia.jpg);">
+                        </div>
+                        <p class="relative-product__item__name">Fittonia</p>
+                        <div class="relative-product__item__price">
+                            <span class="relative-product__item__price-current">$20.34</span>
+                            <span class="relative-product__item__price-old">$24.45</span>                 
+                        </div>
+                    </a>
+
+                    <a class="relative-product__item col l-3 m-3 c-6" href="product.html" >                                   
+                        <div class="relative-product__item__img" style="background-image: url(../img//AllProduct/NopalCactus.jpg);">
+                        </div>
+                        <p class="relative-product__item__name">Nopal Cactus</p>
+                        <div class="relative-product__item__price">
+                            <span class="relative-product__item__price-current">$20.34</span>
+                            <span class="relative-product__item__price-old">$24.45</span>                 
+                        </div>
+                    </a>
+                    <a class="relative-product__item col l-3 m-3 c-6" href="product.html" >                                   
+                        <div class="relative-product__item__img" style="background-image: url(../img//AllProduct/Gerbera.jpg);">
+                        </div>
+                        <p class="relative-product__item__name">Gerbera</p>
+                        <div class="relative-product__item__price">
+                            <span class="relative-product__item__price-current">$20.34</span>
+                            <span class="relative-product__item__price-old">$24.45</span>                 
+                        </div>
+                    </a>
+                    <a class="relative-product__item col l-3 m-3 c-6" href="product.html" >                                   
+                        <div class="relative-product__item__img" style="background-image: url(../img//AllProduct/Pachira.jpg);">
+                        </div>
+                        <p class="relative-product__item__name">Pachira</p>
+                        <div class="relative-product__item__price">
+                            <span class="relative-product__item__price-current">$20.34</span>
+                            <span class="relative-product__item__price-old">$24.45</span>                 
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!--Same Product End -->
+            <button href="" class="back-to-top active">
+                <i class="back-to-top-icon fa fa-angle-double-up"></i>
+            </button>
+        </div>
+
+        <!--footer start-->
+        <footer class="footer">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-4 m-12 c-12 footer__info">
+                        <img class="footer__logo" src="../img/logo.webp" alt="logo">
+                        <p class="footer__info-item">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur at doloremque libero sed cumque et, animi perspiciat</p>
+                        <p class="footer__info-item">Address: 70 Dong Anh, Lien Ha 15, District 11, Ha Noi City</p>
+                    </div>
+                    <div class="col l-2 m-6 c-12">
+                        <h3 class="footer__head">Useful links</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">How to shop</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">FAQ</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Log in</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Question?</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">See More</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-2 m-6 c-12"> 
+                        <h3 class="footer__head">Contact us</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">
+                                    Phone number: 0399620226
+                                </a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">
+                                    Email: support@gmail.com
+                                </a>
+                            </li>
+                            <!-- 4 bieu tuong mxh -->
+                            <li class="footer__item-icon ">       
+                                <a href="" class="footer__icon"><i class="fab fa-facebook"></i></a>
+                                <a href="" class="footer__icon"><i class="fab fa-twitter"></i></a>
+                                <a href="" class="footer__icon"><i class="fab fa-instagram"></i></a>
+                                <a href="" class="footer__icon"><i class="fab fa-pinterest"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-2 m-6 c-12">
+                        <h3 class="footer__head">My Account</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Sign In</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">View Cart</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">My Whishlist</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Track My Order</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Help</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-2 m-6 c-12">
+                        <h3 class="footer__head">Our Service</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Payment Methods</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Money Guarantee!</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Returns</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Shipping</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Privacy Policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2021 Team One Made With &heartsuit;</p>
+                </div>
+            </div>
+        </footer>
+        <!--footer end-->
+    </div>
+    <script src="./js/category.js"></script> 
+</body>    
+</html>
