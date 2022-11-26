@@ -30,7 +30,7 @@ public class Account {
     @Column(nullable = false, length = 50)
     private String password;
 
-    @Column(nullable = false, columnDefinition = "nvarchar(50)")
+    @Column(columnDefinition = "nvarchar(50) not null")
     private String fullName;
 
     @Column(nullable = false, length = 50)
