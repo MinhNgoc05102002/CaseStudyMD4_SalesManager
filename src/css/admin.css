@@ -242,15 +242,78 @@ body {
     margin-left: 30px;
 }
 .addnew {
-    font-size: 18px;
+    font-size: 16px;
     padding: 10px 10px;
-    margin-top: 19px;
     background-color: #91b959;
     border: none;
     color: white;
     border-radius: 5px;
+    border-top-right-radius: 0px;
+    text-align: right;
+    margin-top: 20px;
+    margin-left: 900px;
+}
+
+.addnew:hover{
+    color: white;
+    background-color: #6d7562;
 }
 
 .right__content {
     padding: 15px 20px 0px;
 }
+.card-title {
+    font-size: 20px;
+    padding: 10px;
+}
+.card-body {
+    font-size: 16px;
+}
+.dataTables_filter {
+    font-size: 16px;
+}
+.dataTables_filter input {
+    font-size: 16px;
+}
+
+#product_manager:checked ~ .product__manager {
+    display: block;
+}
+#product_manager:checked ~ .account__manager{
+    display: none;
+}
+#product_manager:checked ~ .category__manager{
+    display: none;
+}
+
+#category_manager:checked ~ .category__manager {
+    display: block;
+}
+#category_manager:checked ~ .product__manager{
+    display: none;
+}
+#category_manager:checked ~ .account__manager{
+    display: none;
+}
+#account_manager:checked ~ .account__manager {
+    display: block;
+}
+#account_manager:checked ~ .product__manager{
+    display: none;
+}
+#account_manager:checked ~ .category__manager{
+    display: none;
+}
+#product_manager, #category_manager, #account_manager, #more_manager {
+    display: none;
+}
+#more_manager:checked ~ .product__manager{
+    visibility: hidden;
+}
+#more_manager:checked ~ .category__manager{
+    visibility: hidden;
+}
+#more_manager:checked ~ .account__manager{
+    visibility: hidden;
+}
+

@@ -5,9 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danh mục sản phẩm</title>
+    
+      <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/cssfamily=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./anotherTheme/static/css/fontawesome.all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="./anotherTheme/static/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="./anotherTheme/static/css/responsive.bootstrap4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="./anotherTheme/static/css/adminlte.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../font/fontawesome-free-5.15.2-web/css/all.min.css">
     <link rel="icon" href="../img/home/logo.png">
     <link rel="stylesheet" href="../Grid layout/grid.css">
@@ -16,6 +27,7 @@
     <link rel="stylesheet" href="../src/css/footer.css">
     <!-- <link rel="stylesheet" href="../src/css/category.css">  -->
     <link rel="stylesheet" href="../src/css/admin.css">
+
 </head>
 <body>
     <div class="app">
@@ -53,8 +65,8 @@
         <!-- Header end -->
 
 
-        <div class="container">
-            <div class="manager grid">
+        <div class="">
+            <div class="manager">
 
                 <!-- category & product -->
                 <div class="row">
@@ -64,34 +76,34 @@
                             
                             <ul class="left__nav-menu">                       
                                 <li class="left__nav-item">
-                                    <a href="categoryAll.html" class="left__nav-link now">
+                                    <label for="product_manager" href="" class="left__nav-link now">
                                         <i class="fas fa-leaf"></i>
                                         Product
-                                    </a>
+                                    </label>
                                 </li>
                                 <li class="left__nav-item">
-                                    <a href="categoryIndoor.html" class="left__nav-link">
+                                    <label for="category_manager" href="" class="left__nav-link">
                                         <i class="fas fa-table"></i>
                                         Category
-                                    </a>
+                                    </label>
                                 </li>
                                 <li class="left__nav-item">
-                                    <a href="categoryPerennials.html" class="left__nav-link">
+                                    <label for="account_manager" href="" class="left__nav-link">
                                         <i class="fas fa-users"></i>
                                         Account
-                                    </a>
+                                    </label>
                                 </li>
                                 <li class="left__nav-item">
-                                    <a href="categoryGift.html" class="left__nav-link">
+                                    <a href="" class="left__nav-link">
                                         <i class="fas fa-wallet"></i>
                                         Order
                                     </a>
                                 </li>
                                 <li class="left__nav-item">
-                                    <a href="" class="left__nav-link">
+                                    <label for="more_manager" href="" class="left__nav-link">
                                         <i class="fas fa-plus"></i>
                                         More
-                                    </a>
+                                    </label>
                                 </li>
                             </ul>
                             
@@ -101,157 +113,1471 @@
                     <!-- product -->
                     <div class="right__content col l-10 m-12 c-12">
 
-                        <div class="manager__header">
-                            <div class="manager__header-title">
-                                Filter product
-                            </div>
-                            <div class="manager__header-body">
-                                <div class="manager__header-choice">
-                                    <p class="choice-title">Category</p>
-                                    <select name="Category" id="Category">
-                                        <option value="volvo">All</option>
-                                        <option value="volvo">Volvo</option>
-                                        <option value="saab">Saab</option>
-                                        <option value="mercedes">Mercedes</option>
-                                        <option value="audi">Audi</option>
-                                    </select>
-                                </div>
+                        <!-- Main content -->
+                        <div class="content">
+                            <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                <input class="admin_choice" type="radio" name="manager" id="product_manager" >
+                                <input class="admin_choice" type="radio" name="manager" id="category_manager">
+                                <input class="admin_choice" type="radio" name="manager" id="account_manager">
+                                <input class="admin_choice" type="radio" name="manager" id="more_manager" checked="checked">
                                 
-                                <div class="manager__header-price">
-                                    <div class="price-filter">
-                                        <p class="choice-title">Price from</p>
-                                        <input type="text" id="price-from">
+                                <!-- Product table -->                                        
+                                <div class="card product__manager">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Products</h3>
+                                        <a href="#" class="addnew">Addnew product</a>
                                     </div>
-                                        
-                                    <div class="price-filter">
-                                        <p class="choice-title">to</p>
-                                        <input type="text" id="price-to">
-                                    </div>    
-                                    
-                                </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
 
-                                <div class="manager__header-search">
-                                    <p class="choice-title">Or search by name</p>
-                                    <input type="text" placeholder="Search here...">
-                                    <button>
-                                        Filter product
-                                        <!-- <a href="" class="header__search-link"><i class="header__search-icon fas fa-search"></i></a> -->
-                                    </button>
-                                </div>
-
-                                <div class="manager__header-add">
-                                    <button class="addnew">Add new</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="manager__area">
-                            <div class="product__manager">
-                                <!-- <div class="manager_title">Blog manager</div> -->
-                                <table class="table">
-                                    <tr class="heading_table">
-                                        <th style="border-radius: 5px 0 0 0;">BlogID</th>
-                                        <th>AccountID</th>
-                                        <th>Create At</th>
-                                        <th>Title</th>
-                                        <th>Content</th>
-                                        <th>Category</th>
+                                    <table id="products" class="table table-bordered table-striped">
+                                        <thead>
+                                        <tr>
+                                        <th>Product ID</th>
+                                        <th>Price in</th>
+                                        <th>Price out</th>
+                                        <th>Unit</th>
+                                        <th>Number</th>
                                         <th>Image</th>
-                                        <th>Status</th>
-                                        <th style="border-radius: 0 5px 0 0;"> </th>
-                                    </tr>
-                                    <tr class="body_table">
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>2022-10-07 22:57:09</td>
-                                        <td>What is a list of skills that are amazing if you learn them?</td>
-                                        <td>Writing. I've never looked at writing as a skill. If I had started writing at a young age I feel I would have had significant advantages growing up. So, don’t be me, think, write and grow with it.</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td style="text-align: center"><a class="eye-icon" href=""><i class="fas fa-eye"></i></a></td>
+                                        <th></th>
+                                        <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 4.0
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td> 4</td>
+                                        <td>X</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
                                         <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
-                                    </tr>
-                                    <tr class="body_table">
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>2022-10-07 22:57:09</td>
-                                        <td>What is a list of skills that are amazing if you learn them?</td>
-                                        <td>Writing. I've never looked at writing as a skill. If I had started writing at a young age I feel I would have had significant advantages growing up. So, don’t be me, think, write and grow with it.</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td style="text-align: center"><a class="eye-icon" href=""><i class="fas fa-eye-slash"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 5.0
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td>5</td>
+                                        <td>C</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
                                         <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
-                                    </tr>
-                                    <tr class="body_table">
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>2022-10-07 22:57:09</td>
-                                        <td>What is a list of skills that are amazing if you learn them?</td>
-                                        <td>Writing. I've never looked at writing as a skill. If I had started writing at a young age I feel I would have had significant advantages growing up. So, don’t be me, think, write and grow with it.</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td style="text-align: center"><a class="eye-icon" href=""><i class="fas fa-eye-slash"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 5.5
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td>5.5</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
                                         <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
-                                    </tr>
-                                    <tr class="body_table">
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>2022-10-07 22:57:09</td>
-                                        <td>What is a list of skills that are amazing if you learn them?</td>
-                                        <td>Writing. I've never looked at writing as a skill. If I had started writing at a young age I feel I would have had significant advantages growing up. So, don’t be me, think, write and grow with it.</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td style="text-align: center"><a class="eye-icon" href=""><i class="fas fa-eye-slash"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 6
+                                        </td>
+                                        <td>Win 98+</td>
+                                        <td>6</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
                                         <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
-                                    </tr>
-                                    <tr class="body_table">
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>2022-10-07 22:57:09</td>
-                                        <td>What is a list of skills that are amazing if you learn them?</td>
-                                        <td>Writing. I've never looked at writing as a skill. If I had started writing at a young age I feel I would have had significant advantages growing up. So, don’t be me, think, write and grow with it.</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td style="text-align: center"><a class="eye-icon" href=""><i class="fas fa-eye-slash"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 7</td>
+                                        <td>Win XP SP2+</td>
+                                        <td>7</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
                                         <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
-                                    </tr>
-                                    <tr class="body_table">
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>2022-10-07 22:57:09</td>
-                                        <td>What is a list of skills that are amazing if you learn them?</td>
-                                        <td>Writing. I've never looked at writing as a skill. If I had started writing at a young age I feel I would have had significant advantages growing up. So, don’t be me, think, write and grow with it.</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td style="text-align: center"><a class="eye-icon" href=""><i class="fas fa-eye-slash"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>AOL browser (AOL desktop)</td>
+                                        <td>Win XP</td>
+                                        <td>6</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
                                         <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
-                                    </tr>
-                                    <tr class="body_table">
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>2022-10-07 22:57:09</td>
-                                        <td>What is a list of skills that are amazing if you learn them?</td>
-                                        <td>Writing. I've never looked at writing as a skill. If I had started writing at a young age I feel I would have had significant advantages growing up. So, don’t be me, think, write and grow with it.</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td style="text-align: center"><a class="eye-icon" href=""><i class="fas fa-eye-slash"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Firefox 1.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.7</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
                                         <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
-                                    </tr>
-                                </table>
-                            </div>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Firefox 1.5</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Firefox 2.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Firefox 3.0</td>
+                                        <td>Win 2k+ / OSX.3+</td>
+                                        <td>1.9</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Camino 1.0</td>
+                                        <td>OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Camino 1.5</td>
+                                        <td>OSX.3+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Netscape 7.2</td>
+                                        <td>Win 95+ / Mac OS 8.6-9.2</td>
+                                        <td>1.7</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Netscape Browser 8</td>
+                                        <td>Win 98SE+</td>
+                                        <td>1.7</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Netscape Navigator 9</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Mozilla 1.0</td>
+                                        <td>Win 95+ / OSX.1+</td>
+                                        <td>1</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Mozilla 1.1</td>
+                                        <td>Win 95+ / OSX.1+</td>
+                                        <td>1.1</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Mozilla 1.2</td>
+                                        <td>Win 95+ / OSX.1+</td>
+                                        <td>1.2</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Mozilla 1.3</td>
+                                        <td>Win 95+ / OSX.1+</td>
+                                        <td>1.3</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Mozilla 1.4</td>
+                                        <td>Win 95+ / OSX.1+</td>
+                                        <td>1.4</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Mozilla 1.5</td>
+                                        <td>Win 95+ / OSX.1+</td>
+                                        <td>1.5</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Mozilla 1.6</td>
+                                        <td>Win 95+ / OSX.1+</td>
+                                        <td>1.6</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Mozilla 1.7</td>
+                                        <td>Win 98+ / OSX.1+</td>
+                                        <td>1.7</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Mozilla 1.8</td>
+                                        <td>Win 98+ / OSX.1+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Seamonkey 1.1</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Gecko</td>
+                                        <td>Epiphany 2.20</td>
+                                        <td>Gnome</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Webkit</td>
+                                        <td>Safari 1.2</td>
+                                        <td>OSX.3</td>
+                                        <td>125.5</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Webkit</td>
+                                        <td>Safari 1.3</td>
+                                        <td>OSX.3</td>
+                                        <td>312.8</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Webkit</td>
+                                        <td>Safari 2.0</td>
+                                        <td>OSX.4+</td>
+                                        <td>419.3</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Webkit</td>
+                                        <td>Safari 3.0</td>
+                                        <td>OSX.4+</td>
+                                        <td>522.1</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Webkit</td>
+                                        <td>OmniWeb 5.5</td>
+                                        <td>OSX.4+</td>
+                                        <td>420</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Webkit</td>
+                                        <td>iPod Touch / iPhone</td>
+                                        <td>iPod</td>
+                                        <td>420.1</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Webkit</td>
+                                        <td>S60</td>
+                                        <td>S60</td>
+                                        <td>413</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Presto</td>
+                                        <td>Opera 7.0</td>
+                                        <td>Win 95+ / OSX.1+</td>
+                                        <td>-</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Presto</td>
+                                        <td>Opera 7.5</td>
+                                        <td>Win 95+ / OSX.2+</td>
+                                        <td>-</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Presto</td>
+                                        <td>Opera 8.0</td>
+                                        <td>Win 95+ / OSX.2+</td>
+                                        <td>-</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Presto</td>
+                                        <td>Opera 8.5</td>
+                                        <td>Win 95+ / OSX.2+</td>
+                                        <td>-</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Presto</td>
+                                        <td>Opera 9.0</td>
+                                        <td>Win 95+ / OSX.3+</td>
+                                        <td>-</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Presto</td>
+                                        <td>Opera 9.2</td>
+                                        <td>Win 88+ / OSX.3+</td>
+                                        <td>-</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Presto</td>
+                                        <td>Opera 9.5</td>
+                                        <td>Win 88+ / OSX.3+</td>
+                                        <td>-</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Presto</td>
+                                        <td>Opera for Wii</td>
+                                        <td>Wii</td>
+                                        <td>-</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Presto</td>
+                                        <td>Nokia N800</td>
+                                        <td>N800</td>
+                                        <td>-</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Presto</td>
+                                        <td>Nintendo DS browser</td>
+                                        <td>Nintendo DS</td>
+                                        <td>8.5</td>
+                                        <td>C/A<sup>1</sup></td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>KHTML</td>
+                                        <td>Konqureror 3.1</td>
+                                        <td>KDE 3.1</td>
+                                        <td>3.1</td>
+                                        <td>C</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>KHTML</td>
+                                        <td>Konqureror 3.3</td>
+                                        <td>KDE 3.3</td>
+                                        <td>3.3</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>KHTML</td>
+                                        <td>Konqureror 3.5</td>
+                                        <td>KDE 3.5</td>
+                                        <td>3.5</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Tasman</td>
+                                        <td>Internet Explorer 4.5</td>
+                                        <td>Mac OS 8-9</td>
+                                        <td>-</td>
+                                        <td>X</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Tasman</td>
+                                        <td>Internet Explorer 5.1</td>
+                                        <td>Mac OS 7.6-9</td>
+                                        <td>1</td>
+                                        <td>C</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Tasman</td>
+                                        <td>Internet Explorer 5.2</td>
+                                        <td>Mac OS 8-X</td>
+                                        <td>1</td>
+                                        <td>C</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Misc</td>
+                                        <td>NetFront 3.1</td>
+                                        <td>Embedded devices</td>
+                                        <td>-</td>
+                                        <td>C</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Misc</td>
+                                        <td>NetFront 3.4</td>
+                                        <td>Embedded devices</td>
+                                        <td>-</td>
+                                        <td>A</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Misc</td>
+                                        <td>Dillo 0.8</td>
+                                        <td>Embedded devices</td>
+                                        <td>-</td>
+                                        <td>X</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Misc</td>
+                                        <td>Links</td>
+                                        <td>Text only</td>
+                                        <td>-</td>
+                                        <td>X</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Misc</td>
+                                        <td>Lynx</td>
+                                        <td>Text only</td>
+                                        <td>-</td>
+                                        <td>X</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Misc</td>
+                                        <td>IE Mobile</td>
+                                        <td>Windows Mobile 6</td>
+                                        <td>-</td>
+                                        <td>C</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Misc</td>
+                                        <td>PSP browser</td>
+                                        <td>PSP</td>
+                                        <td>-</td>
+                                        <td>C</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Other browsers</td>
+                                        <td>All others</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>U</td>
+                                        <td style="background-image: url(../img/Perennials/ArumFern.jpg);     
+                                                    background-size: contain;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;"></td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <th>Product ID</th>
+                                            <th>Price in</th>
+                                            <th>Price out</th>
+                                            <th>Unit</th>
+                                            <th>Number</th>
+                                            <th>Image</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
 
+                                <!-- Category table -->
+                                <div class="card category__manager">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Category</h3>
+                                        <a href="#" class="addnew">Addnew category</a>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+
+                                    <table id="categories" class="table table-bordered table-striped">
+                                        <thead>
+                                        <tr>
+                                        <th>Category ID</th>
+                                        <th>Name</th>
+                                        <th>Descriptions</th>
+                                        <th></th>
+                                        <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 4.0
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 5.0
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 5.5
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 6
+                                        </td>
+                                        <td>Win 98+</td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 7</td>
+                                        <td>Win XP SP2+</td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>AOL browser (AOL desktop)</td>
+                                        <td>Win XP</td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 5.5
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 6
+                                        </td>
+                                        <td>Win 98+</td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 7</td>
+                                        <td>Win XP SP2+</td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>AOL browser (AOL desktop)</td>
+                                        <td>Win XP</td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 5.5
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 6
+                                        </td>
+                                        <td>Win 98+</td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 7</td>
+                                        <td>Win XP SP2+</td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>AOL browser (AOL desktop)</td>
+                                        <td>Win XP</td>
+                                        <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <th>Category ID</th>
+                                            <th>Name</th>
+                                            <th>Descriptions</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+
+                                <!-- Account table -->
+                                <div class="card account__manager">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Account</h3>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+
+                                    
+                                        <table id="accounts" class="table table-bordered table-striped">
+                                            <thead>
+                                            <tr>
+                                            <th>Account ID</th>
+                                            <th>Role</th>
+                                            <th>Username</th>
+                                            <th>Dayofbirth</th>
+                                            <th>Sex</th>
+                                            <th>Email</th>
+                                            <th></th>
+                                            <th></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                            <td>Trident</td>
+                                            <td>Internet
+                                                Explorer 4.0
+                                            </td>
+                                            <td>Win 95+</td>
+                                            <td> 4</td>
+                                            <td>X</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Trident</td>
+                                            <td>Internet
+                                                Explorer 5.0
+                                            </td>
+                                            <td>Win 95+</td>
+                                            <td>5</td>
+                                            <td>C</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Trident</td>
+                                            <td>Internet
+                                                Explorer 5.5
+                                            </td>
+                                            <td>Win 95+</td>
+                                            <td>5.5</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Trident</td>
+                                            <td>Internet
+                                                Explorer 6
+                                            </td>
+                                            <td>Win 98+</td>
+                                            <td>6</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Trident</td>
+                                            <td>Internet Explorer 7</td>
+                                            <td>Win XP SP2+</td>
+                                            <td>7</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Trident</td>
+                                            <td>AOL browser (AOL desktop)</td>
+                                            <td>Win XP</td>
+                                            <td>6</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Firefox 1.0</td>
+                                            <td>Win 98+ / OSX.2+</td>
+                                            <td>1.7</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Firefox 1.5</td>
+                                            <td>Win 98+ / OSX.2+</td>
+                                            <td>1.8</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Firefox 2.0</td>
+                                            <td>Win 98+ / OSX.2+</td>
+                                            <td>1.8</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Firefox 3.0</td>
+                                            <td>Win 2k+ / OSX.3+</td>
+                                            <td>1.9</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Camino 1.0</td>
+                                            <td>OSX.2+</td>
+                                            <td>1.8</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Camino 1.5</td>
+                                            <td>OSX.3+</td>
+                                            <td>1.8</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Netscape 7.2</td>
+                                            <td>Win 95+ / Mac OS 8.6-9.2</td>
+                                            <td>1.7</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Netscape Browser 8</td>
+                                            <td>Win 98SE+</td>
+                                            <td>1.7</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Netscape Navigator 9</td>
+                                            <td>Win 98+ / OSX.2+</td>
+                                            <td>1.8</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Mozilla 1.0</td>
+                                            <td>Win 95+ / OSX.1+</td>
+                                            <td>1</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Mozilla 1.1</td>
+                                            <td>Win 95+ / OSX.1+</td>
+                                            <td>1.1</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Mozilla 1.2</td>
+                                            <td>Win 95+ / OSX.1+</td>
+                                            <td>1.2</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Mozilla 1.3</td>
+                                            <td>Win 95+ / OSX.1+</td>
+                                            <td>1.3</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Mozilla 1.4</td>
+                                            <td>Win 95+ / OSX.1+</td>
+                                            <td>1.4</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Mozilla 1.5</td>
+                                            <td>Win 95+ / OSX.1+</td>
+                                            <td>1.5</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Mozilla 1.6</td>
+                                            <td>Win 95+ / OSX.1+</td>
+                                            <td>1.6</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Mozilla 1.7</td>
+                                            <td>Win 98+ / OSX.1+</td>
+                                            <td>1.7</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Mozilla 1.8</td>
+                                            <td>Win 98+ / OSX.1+</td>
+                                            <td>1.8</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Seamonkey 1.1</td>
+                                            <td>Win 98+ / OSX.2+</td>
+                                            <td>1.8</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Epiphany 2.20</td>
+                                            <td>Gnome</td>
+                                            <td>1.8</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Webkit</td>
+                                            <td>Safari 1.2</td>
+                                            <td>OSX.3</td>
+                                            <td>125.5</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Webkit</td>
+                                            <td>Safari 1.3</td>
+                                            <td>OSX.3</td>
+                                            <td>312.8</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Webkit</td>
+                                            <td>Safari 2.0</td>
+                                            <td>OSX.4+</td>
+                                            <td>419.3</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Webkit</td>
+                                            <td>Safari 3.0</td>
+                                            <td>OSX.4+</td>
+                                            <td>522.1</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Webkit</td>
+                                            <td>OmniWeb 5.5</td>
+                                            <td>OSX.4+</td>
+                                            <td>420</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Webkit</td>
+                                            <td>iPod Touch / iPhone</td>
+                                            <td>iPod</td>
+                                            <td>420.1</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Webkit</td>
+                                            <td>S60</td>
+                                            <td>S60</td>
+                                            <td>413</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Presto</td>
+                                            <td>Opera 7.0</td>
+                                            <td>Win 95+ / OSX.1+</td>
+                                            <td>-</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Presto</td>
+                                            <td>Opera 7.5</td>
+                                            <td>Win 95+ / OSX.2+</td>
+                                            <td>-</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Presto</td>
+                                            <td>Opera 8.0</td>
+                                            <td>Win 95+ / OSX.2+</td>
+                                            <td>-</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Presto</td>
+                                            <td>Opera 8.5</td>
+                                            <td>Win 95+ / OSX.2+</td>
+                                            <td>-</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Presto</td>
+                                            <td>Opera 9.0</td>
+                                            <td>Win 95+ / OSX.3+</td>
+                                            <td>-</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Presto</td>
+                                            <td>Opera 9.2</td>
+                                            <td>Win 88+ / OSX.3+</td>
+                                            <td>-</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Presto</td>
+                                            <td>Opera 9.5</td>
+                                            <td>Win 88+ / OSX.3+</td>
+                                            <td>-</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Presto</td>
+                                            <td>Opera for Wii</td>
+                                            <td>Wii</td>
+                                            <td>-</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><a class="editIcon" href=""><i class="fas fa-edit"></i></a></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <th>Product ID</th>
+                                                <th>Price in</th>
+                                                <th>Price out</th>
+                                                <th>Unit</th>
+                                                <th>Number</th>
+                                                <th>Image</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+
+                                <!-- /.card -->
+                                </div>
+                                <!-- /.col-md-6 -->
+                            </div>
+                            <!-- /.row -->
+                            </div>
+                            <!-- /.container-fluid -->
                         </div>
+                        <!-- /.content -->
+
                     </div>
                 </div>
-
-                <button href="" class="back-to-top active">
-                    <i class="back-to-top-icon fa fa-angle-double-up"></i>
-                </button>
-
             </div>
         </div>
 
     </div>
     <script src="./js/category.js"></script>    
+    <!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="./anotherTheme/static/js/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="./anotherTheme/static/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="./anotherTheme/static/js/adminlte.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="./anotherTheme/static/js/jquery.dataTables.min.js"></script>
+<script src="./anotherTheme/static/js/dataTables.bootstrap4.min.js"></script>
+<script src="./anotherTheme/static/js/dataTables.responsive.min.js"></script>
+<script src="./anotherTheme/static/js/responsive.bootstrap4.min.js"></script>
+<script>
+  $("#products").DataTable({
+    "paging": true,
+    "lengthChange": false,
+    "searching": true,
+    "ordering": true,
+    "info": true,
+    "autoWidth": true,
+    "responsive": true,
+  });
+  $("#categories").DataTable({
+    "paging": true,
+    "lengthChange": false,
+    "searching": true,
+    "ordering": true,
+    "info": true,
+    "autoWidth": true,
+    "responsive": true,
+  });
+  $("#accounts").DataTable({
+    "paging": true,
+    "lengthChange": false,
+    "searching": true,
+    "ordering": true,
+    "info": true,
+    "autoWidth": true,
+    "responsive": true,
+  });
+</script>
 </body>
 </html>
