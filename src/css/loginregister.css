@@ -38,7 +38,6 @@
     font-weight: 700;
 }
 .control{
-    margin-bottom: 30px;
     margin: 10px;
 }
 .control input {
@@ -46,7 +45,7 @@
 }
 .Email-input,.Password-input,.Surname-input,.Name-input{
     width: 100%;
-    min-height: 40px;
+    min-height: 30px;
     padding: 0 10px;
     font-size: 1.2em;
     border-radius: 5px;
@@ -136,4 +135,20 @@
     .accout{
         margin: 0 10px;
     }
+}
+.sex_choice {
+    padding-left: 150px;
+    margin-top: 10px;
+}
+.sex_choice label{
+    padding: 10px;
+    /* font-size: 18px; */
+}
+.dayofbirth-picker {
+    margin-left: 15px;
+    border: 1px solid #eee;
+    padding: 5px;
+    border-radius: 5px;
+    width: 150px;
+    
 }
