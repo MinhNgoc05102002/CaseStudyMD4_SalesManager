@@ -127,7 +127,7 @@
                                 <div class="card product__manager">
                                     <div class="card-header">
                                         <h3 class="card-title">Products</h3>
-                                        <a href="#" class="addnew">Addnew product</a>
+                                        <button id="addnewProduct" class="addnew">Addnew product</button>
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
@@ -917,7 +917,7 @@
                                 <div class="card category__manager">
                                     <div class="card-header">
                                         <h3 class="card-title">Category</h3>
-                                        <a href="#" class="addnew">Addnew category</a>
+                                        <button class="addnew">Addnew category</button>
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
@@ -1537,7 +1537,72 @@
         </div>
 
     </div>
+
+    <div id="modalProduct" class="modal">
+        
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close"><i class="fas fa-times"></i></span>
+            <h2>Update product</h2>
+            
+            <form action="" method="post">
+                <img class="img_dialog" id="add_product_image" width="400px" src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png"
+                     alt="product image">
+                <input id="productID" type="text" style="display: none" name="productID">
+                <table class="edit_table" style="border: 5px solid white">
+                    <tr>
+                        <td><p for="image_product_input">Product image</p></td>
+                        <td><input name="imageSource" id="image_product_input" type="text" onchange="changeImageSource(this.value);"></td>
+                    </tr>
+                    <tr>
+                        <td><p for="name_product_input">Product name</p></td>
+                        <td><input name="name" id="name_product_input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><p for="price_in">Price in</p></td>
+                        <td><input name="price" id="price_in" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><p for="price_out">Price out</p></td>
+                        <td><input name="price" id="price_out" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><p for="product_unit">Unit</p></td>
+                        <td><input name="unit" id="product_unit" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><p for="product_number">Number</p></td>
+                        <td><input name="number" id="product_number" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: center"><p for="product_description">Description</p></td>
+                        <td><textarea name="description" id="product_description"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><p>Category</p></td>
+                        <td>
+                            <div class="cate">
+                                
+                                <input class="catechoice" type="checkbox" name="cate1" id="cate1">
+                                <label for="cate1" class="labelCate">cate1_name</label>
+
+                                <input class="catechoice" type="checkbox" name="cate2" id="cate2">
+                                <label for="cate2" class="labelCate">cate2_name</label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="modal-button" style="text-align: center;">
+                    <!-- <input id="editBlogButton" type="submit" value="Edit"> -->
+                    <input class="ok" id="postNewBlogButton" type="submit" value="Addnew">
+                    <input class="cancel" type="button" value="Cancel" onclick="closeAddBlogDialog()">
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script src="./js/category.js"></script>    
+    <script src="./js/dialog.js"></script>
     <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="./anotherTheme/static/js/jquery.min.js"></script>
