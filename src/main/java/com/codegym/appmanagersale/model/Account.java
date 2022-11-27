@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "accounts", uniqueConstraints = {
@@ -17,6 +18,9 @@ import javax.persistence.*;
 public class Account {
     public static final String ADMIN = "ROLE_ADMIN";
     public static final String USER = "ROLE_USER";
+    public static final String MAN = "MAN";
+    public static final String WOMAN = "WOMAN";
+    public static final String OTHER = "OTHER";
     public static final int ACTIVE = 1;
     public static final int INACTIVE = 0;
 
@@ -35,15 +39,18 @@ public class Account {
 
     @Column(nullable = false, length = 50)
     private String email;
-
-    @Column(columnDefinition = "nvarchar(200)")
-    private String address;
     private Integer active;
     @Column(name = "user_role", length = 20)
     private String userRole;
 
     @Transient
     private String confirmPassword;
+
+    @OneToMany(mappedBy = "account")
+    Set<Order> orders;
+
+    @OneToMany(mappedBy = "account")
+    Set<Judge> judges;
 
     @PrePersist
     public void preCreate() {

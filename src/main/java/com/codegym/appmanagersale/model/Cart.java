@@ -7,26 +7,22 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "orderDetails")
+@Table(name = "cart")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderDetail {
+public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private Integer quantity;
-
-    @Column(nullable = false)
-    private Double price;
-
-    @ManyToOne
-    @JoinColumn(name = "orderId", nullable = false)
-    private Order order;
-
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "productId", nullable = false)
     private Product product;
+
+    @OneToOne
+    @JoinColumn(name = "accountId", nullable = false)
+    private Account account;
+
+    private Integer quantity;
 }

@@ -44,6 +44,9 @@ public class Product {
     @OneToMany(mappedBy = "product")
     Set<CategoryWithProduct> categoryWithProducts;
 
+    @OneToMany(mappedBy = "product")
+    Set<OrderDetail> orderDetails;
+
     @PrePersist
     public void preCreate() {
         status = AVAILABLE;
