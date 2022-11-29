@@ -283,6 +283,9 @@ body {
 #product_manager:checked ~ .category__manager{
     display: none;
 }
+#product_manager:checked ~ .order__manager{
+    display: none;
+}
 
 #category_manager:checked ~ .category__manager {
     display: block;
@@ -293,6 +296,10 @@ body {
 #category_manager:checked ~ .account__manager{
     display: none;
 }
+#category_manager:checked ~ .order__manager {
+    display: none;
+}
+
 #account_manager:checked ~ .account__manager {
     display: block;
 }
@@ -302,7 +309,25 @@ body {
 #account_manager:checked ~ .category__manager{
     display: none;
 }
-#product_manager, #category_manager, #account_manager, #more_manager {
+#account_manager:checked ~ .order__manager{
+    display: none;
+}
+
+
+#order_manager:checked ~ .order_manager {
+    display: block;
+}
+#order_manager:checked ~ .product__manager{
+    display: none;
+}
+#order_manager:checked ~ .category__manager{
+    display: none;
+}
+#order_manager:checked ~ .account__manager{
+    display: none;
+}
+
+#product_manager, #category_manager, #account_manager, #order_manager, #more_manager {
     display: none;
 }
 #more_manager:checked ~ .product__manager{
@@ -312,6 +337,9 @@ body {
     visibility: hidden;
 }
 #more_manager:checked ~ .account__manager{
+    visibility: hidden;
+}
+#more_manager:checked ~ .order__manager{
     visibility: hidden;
 }
 
@@ -381,12 +409,17 @@ td input, td textarea {
 .catechoice:checked + .labelCate {
     background-color: #bfc3bf;
 }
+.cate {
+    border: 1px solid black;
+    margin: 0px -22px 0px 10px;
+    padding: 5px;
+    border-radius: 2px;
+}
 .labelCate {
     font-size: 16px;
     font-weight: 100 !important;
     background-color: #e1e3e1;
     border-radius: 3px;
-    margin-left: 7px;
     padding: 3px;
 }
 .modal-button input{
@@ -405,4 +438,17 @@ td input, td textarea {
 }
 .cancel:hover {
     background-color: rgb(85, 84, 84) !important;
+}
+
+.roleChange {
+    /* border: 1px solid #6d7562; */
+    border-radius: 2px;
+    padding: 2px;
+    display: block;
+    text-align: center;
+    background-color: #7e8a89;
+    color: white;
+}
+.admin {
+    background-color: #43d536;
 }
