@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="../src/css/footer.css">
     <link rel="stylesheet" href="../src/css/category.css"> 
+    <link rel="stylesheet" href="../src/css/cart.css">
 </head>
 <body>
     
@@ -142,17 +143,119 @@
 
         <div class="cart">
             <div class="grid wide">
-                <h2 class="cart__header">Your cart</h2>
-                <div class="cart__body grid">
-                    <div class="row">
-                        <div class="col l-3"></div>
+                <div class="cart__button row">
+                    <h2 class="cart__header col l-o-1">Your cart</h2>
+                    <!-- <div class="cart__button-selectall "></div> -->
+                    <div class="cart__button-buynow col l-o-6">
+                        <button>Buynow</button>
                     </div>
+                </div>
+                <hr class="cart__header-bottom">
+                <div class="cart__body grid">
+                    <div class="cart__body-item row">
+                        <div class="cart-check col l-o-1"><input name="buynow" id="buynow" type="checkbox"></div>
+                        <div class="cart-img col l-2">
+                            <img src="../img//AllProduct/Fittonia.jpg" alt="">
+                        </div>
+                        <div class="cart-info col l-6">
+                            <label for="buynow" class="info-text">
+                                <p class="info-name">Fittonia promia from England</p>
+                                <p class="info-price">$20.00</p>
+                            </label>
+                                
+                            <div class="cart-numberChange">
+                                <div class="minus" onclick="minusNumber('1')">-</div>
+                                <div id="1" class="cart-number">3</div>
+                                <div class="plus" onclick="plusNumber(1)">+</div>
+                            </div>
+                        </div>
+                        <div class="cart-button col l-1">
+                            <div></div>
+                            <button>Delete</button>
+                        </div>
+                    </div>
+                    <div class="end-item"></div>
+                    <div class="cart__body-item row">
+                        <div class="cart-check col l-o-1"><input name="buynow" id="buynow" type="checkbox"></div>
+                        <div class="cart-img col l-2">
+                            <img src="../img//AllProduct/Fittonia.jpg" alt="">
+                        </div>
+                        <div class="cart-info col l-6">
+                            <label for="buynow" class="info-text">
+                                <p class="info-name">Fittonia promia from England</p>
+                                <p class="info-price">$20.00</p>
+                            </label>
+                                
+                            <div class="cart-numberChange">
+                                <div class="minus" onclick="minusNumber('1')">-</div>
+                                <div id="1" class="cart-number">3</div>
+                                <div class="plus" onclick="plusNumber(1)">+</div>
+                            </div>
+                        </div>
+                        <div class="cart-button col l-1">
+                            <div></div>
+                            <button>Delete</button>
+                        </div>
+                    </div>
+                    <div class="end-item"></div>
+                    <div class="cart__body-item row">
+                        <div class="cart-check col l-o-1"><input name="buynow" id="buynow" type="checkbox"></div>
+                        <div class="cart-img col l-2">
+                            <img src="../img//AllProduct/Fittonia.jpg" alt="">
+                        </div>
+                        <label for="buynow" class="cart-info col l-6">
+                            <div class="info-text">
+                                <p class="info-name">Fittonia promia from England</p>
+                                <p class="info-price">$20.00</p>
+                            </div>
+                                
+                            <div class="cart-numberChange">
+                                <div class="minus">-</div>
+                                <div class="cart-number">3</div>
+                                <div class="plus">+</div>
+                            </div>
+                        </label>
+                        <div class="cart-button col l-1">
+                            <div></div>
+                            <button>Delete</button>
+                        </div>
+                    </div>
+                    <div class="end-item"></div>
                 </div>
             </div>
         </div>
 
         <!-- End cart -->
 
+        <!-- Start order -->
+        <div id="modalOrder" class="modal">
+        
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" onclick="closeOrder()"><i class="fas fa-times"></i></span>
+                <h2>Order infomation</h2>
+                
+                <form action="" method="post">
+                    <input id="categoryID" type="text" style="display: none" name="categoryID">
+                    <table class="edit_table" style="border: 5px solid white">
+                        <tr>
+                            <td><p for="name_category_input">Category name</p></td>
+                            <td><input name="name" id="name_category_input" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: center"><p for="category_description">Description</p></td>
+                            <td><textarea name="description" id="category_description"></textarea></td>
+                        </tr>
+                    </table>
+                    <div class="modal-button" style="text-align: center;">
+                        <input class="ok" id="editCategoryButton" type="submit" value="Edit">
+                        <input class="ok" id="addCategoryButton" type="submit" value="Addnew">
+                        <input class="cancel" type="button" value="Cancel" onclick="closeAddCate()">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End order -->
         
         <footer class="footer">
             <div class="grid wide">
@@ -252,9 +355,8 @@
         </footer>
 
     </div>
-    </body>
-    </html>
     <script src="./js/category.js"></script>
     <script src="./js/loginregister.js"></script>
+    <script src="./js/cart.js"></script>
 </body>
 </html>
