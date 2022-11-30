@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giỏ hàng</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="../src/css/footer.css">
     <link rel="stylesheet" href="../src/css/category.css"> 
+    <link rel="stylesheet" href="../src/css/admin.css">
     <link rel="stylesheet" href="../src/css/cart.css">
 </head>
 <body>
@@ -147,7 +149,7 @@
                     <h2 class="cart__header col l-o-1">Your cart</h2>
                     <!-- <div class="cart__button-selectall "></div> -->
                     <div class="cart__button-buynow col l-o-6">
-                        <button>Buynow</button>
+                        <button onclick="showModalOrder()">Buynow</button>
                     </div>
                 </div>
                 <hr class="cart__header-bottom">
@@ -232,25 +234,61 @@
         
             <!-- Modal content -->
             <div class="modal-content">
-                <span class="close" onclick="closeOrder()"><i class="fas fa-times"></i></span>
+                <!-- <span class="close" onclick="closeOrder()"><i class="fas fa-times"></i></span> -->
                 <h2>Order infomation</h2>
-                
                 <form action="" method="post">
-                    <input id="categoryID" type="text" style="display: none" name="categoryID">
-                    <table class="edit_table" style="border: 5px solid white">
-                        <tr>
-                            <td><p for="name_category_input">Category name</p></td>
-                            <td><input name="name" id="name_category_input" type="text"></td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align: center"><p for="category_description">Description</p></td>
-                            <td><textarea name="description" id="category_description"></textarea></td>
-                        </tr>
-                    </table>
+                    <div class="productOrder grid">
+                        <div class="productOrder-item row">
+                            <div class="productOrder-item-img col l-3">
+                                <img src="../img//AllProduct/Fittonia.jpg" alt="">
+                            </div>
+                            <div class="productOrder-item-info col l-7">
+                                <div class="productOrder-item-info-text">
+                                    <p class="productOrder-item-info-name">Fittonia promia from England</p>
+                                    <p class="productOrder-item-info-price">$20.00</p>
+                                </div>
+                                <div class="productOrder-item-number">
+                                    Number: <div id="1" class="item-number">3</div>
+                                </div>
+                            </div>
+                            <div class="item-totalPrice col l-2">
+                                <div></div>
+                                <div>20.00</div>
+                            </div>
+                        </div>
+                        <hr>
+                        
+                        <div class="productOrder-item row">
+                            <div class="productOrder-item-img col l-3">
+                                <img src="../img//AllProduct/Fittonia.jpg" alt="">
+                            </div>
+                            <div class="productOrder-item-info col l-7">
+                                <div class="productOrder-item-info-text">
+                                    <p class="productOrder-item-info-name">Fittonia promia from England</p>
+                                    <p class="productOrder-item-info-price">$20.00</p>
+                                </div>
+                                <div class="productOrder-item-number">
+                                    Number: <div id="1" class="item-number">3</div>
+                                </div>
+                            </div>
+                            <div class="item-totalPrice col l-2">
+                                <div></div>
+                                <div>20.00</div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    
+                    <div class="productOrder-totalPrice">
+                        Total: <div class="orderTotalPrice">40.00</div>
+                    </div>
+                    <div class="order-address">
+                        <label for="order-address">Address:</label>
+                        <textarea name="description" id="order-address"></textarea>
+                    </div>
                     <div class="modal-button" style="text-align: center;">
-                        <input class="ok" id="editCategoryButton" type="submit" value="Edit">
-                        <input class="ok" id="addCategoryButton" type="submit" value="Addnew">
-                        <input class="cancel" type="button" value="Cancel" onclick="closeAddCate()">
+                        <input class="ok" id="addCategoryButton" type="submit" value="Order">
+                        <input class="cancel" type="button" value="Cancel" onclick="closeOrder()">
                     </div>
                 </form>
             </div>

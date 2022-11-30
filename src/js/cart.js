@@ -13,3 +13,12 @@ function plusNumber(id) {
     document.getElementById(id).innerHTML = number;
 
 }
+function closeOrder() {
+    document.getElementById("order-address").value = "";
+    document.getElementById("modalOrder").style.display = "none";
+}
+
+function showModalOrder() {
+
+    document.getElementById("modalOrder").style.display = "block";
+}
