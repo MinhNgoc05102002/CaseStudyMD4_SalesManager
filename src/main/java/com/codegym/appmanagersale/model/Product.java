@@ -35,9 +35,10 @@ public class Product {
     @Column(nullable = false)
     private Integer quantity;
 
+    @Column(columnDefinition = "longtext")
     private String image;
 
-    @Column(columnDefinition = "nvarchar(300)")
+    @Column(columnDefinition = "longtext")
     private String description;
     private String status;
 

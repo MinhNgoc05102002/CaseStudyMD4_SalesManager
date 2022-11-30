@@ -2,9 +2,639 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/font/fontawesome-free-5.15.2-web/css/all.min.css">
+    <link rel="stylesheet" href="/assets/Grid layout/grid.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+    <link rel="stylesheet" href="/assets/css/home.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link rel="icon" href="../../static/assets/img/Home/logo.png">
+    <title>Home</title>
 </head>
 <body>
-<h1>this is home store</h1>
+
+<div class="app">
+    <div class="loader__wrap">
+        <i class="loader">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </i>
+    </div>
+
+    <!-- Header start -->
+    <div class="header">
+        <div class="grid wide">
+            <div class="header__top">
+                <div class="header__top-head hide-on-mobile-tablet">
+                    <div class="header__social">
+                        <span>Follow us:</span>
+                        <a href="" class="header__social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="" class="header__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="" class="header__social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="header__user">
+                        <div class="header__user-login">
+                            <a href="/login" class="header__user-link"><span>Login</span><i
+                                    class="fas fa-sign-in-alt"></i></a>
+                        </div>
+
+                        <div class="header__user-register">
+                            <a href="/register" class="header__user-link"><span>Register</span><i
+                                    class="fas fa-user-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header__top-body">
+                    <div class="header__logo">
+                        <a href="home.html" class="header__logo-link"><img src="/assets/img/logo.webp" alt=""></a>
+                    </div>
+
+                    <div class="header__search hide-on-mobile-tablet">
+                        <input type="text" placeholder="Search here...">
+                        <button>
+                            <a href="" class="header__search-link"><i class="header__search-icon fas fa-search"></i></a>
+                        </button>
+                    </div>
+
+                    <div class="header__cart">
+                        <div class="header__search-on-tablet">
+                            <i class="fas fa-search"></i>
+                        </div>
+
+                        <button class=""><a href=""><i class="header__cart-icon fas fa-cart-plus"></i></a></button>
+
+                        <label for="nav-mobile-input" class="nav__bars-btn">
+                            <i class="fas fa-bars"></i>
+                        </label>
+
+                        <input type="checkbox" hidden name="" class="nav__input" id="nav-mobile-input">
+
+
+                        <label for="nav-mobile-input" class="nav__overlay"></label>
+
+                        <div class="navbar__mobile">
+                            <label for="nav-mobile-input" class="nav__mobile-close">
+                                <i class="fas fa-times"></i>
+                            </label>
+
+                            <ul class="nav__mobile-list">
+                                <li class="nav__mobile-item"><a class="nav__mobile-link" href="home.html">Home</a></li>
+                                <li class="nav__mobile-item"><a class="nav__mobile-link" href="aboutus.html">About
+                                    us</a></li>
+                                <li class="nav__mobile-item">
+                                    <input type="checkbox" hidden class="nav__input-product" id="nav__product-id">
+                                    <label for="nav__product-id" class="nav__mobile-link">
+                                        <span>Product</span>
+                                        <i class="nav__mobile-icon fas fa-chevron-down"></i>
+                                    </label>
+                                    <div class="nav__mobile-product">
+                                        <ul class="nav__mobile-product-list">
+                                            <li class="nav__mobile-product-item"><a class="nav__mobile-product-link"
+                                                                                    href="categoryAll.html">All</a></li>
+                                            <li class="nav__mobile-product-item"><a class="nav__mobile-product-link"
+                                                                                    href="categoryIndoor.html">Indoor
+                                                Living</a></li>
+                                            <li class="nav__mobile-product-item"><a class="nav__mobile-product-link"
+                                                                                    href="categoryPerennials.html">Perennials</a>
+                                            </li>
+                                            <li class="nav__mobile-product-item"><a class="nav__mobile-product-link"
+                                                                                    href="categoryGift.html">Plant for
+                                                Gift</a></li>
+                                            <li class="nav__mobile-product-item"><a class="nav__mobile-product-link"
+                                                                                    href="categoryAll.html">Garden
+                                                Tools</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav__mobile-item"><a class="nav__mobile-link" href="">News</a></li>
+                                <li class="nav__mobile-item"><a class="nav__mobile-link" href="">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header__bottom hide-on-mobile-tablet">
+        <div class="grid wide">
+            <div class="navbar">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="home.html" class="nav__item-link">Home</a></li>
+                    <li class="nav__item"><a href="aboutus.html" class="nav__item-link">About us</a></li>
+                    <li class="nav__item">
+                        <a href="" class="nav__item-link">Product<i class="fas fa-chevron-down"
+                                                                    id="nav__produce-icon"></i></a>
+
+                        <div class="nav__produce">
+                            <ul class="nav__produce-list">
+                                <li class="nav__produce-item"><a href="categoryAll.html"
+                                                                 class="nav__produce-link">All</a></li>
+                                <li class="nav__produce-item"><a href="categoryIndoor.html" class="nav__produce-link">Indoor
+                                    Living</a></li>
+                                <li class="nav__produce-item"><a href="categoryPerennials.html"
+                                                                 class="nav__produce-link">Perennials</a></li>
+                                <li class="nav__produce-item"><a href="categoryGift.html" class="nav__produce-link">Plant
+                                    for Gift</a></li>
+                                <li class="nav__produce-item"><a href="categoryAll.html" class="nav__produce-link">Garden
+                                    Tools</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav__item"><a href="" class="nav__item-link">News</a></li>
+                    <li class="nav__item"><a href="" class="nav__item-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Header end -->
+
+    <!-- slider start -->
+    <div class="grid wide">
+        <div class="slider__img">
+            <div class="slide active" id="slide1">
+                <div class="info active">
+                    <h1>65% OFF</h1>
+                    <h2>NEW PLANT</h2>
+                    <span>Lorem ipsum dolor sit</span>
+                    <a href="categoryAll.html">DISCOVER NOW</a>
+                </div>
+                <img src="/assets/img/slider 1.webp" data-speed="-5" class="slider_img" alt="">
+            </div>
+
+            <div class="slide" id="slide2">
+                <div class="info">
+                    <h1>65% OFF</h1>
+                    <h2>NEW PLANT</h2>
+                    <span>Lorem ipsum dolor sit</span>
+                    <a href="#">DISCOVER NOW</a>
+                </div>
+                <img src="/assets/img/slider 2.webp" data-speed="-5" class="slider_img" alt="">
+            </div>
+
+            <div class="slide" id="slide3">
+                <div class="info">
+                    <h1>65% OFF</h1>
+                    <h2>NEW PLANT</h2>
+                    <span>Lorem ipsum dolor sit</span>
+                    <a href="">DISCOVER NOW</a>
+                </div>
+                <img src="/assets/img/slider 1.webp" data-speed="-5" class="slider_img" alt="">
+            </div>
+
+            <div class="slide" id="slide4">
+                <div class="info">
+                    <h1>65% OFF</h1>
+                    <h2>NEW PLANT</h2>
+                    <span>Lorem ipsum dolor sit</span>
+                    <a href="">DISCOVER NOW</a>
+                </div>
+                <img src="/assets/img/slider 2.webp" data-speed="-5" class="slider_img" alt="">
+            </div>
+
+            <div class="slide" id="slide5">
+                <div class="info">
+                    <h1>65% OFF</h1>
+                    <h2>NEW PLANT</h2>
+                    <span>Lorem ipsum dolor sit</span>
+                    <a href="">DISCOVER NOW</a>
+                </div>
+                <img src="/assets/img/slider 1.webp" data-speed="-5" class="slider_img" alt="">
+            </div>
+
+            <div class="slider__navigation">
+                <div class="slider__btn active"></div>
+                <div class="slider__btn"></div>
+                <div class="slider__btn"></div>
+                <div class="slider__btn"></div>
+                <div class="slider__btn"></div>
+            </div>
+        </div>
+    </div>
+    <!-- slider end -->
+
+
+    <!-- home -->
+    <div class="home">
+        <div class="grid wide">
+            <!-- home product introduce -->
+
+            <div class="home_product row">
+                <a class="home__product-banner col l-4 m-4 c-4" href="#new_product">
+                    <div data-aos="flip-up" href="#" class="home__product-banner__img" style="background-image: url(/assets/img/Home/new_product.png);">
+                        <h2 class="home__product-banner__title">New product</h2>
+                        <p class="home__product-banner__content">Up to 50%</p>
+                        <p class="home__product-banner__now">SHOP NOW</p>
+                    </div>
+                </a>
+                <a class="home__product-banner col l-4 m-4 c-4" href="#sale_off">
+                    <div data-aos="flip-up" href="#" class="home__product-banner__img" style="background-image: url(/assets/img/Home/sale_off.png);">
+                        <h2 class="home__product-banner__title">Sale off</h2>
+                        <p class="home__product-banner__content">Up to 50%</p>
+                        <p class="home__product-banner__now">SHOP NOW</p>
+                    </div>
+                </a>
+                <a class="home__product-banner col l-4 m-4 c-4" href="#best_seller">
+                    <div data-aos="flip-up" href="#" class="home__product-banner__img" style="background-image: url(/assets/img/Home/best_seller.png);">
+                        <h2 class="home__product-banner__title">Best seller</h2>
+                        <p class="home__product-banner__content">Up to 50%</p>
+                        <p class="home__product-banner__now">SHOP NOW</p>
+
+                    </div>
+                </a>
+            </div>
+
+            <!-- services -->
+            <div class="home_services row">
+                <a class="home_services_item_ col l-4 m-4 c-12" href="#">
+                    <div data-aos="zoom-in" class="home_services_item one">
+                        <div class="home_services_item_img">
+                            <img src="https://template.hasthemes.com/pronia/pronia/assets/images/shipping/icon/car.png" alt="">
+                        </div>
+                        <div class="home_sevices_item-content">
+                            <div class="home_services_item_title">
+                                Free shipping
+                            </div>
+                            <div class="home_services_item_info">
+                                Capped at $319 per order
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="home_services_item_ col l-4 m-4 c-12" href="#">
+                    <div data-aos="zoom-in" class="home_services_item two">
+                        <div class="home_services_item_img">
+                            <img src="https://template.hasthemes.com/pronia/pronia/assets/images/shipping/icon/card.png" alt="">
+                        </div>
+                        <div class="home_sevices_item-content">
+                            <div class="home_services_item_title">
+                                Safe payment
+                            </div>
+                            <div class="home_services_item_info">
+                                With our payment gateway
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="home_services_item_ col l-4 m-4 c-12" href="#">
+                    <div data-aos="zoom-in" class="home_services_item three">
+                        <div class="home_services_item_img">
+                            <img style="width: 100%;" src="https://template.hasthemes.com/pronia/pronia/assets/images/shipping/icon/service.png" alt="">
+                        </div>
+                        <div class="home_sevices_item-content">
+                            <div class="home_services_item_title">
+                                Best services
+                            </div>
+                            <div class="home_services_item_info">
+                                Friendly & Supper Services
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- new products -->
+            <div class="row" id="new_product">
+                <div data-aos="fade-right" class="new_product_title col l-12 m-12 c-12">
+                    <h1>New product</h1>
+                    <hr>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam neque cum reprehenderit illo veritatis odit! <br><br>
+                    </p>
+                </div>
+                <!-- new products 1 -->
+                <a class="new_product-item col l-3 m-6 c-6" href="product.html">
+                    <div data-aos="zoom-out-up" data-aos-delay="100" class="new_product-item__img" style="background-image: url(/assets/img/PlantForGift/hamaCactus.jpg);">
+                    </div>
+                    <p class="new_product-item__name">Hama Cactus</p>
+                    <div class="new_product-item__price">
+                        <span class="new_product-item__price">$20.34</span>
+                        <span class="">For reservations</span>
+
+                    </div>
+
+                </a>
+                <!-- new products 2 -->
+                <a class="new_product-item col l-3 m-6 c-6" href="product.html">
+                    <div data-aos="zoom-out-up" data-aos-delay="300" class="new_product-item__img" style="background-image: url(/assets/img/PlantForGift/littleGirl.jpg);">
+                    </div>
+                    <p class="new_product-item__name">Little girl</p>
+                    <div class="new_product-item__price">
+                        <span class="new_product-item__price">$20.34</span>
+                        <span class="">For reservations</span>
+                    </div>
+
+                </a>
+                <!-- new products 3 -->
+                <a class="new_product-item col l-3 m-6 c-6" href="product.html">
+                    <div data-aos="zoom-out-up" data-aos-delay="600" class="new_product-item__img" style="background-image: url(/assets/img/PlantForGift/miniCastus.jpg);">
+                    </div>
+                    <p class="new_product-item__name">Mini Castus</p>
+                    <div class="new_product-item__price">
+                        <span class="new_product-item__price">$20.34</span>
+                        <span class="">For reservations</span>
+                    </div>
+
+                </a>
+                <!-- new products 4 -->
+                <a class="new_product-item col l-3 m-6 c-6" href="product.html">
+                    <div data-aos="zoom-out-up" data-aos-delay="800" class="new_product-item__img" style="background-image: url(/assets/img/PlantForGift/mixgif.jpg);">
+                    </div>
+                    <p class="new_product-item__name">Mixgif</p>
+                    <div class="new_product-item__price">
+                        <span class="new_product-item__price">$20.34</span>
+                        <span class="">For reservations</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- sale off -->
+            <div class="row" id="sale_off">
+                <div data-aos="fade-right" class="sale_off_title col l-12 m-12 c-12">
+                    <h1>Sale off</h1>
+                    <hr>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam neque cum reprehenderit illo veritatis odit! <br><br>
+                    </p>
+                </div>
+                <!-- sale off 1 -->
+                <a class="sale_off-item col l-3 m-6 c-6" href="product.html">
+                    <div data-aos="fade-up" data-aos-delay="100" class="sale_off-item__img" style="background-image: url(/assets/img/PlantForGift/mixSenda.jpg);">
+                    </div>
+                    <p class="sale_off-item__name">Senda</p>
+                    <div class="sale_off-item__price">
+                        <span class="sale_off-item__price">$20.34</span>
+                        <span class="sale_off-item__percent">SALE 50%</span>
+                    </div>
+
+                </a>
+                <!-- sale off 2 -->
+                <a class="sale_off-item col l-3 m-6 c-6" href="#">
+                    <div data-aos="fade-up" data-aos-delay="300" class="sale_off-item__img" style="background-image: url(/assets/img/PlantForGift/nhadam.jpg);">
+                    </div>
+                    <p class="sale_off-item__name">Nha dam</p>
+                    <div class="sale_off-item__price">
+                        <span class="sale_off-item__price">$20.34</span>
+                        <span class="sale_off-item__percent">SALE 50%</span>
+                    </div>
+
+                </a>
+                <!-- sale off 3 -->
+                <a class="sale_off-item col l-3 m-6 c-6" href="#">
+                    <div data-aos="fade-up" data-aos-delay="600" class="sale_off-item__img" style="background-image: url(/assets/img/PlantForGift/xuongrongTru.jpg);">
+                    </div>
+                    <p class="sale_off-item__name">Xuong dragon</p>
+                    <div class="sale_off-item__price">
+                        <span class="sale_off-item__price">$20.34</span>
+                        <span class="sale_off-item__percent">SALE 50%</span>
+                    </div>
+
+                </a>
+                <!-- sale off 4 -->
+                <a class="sale_off-item col l-3 m-6 c-6" href="product.html">
+                    <div data-aos="fade-up" data-aos-delay="800" class="sale_off-item__img" style="background-image: url(/assets/img/PlantForGift/boygif.jpg);">
+                    </div>
+                    <p class="sale_off-item__name">Boygif</p>
+                    <div class="sale_off-item__price">
+                        <span class="sale_off-item__price">$20.34</span>
+                        <span class="sale_off-item__percent">SALE 50%</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- best seller -->
+            <div class="row" id="best_seller">
+                <div data-aos="fade-right" class="best_seller_title col l-12 m-12 c-12">
+                    <h1>Best seller</h1>
+                    <hr>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam neque cum reprehenderit illo veritatis odit! <br><br>
+                    </p>
+                </div>
+                <!-- best seller 1 -->
+                <a class="best_seller-item col l-3 m-6 c-6" href="#">
+                    <div data-aos="fade-right" data-aos-delay="100" class="best_seller-item__img" style="background-image: url(/assets/img/PlantForGift/cayquat.jpg);">
+                    </div>
+                    <p class="best_seller-item__name">Cay quat</p>
+                    <div class="best_seller-item__price">
+                        <span class="best_seller-item__price">$20.34</span>
+                        <span class="best_seller-item__number">1005 sold</span>
+                    </div>
+
+                </a>
+                <!-- best seller 2 -->
+                <a class="best_seller-item col l-3 m-6 c-6" href="#">
+                    <div data-aos="fade-right" data-aos-delay="300" class="best_seller-item__img" style="background-image: url(/assets/img/PlantForGift/mixgif5.jpg);">
+                    </div>
+                    <p class="best_seller-item__name">Mixgif</p>
+                    <div class="best_seller-item__price">
+                        <span class="best_seller-item__price">$20.34</span>
+                        <span class="best_seller-item__number">2505 sold</span>
+                    </div>
+
+                </a>
+                <!-- best seller 3 -->
+                <a class="best_seller-item col l-3 m-6 c-6" href="#">
+                    <div data-aos="fade-right" data-aos-delay="600" class="best_seller-item__img" style="background-image: url(/assets/img/PlantForGift/shorthair.jpg);">
+                    </div>
+                    <p class="best_seller-item__name">Short hair</p>
+                    <div class="best_seller-item__price">
+                        <span class="best_seller-item__price">$20.34</span>
+                        <span class="best_seller-item__number">2777 sold</span>
+                    </div>
+
+                </a>
+                <!-- best seller 4 -->
+                <a class="best_seller-item col l-3 m-6 c-6" href="#">
+                    <div data-aos="fade-right" data-aos-delay="800" class="best_seller-item__img" style="background-image: url(/assets/img/PlantForGift/combo.jpg);">
+                    </div>
+                    <p class="best_seller-item__name">Con bo</p>
+                    <div class="best_seller-item__price">
+                        <span class="best_seller-item__price">$20.34</span>
+                        <span class="best_seller-item__number">2855 sold</span>
+                    </div>
+                </a>
+            </div>
+
+
+            <!-- feedback -->
+            <div class="feedback row">
+                <div data-aos="fade-right" class="feedback_title col l-12 m-12 c-12">
+                    <h1> ❥Feedback</h1>
+                    <hr>
+                </div>
+                <!-- first feedback -->
+                <div data-aos="flip-left"
+                     data-aos-easing="ease-out-cubic"
+                     data-aos-duration="2000"
+                     class="feedback_item col l-4 m-4 c-4"
+                >
+                    <div  class="feedback_item_img" style="background-image: url(/assets/img/blog2.webp);">
+                    </div>
+                    <div class="feedback_item_info">
+                        <span class="feedback_item_info_name">Minh Duc Tran</span>
+                        <p class="feedback_item_info_comment">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem totam eveniet nulla fuga doloremque. Voluptas nam illum tempora minus veniam!
+                        </p>
+                    </div>
+                </div>
+                <!-- second feedback -->
+                <div data-aos="flip-left"
+                     data-aos-easing="ease-out-cubic"
+                     data-aos-duration="2000"
+                     class="feedback_item col l-4 m-4 c-4"
+                >
+                    <div class="feedback_item_img" style="background-image: url(/assets/img/blog3.webp);">
+
+                    </div>
+                    <div class="feedback_item_info">
+                        <span class="feedback_item_info_name">Minh Ngoc</span>
+                        <p class="feedback_item_info_comment">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate sit ullam mollitia accusamus. Explicabo ex est ea facere nisi unde rerum, natus nam? Eveniet accusantium eos nobis voluptas sequi. Porro.
+                        </p>
+                    </div>
+                </div>
+                <!-- third feedback -->
+                <div data-aos="flip-left"
+                     data-aos-easing="ease-out-cubic"
+                     data-aos-duration="2000"
+                     class="feedback_item col l-4 m-4 c-4"
+                >
+                    <div class="feedback_item_img" style="background-image: url(https://template.hasthemes.com/lukani/lukani/assets/img/blog/blog1.jpg);">
+                    </div>
+                    <div class="feedback_item_info">
+                        <span class="feedback_item_info_name">Thinh Nam</span>
+                        <p class="feedback_item_info_comment last_p">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dignissimos sequi in architecto iure, ducimus culpa iusto sit a non!
+                            <br>Thank you very much!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-4 m-12 c-12 footer__info">
+                    <img class="footer__logo" src="/assets/img/logo.webp" alt="logo">
+                    <p class="footer__info-item">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur at doloremque libero sed cumque et, animi perspiciat</p>
+                    <p class="footer__info-item">Address: 70 Dong Anh, Lien Ha 15, District 11, Ha Noi City</p>
+                </div>
+                <div class="col l-2 m-6 c-12">
+                    <h3 class="footer__head">Useful links</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">How to shop</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">FAQ</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Log in</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Question?</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">See More</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l-2 m-6 c-12">
+                    <h3 class="footer__head">Contact us</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">
+                                Phone number: 0399620226
+                            </a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">
+                                Email: support@gmail.com
+                            </a>
+                        </li>
+                        <!-- 4 bieu tuong mxh -->
+                        <li class="footer__item-icon ">
+                            <a href="" class="footer__icon"><i class="fab fa-facebook"></i></a>
+                            <a href="" class="footer__icon"><i class="fab fa-twitter"></i></a>
+                            <a href="" class="footer__icon"><i class="fab fa-instagram"></i></a>
+                            <a href="" class="footer__icon"><i class="fab fa-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l-2 m-6 c-12">
+                    <h3 class="footer__head">My Account</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Sign In</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">View Cart</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">My Whishlist</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Track My Order</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Help</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l-2 m-6 c-12">
+                    <h3 class="footer__head">Our Service</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Payment Methods</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Money Guarantee!</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Returns</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Shipping</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2021 Team One Made With &heartsuit;</p>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+    <button href="" class="back-to-top active">
+        <i class="back-to-top-icon fa fa-angle-double-up"></i>
+    </button>
+
+</div>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/23500/nextparticle-documentation.js"></script>
+    <script src="https://nextparticle.nextco.de/nextparticle.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/23500/nextparticle-interaction.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/category.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
