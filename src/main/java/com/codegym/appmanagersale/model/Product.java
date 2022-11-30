@@ -37,7 +37,7 @@ public class Product {
 
     private String image;
 
-    @Column(columnDefinition = "nvarchar(300)")
+    @Column(columnDefinition = "longtext")
     private String description;
     private String status;
 
