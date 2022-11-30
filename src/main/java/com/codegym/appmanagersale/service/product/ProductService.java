@@ -36,6 +36,7 @@ public class ProductService implements IProductService {
     @Override
     public Boolean save(Product product) {
         try {
+            if (product == null) throw new Exception("Product is null!");
             productRepository.save(product);
             return true;
         } catch (Exception e) {

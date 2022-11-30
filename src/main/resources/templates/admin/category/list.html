@@ -45,7 +45,7 @@
         <div class="header__top grid">
             <div class="header__top-head hide-on-mobile-tablet row">
                 <div class="header__logo col l-2">
-                    <a href="home.html" class="header__logo-link"><img src="/assets/img/logo.webp" alt=""></a>
+                    <a href="home.html" class="header__logo-link"><img src="../img/logo.webp" alt=""></a>
                 </div>
                 <div class="header__user col ">
                     <div class="header__user-login">
@@ -112,12 +112,110 @@
 
                     </div>
                 </div>
+
+                <!-- product -->
+                <div class="right__content col l-10 m-12 c-12">
+
+                    <!-- Main content -->
+                    <div class="content">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+
+                                    <!-- Category table -->
+                                    <div class="card category__manager">
+                                        <div class="card-header">
+                                            <h3 class="card-title">Category</h3>
+                                            <button class="addnew" onclick="showUpdateCategory('', '', '')">Add new
+                                                category
+                                            </button>
+                                        </div>
+                                        <!-- /.card-header -->
+                                        <div class="card-body">
+
+                                            <table id="categories" class="table table-bordered table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>Category ID</th>
+                                                    <th>Name</th>
+                                                    <th>Descriptions</th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+
+                                                <tr th:each="category, state :${categories}">
+                                                    <td th:text="${category.id}"></td>
+                                                    <td th:text="${category.name}"></td>
+                                                    <td th:text="${category.description}"></td>
+                                                    <td><p class="editIcon"
+                                                           onclick="showUpdateCategory('Trident', 'internet', 'doewfdhwougfewòe')">
+                                                        <i class="fas fa-edit"></i></p></td>
+                                                    <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                                </tr>
+                                                </tbody>
+
+
+                                                <tfoot>
+                                                <tr>
+                                                    <th>Category ID</th>
+                                                    <th>Name</th>
+                                                    <th>Descriptions</th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                        <!-- /.card-body -->
+                                    </div>
+
+                                    <!-- /.card -->
+                                </div>
+                                <!-- /.col-md-6 -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.container-fluid -->
+                    </div>
+                    <!-- /.content -->
+
+                </div>
             </div>
         </div>
     </div>
 
 </div>
 
+<div id="modalCategory" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" onclick="closeAddCate()"><i class="fas fa-times"></i></span>
+        <h2>Update Category</h2>
+
+        <form action="" method="post">
+            <input id="categoryID" type="text" style="display: none" name="categoryID">
+            <table class="edit_table" style="border: 5px solid white">
+                <tr>
+                    <td><p for="name_category_input">Category name</p></td>
+                    <td><input name="name" id="name_category_input" type="text"></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: center"><p for="category_description">Description</p></td>
+                    <td><textarea name="description" id="category_description"></textarea></td>
+                </tr>
+            </table>
+            <div class="modal-button" style="text-align: center;">
+                <input class="ok" id="editCategoryButton" type="submit" value="Edit">
+                <input class="ok" id="addCategoryButton" type="submit" value="Addnew">
+                <input class="cancel" type="button" value="Cancel" onclick="closeAddCate()">
+            </div>
+        </form>
+    </div>
+</div>
 
 
 <script src="/assets/js/category.js"></script>
