@@ -7,13 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/style/fontawesome-free-5.15.2-web/css/all.min.css}">
-    <link rel="stylesheet" th:href="@{/style/Grid}">
-    <link rel="stylesheet" th:href="@{/style/css/base.css}">
-    <link rel="stylesheet" th:href="@{/style/css/main.css}">
-    <link rel="stylesheet" th:href="@{/style/css/footer.css}">
-    <link rel="stylesheet" th:href="@{/style/css/loginregister.css}">
-    <link rel="icon" th:href="@{/style/img/Home/logo.png}">
+    <link rel="stylesheet" href="/assets/font/fontawesome-free-5.15.2-web/css/all.min.css">
+    <link rel="stylesheet" href="/assets/Grid%20layout/grid.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+    <link rel="stylesheet" href="/assets/css/loginregister.css">
+    <link rel="icon" href="/assets/img/Home/logo.png">
     <title>Trồng cây</title>
 </head>
 <body>
@@ -53,7 +53,7 @@
 
                 <div class="header__top-body">
                     <div class="header__logo">
-                        <a href="home.html" class="header__logo-link"><img src="/style/img/logo.webp" alt=""></a>
+                        <a href="home.html" class="header__logo-link"><img src="/assets/img/logo.webp" alt=""></a>
                     </div>
 
                     <div class="header__search hide-on-mobile-tablet">
@@ -181,6 +181,7 @@
                                                           src="//bizweb.dktcdn.net/assets/admin/images/login/gp-btn.svg"></a>
                 </div>
 
+
                 <form class="account" id="form_register" th:object="${account}" method="post" th:action="@{/register}">
                     <div class="control">
                         <div class="fix">
@@ -235,9 +236,11 @@
                         <input type="password" class="Password-input" placeholder="Rewrite password" id="Password2"
                                th:field="*{confirmPassword}">
                         <div class="massage">error</div>
+
+                        <h2 th:if="${message != null}"><span th:text="${message}"></span></h2>
+
                     </div>
                 </form>
-
 
                 <div class="content">
                     <button type="submit" class="button__submit" onclick="register()">Register</button>
@@ -247,6 +250,8 @@
                         document.getElementById("form_register").submit();
                     }
                 </script>
+
+
             </div>
         </div>
     </div>
@@ -254,7 +259,7 @@
         <div class="grid wide">
             <div class="row">
                 <div class="col l-4 m-12 c-12 footer__info">
-                    <img class="footer__logo" src="/style/img/logo.webp" alt="logo">
+                    <img class="footer__logo" src="/assets/img/logo.webp" alt="logo">
                     <p class="footer__info-item">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur at
                         doloremque libero sed cumque et, animi perspiciat</p>
                     <p class="footer__info-item">Address: 70 Dong Anh, Lien Ha 15, District 11, Ha Noi City</p>
@@ -351,7 +356,7 @@
         <i class="back-to-top-icon fa fa-angle-double-up"></i>
     </button>
 </div>
-<script src="/style/js/category.js"></script>
-<script src="/style/js/loginregister.js"></script>
+<script src="/assets/js/category.js"></script>
+<script src="/assets/js/loginregister.js"></script>
 </body>
 </html>

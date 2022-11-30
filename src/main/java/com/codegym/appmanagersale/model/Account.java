@@ -31,7 +31,7 @@ public class Account {
     @Column(nullable = false, length = 50)
     private String username;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 100)
     private String password;
 
     @Column(columnDefinition = "nvarchar(50) not null")

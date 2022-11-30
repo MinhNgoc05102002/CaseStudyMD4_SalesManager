@@ -179,29 +179,44 @@
                     <img width="129px" height="37px" alt="google-login-button"
                          src="//bizweb.dktcdn.net/assets/admin/images/login/gp-btn.svg">
                 </div>
-                <div class="control">
-                    <div class="Email">
-                        <div class="fix">
-                            <label>Email
-                                <span class="required">*</span>
-                            </label>
+
+
+                <form action="/login" method="post" id="loginForm">
+                    <div class="control">
+                        <div class="Email">
+                            <div class="fix">
+                                <label>Username
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <input type="text" placeholder="Eg: abc" id="Name" class="Name-input" name="username">
+                            <div class="massage">error</div>
                         </div>
-                        <input type="text" class="Email-input" placeholder="Eg: abc@gmail.com" id="Email">
-                        <div class="massage">error</div>
-                    </div>
-                    <div class="Password">
-                        <div class="fix">
-                            <label>Password
-                                <span class="required">*</span>
-                            </label>
+                        <div class="Password">
+                            <div class="fix">
+                                <label>Password
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <input type="password" class="Password-input" placeholder="Password" id="Password"
+                                   name="password">
+                            <div class="massage">error</div>
+                            <h2 th:if="${param.error}">
+                                Invalid username and password.
+                            </h2>
                         </div>
-                        <input type="password" class="Password-input" placeholder="Password" id="Password">
-                        <div class="massage">error</div>
                     </div>
-                </div>
-                <div>
-                    <button type="submit" class="button__submit">Login</button>
-                </div>
+                    <div>
+                        <button type="submit" class="button__submit" onclick="submitForm()">Login</button>
+                    </div>
+                </form>
+
+                <script>
+                    function submitForm() {
+                        document.getElementById("loginForm").submit();
+                    }
+                </script>
+
                 <p class="link"><a href="#" class="link-style">Forgot password?</a></p>
                 <div class="text-login">
                     <p>Don't have an account yet? Sign up <a href="./register.html">here</a></p>

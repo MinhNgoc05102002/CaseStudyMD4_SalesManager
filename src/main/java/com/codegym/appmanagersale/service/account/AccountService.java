@@ -39,7 +39,6 @@ public class AccountService implements IAccountService {
     @Override
     public Boolean save(Account account) {
         account.setPassword(passwordEncoder.encode(account.getPassword()));
-        account.setUserRole(account.USER);
         try {
             accountRepository.save(account);
             return true;
