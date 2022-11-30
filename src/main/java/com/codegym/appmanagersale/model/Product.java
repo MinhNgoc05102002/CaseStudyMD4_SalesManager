@@ -35,6 +35,7 @@ public class Product {
     @Column(nullable = false)
     private Integer quantity;
 
+    @Column(columnDefinition = "longtext")
     private String image;
 
     @Column(columnDefinition = "longtext")

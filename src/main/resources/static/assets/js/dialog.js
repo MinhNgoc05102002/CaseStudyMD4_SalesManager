@@ -51,8 +51,8 @@ function showUpdateProduct(productID, name, pricein, priceout, description, numb
     //     }
     // }
 
-
     // document.getElementById('content_blog_input').value = content
+
     addButton.style.display = 'none';
     editButton.style.display = 'inline';
   }
