@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh mục sản phẩm</title>
+    
+      <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/cssfamily=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./anotherTheme/static/css/fontawesome.all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="./anotherTheme/static/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="./anotherTheme/static/css/responsive.bootstrap4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="./anotherTheme/static/css/adminlte.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../font/fontawesome-free-5.15.2-web/css/all.min.css">
+    <link rel="icon" href="../img/home/logo.png">
+    <link rel="stylesheet" href="../Grid layout/grid.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../src/css/footer.css">
+    <!-- <link rel="stylesheet" href="../src/css/category.css">  -->
+    <link rel="stylesheet" href="../src/css/admin.css">
+
+</head>
+<body>
+    <div class="app">
+        <div class="loader__wrap">
+            <i class="loader">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </i>
+        </div>
+
+        <!-- Header start -->
+        <div class="header">
+            <div class="header__top grid">
+                <div class="header__top-head hide-on-mobile-tablet row">
+                    <div class="header__logo col l-2">
+                        <a href="home.html" class="header__logo-link"><img src="../img/logo.webp" alt=""></a>
+                    </div>
+                    <div class="header__user col ">
+                        <div class="header__user-login">
+                            <a href="login.html" class="header__user-link"><span>Login</span><i class="fas fa-sign-in-alt"></i></a>
+                        </div>
+
+                        <div class="header__user-register">
+                            <a href="register.html" class="header__user-link"><span>Register</span><i class="fas fa-user-plus"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+        
+        <!-- Header end -->
+
+
+        <div class="">
+            <div class="manager">
+
+                <!-- category & product -->
+                <div class="row">
+                    <!-- navbar -->
+                    <div class="left__nav-container col l-2 hide-on-mobile-tablet">
+                        <div class="left__nav">
+                            
+                            <ul class="left__nav-menu">                       
+                                <li class="left__nav-item">
+                                    <a  href="./admin_product.html" class="left__nav-link ">
+                                        <i class="fas fa-leaf"></i>
+                                        Product
+                                    </a>
+                                </li>
+                                <li class="left__nav-item">
+                                    <a  href="./admin_category.html" class="left__nav-link now">
+                                        <i class="fas fa-table"></i>
+                                        Category
+                                    </a>
+                                </li>
+                                <li class="left__nav-item">
+                                    <a  href="./admin_account.html" class="left__nav-link">
+                                        <i class="fas fa-users"></i>
+                                        Account
+                                    </a>
+                                </li>
+                                <li class="left__nav-item">
+                                    <a href="./admin_order.html" class="left__nav-link">
+                                        <i class="fas fa-wallet"></i>
+                                        Order
+                                    </a>
+                                </li>
+                                <li class="left__nav-item">
+                                    <a  href="" class="left__nav-link">
+                                        <i class="fas fa-plus"></i>
+                                        More
+                                    </a>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+
+                    <!-- product -->
+                    <div class="right__content col l-10 m-12 c-12">
+
+                        <!-- Main content -->
+                        <div class="content">
+                            <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+
+                                <!-- Category table -->
+                                <div class="card category__manager">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Category</h3>
+                                        <button class="addnew" onclick="showUpdateCategory('', '', '')">Addnew category</button>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+
+                                    <table id="categories" class="table table-bordered table-striped">
+                                        <thead>
+                                        <tr>
+                                        <th>Category ID</th>
+                                        <th>Name</th>
+                                        <th>Descriptions</th>
+                                        <th></th>
+                                        <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 4.0
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td><p class="editIcon" onclick="showUpdateCategory('Trident', 'internet', 'doewfdhwougfewòe')"><i class="fas fa-edit"></i></p></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 5.0
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td><p class="editIcon" onclick="showUpdateCategory('Trident22222', 'internet22222', 'doewfdhwougfewòe222222')"><i class="fas fa-edit"></i></p></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 5.5
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td><p class="editIcon" onclick=""><i class="fas fa-edit"></i></p></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 6
+                                        </td>
+                                        <td>Win 98+</td>
+                                        <td><p class="editIcon" onclick=""><i class="fas fa-edit"></i></p></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 7</td>
+                                        <td>Win XP SP2+</td>
+                                        <td><p class="editIcon" onclick=""><i class="fas fa-edit"></i></p></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>AOL browser (AOL desktop)</td>
+                                        <td>Win XP</td>
+                                        <td><p class="editIcon" onclick=""><i class="fas fa-edit"></i></p></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 5.5
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td><p class="editIcon" onclick=""><i class="fas fa-edit"></i></p></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 6
+                                        </td>
+                                        <td>Win 98+</td>
+                                        <td><p class="editIcon" onclick=""><i class="fas fa-edit"></i></p></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 7</td>
+                                        <td>Win XP SP2+</td>
+                                        <td><p class="editIcon" onclick=""><i class="fas fa-edit"></i></p></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>AOL browser (AOL desktop)</td>
+                                        <td>Win XP</td>
+                                        <td><p class="editIcon" onclick=""><i class="fas fa-edit"></i></p></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 5.5
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td><p class="editIcon" onclick=""><i class="fas fa-edit"></i></p></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 6
+                                        </td>
+                                        <td>Win 98+</td>
+                                        <td><p class="editIcon" onclick=""><i class="fas fa-edit"></i></p></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 7</td>
+                                        <td>Win XP SP2+</td>
+                                        <td><p class="editIcon" onclick=""><i class="fas fa-edit"></i></p></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Trident</td>
+                                        <td>AOL browser (AOL desktop)</td>
+                                        <td>Win XP</td>
+                                        <td><p class="editIcon" onclick=""><i class="fas fa-edit"></i></p></td>
+                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                        </tr>
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <th>Category ID</th>
+                                            <th>Name</th>
+                                            <th>Descriptions</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+
+                                <!-- /.card -->
+                                </div>
+                                <!-- /.col-md-6 -->
+                            </div>
+                            <!-- /.row -->
+                            </div>
+                            <!-- /.container-fluid -->
+                        </div>
+                        <!-- /.content -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="modalCategory" class="modal">
+        
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeAddCate()"><i class="fas fa-times"></i></span>
+            <h2>Update Category</h2>
+            
+            <form action="" method="post">
+                <input id="categoryID" type="text" style="display: none" name="categoryID">
+                <table class="edit_table" style="border: 5px solid white">
+                    <tr>
+                        <td><p for="name_category_input">Category name</p></td>
+                        <td><input name="name" id="name_category_input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: center"><p for="category_description">Description</p></td>
+                        <td><textarea name="description" id="category_description"></textarea></td>
+                    </tr>
+                </table>
+                <div class="modal-button" style="text-align: center;">
+                    <input class="ok" id="editCategoryButton" type="submit" value="Edit">
+                    <input class="ok" id="addCategoryButton" type="submit" value="Addnew">
+                    <input class="cancel" type="button" value="Cancel" onclick="closeAddCate()">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+    <script src="./js/category.js"></script>    
+    <script src="./js/dialog.js"></script>
+    <!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="./anotherTheme/static/js/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="./anotherTheme/static/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="./anotherTheme/static/js/adminlte.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="./anotherTheme/static/js/jquery.dataTables.min.js"></script>
+<script src="./anotherTheme/static/js/dataTables.bootstrap4.min.js"></script>
+<script src="./anotherTheme/static/js/dataTables.responsive.min.js"></script>
+<script src="./anotherTheme/static/js/responsive.bootstrap4.min.js"></script>
+<script>
+
+  $("#categories").DataTable({
+    "paging": true,
+    "lengthChange": false,
+    "searching": true,
+    "ordering": true,
+    "info": true,
+    "autoWidth": true,
+    "responsive": true,
+  });
+</script>
+</body>
+</html>

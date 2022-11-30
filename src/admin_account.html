@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh mục sản phẩm</title>
+    
+      <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/cssfamily=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./anotherTheme/static/css/fontawesome.all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="./anotherTheme/static/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="./anotherTheme/static/css/responsive.bootstrap4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="./anotherTheme/static/css/adminlte.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../font/fontawesome-free-5.15.2-web/css/all.min.css">
+    <link rel="icon" href="../img/home/logo.png">
+    <link rel="stylesheet" href="../Grid layout/grid.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../src/css/footer.css">
+    <!-- <link rel="stylesheet" href="../src/css/category.css">  -->
+    <link rel="stylesheet" href="../src/css/admin.css">
+
+</head>
+<body>
+    <div class="app">
+        <div class="loader__wrap">
+            <i class="loader">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </i>
+        </div>
+
+        <!-- Header start -->
+        <div class="header">
+            <div class="header__top grid">
+                <div class="header__top-head hide-on-mobile-tablet row">
+                    <div class="header__logo col l-2">
+                        <a href="home.html" class="header__logo-link"><img src="../img/logo.webp" alt=""></a>
+                    </div>
+                    <div class="header__user col ">
+                        <div class="header__user-login">
+                            <a href="login.html" class="header__user-link"><span>Login</span><i class="fas fa-sign-in-alt"></i></a>
+                        </div>
+
+                        <div class="header__user-register">
+                            <a href="register.html" class="header__user-link"><span>Register</span><i class="fas fa-user-plus"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+        
+        <!-- Header end -->
+
+
+        <div class="">
+            <div class="manager">
+
+                <!-- category & product -->
+                <div class="row">
+                    <!-- navbar -->
+                    <div class="left__nav-container col l-2 hide-on-mobile-tablet">
+                        <div class="left__nav">
+                            
+                            <ul class="left__nav-menu">                       
+                                <li class="left__nav-item">
+                                    <a href="./admin_product.html" class="left__nav-link">
+                                        <i class="fas fa-leaf"></i>
+                                        Product
+                                    </a>
+                                </li>
+                                <li class="left__nav-item">
+                                    <a href="./admin_category.html" class="left__nav-link">
+                                        <i class="fas fa-table"></i>
+                                        Category
+                                    </a>
+                                </li>
+                                <li class="left__nav-item">
+                                    <a href="./admin_account.html" class="left__nav-link now">
+                                        <i class="fas fa-users"></i>
+                                        Account
+                                    </a>
+                                </li>
+                                <li class="left__nav-item">
+                                    <a for="order_manager" href="./admin_order.html" class="left__nav-link">
+                                        <i class="fas fa-wallet"></i>
+                                        Order
+                                    </a>
+                                </li>
+                                <li class="left__nav-item">
+                                    <a href="" class="left__nav-link">
+                                        <i class="fas fa-plus"></i>
+                                        More
+                                    </a>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+
+                    <!-- product -->
+                    <div class="right__content col l-10 m-12 c-12">
+
+                        <!-- Main content -->
+                        <div class="content">
+                            <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                <!-- Account table -->
+                                <div class="card account__manager">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Account</h3>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                    
+                                        <table id="accounts" class="table table-bordered table-striped">
+                                            <thead>
+                                            <tr>
+                                            <th>Account ID</th>
+                                            <th>Role</th>
+                                            <th>Username</th>
+                                            <th>Fullname</th>
+                                            <th>Password</th>
+                                            <th>Dayofbirth</th>
+                                            <th>Sex</th>
+                                            <th>Email</th>
+                                            <th></th>
+                                            <th></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                            <td>Trident</td>
+                                            <td>Trident</td>
+                                            <td>Password</td>
+                                            <td>Internet
+                                                Explorer 4.0
+                                            </td>
+                                            <td>Win 95+</td>
+                                            <td> 4</td>
+                                            <td>X</td>
+                                            <td ></td>
+                                            <td><p class="roleChange admin" onclick="">admin</p></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Trident</td>
+                                            <td>Trident</td>
+                                            <td>Password</td>
+                                            <td>Internet
+                                                Explorer 5.0
+                                            </td>
+                                            <td>Win 95+</td>
+                                            <td>5</td>
+                                            <td>C</td>
+                                            <td ></td>
+                                            <td><p class="roleChange" onclick="">user</p></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Trident</td>
+                                            <td>Trident</td>
+                                            <td>Password</td>
+                                            <td>Internet
+                                                Explorer 5.5
+                                            </td>
+                                            <td>Win 95+</td>
+                                            <td>5.5</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><p class="roleChange" onclick="">user</p></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Trident</td>
+                                            <td>Trident</td>
+                                            <td>Password</td>
+                                            <td>Internet
+                                                Explorer 6
+                                            </td>
+                                            <td>Win 98+</td>
+                                            <td>6</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><p class="roleChange" onclick="">user</p></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Trident</td>
+                                            <td>Trident</td>
+                                            <td>Password</td>
+                                            <td>Internet Explorer 7</td>
+                                            <td>Win XP SP2+</td>
+                                            <td>7</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><p class="roleChange" onclick="">user</p></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Trident</td>
+                                            <td>Trident</td>
+                                            <td>Password</td>
+                                            <td>AOL browser (AOL desktop)</td>
+                                            <td>Win XP</td>
+                                            <td>6</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><p class="roleChange" onclick="">user</p></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Gecko</td>
+                                            <td>Trident</td>
+                                            <td>Password</td>
+                                            <td>Firefox 1.0</td>
+                                            <td>Win 98+ / OSX.2+</td>
+                                            <td>1.7</td>
+                                            <td>A</td>
+                                            <td ></td>
+                                            <td><p class="roleChange" onclick="">user</p></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Presto</td>
+                                            <td>Trident</td>
+                                            <td>Password</td>
+                                            <td>Opera 9.5</td>
+                                            <td>Win 88+ / OSX.3+</td>
+                                            <td>-</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><p class="roleChange">user</p></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Presto</td>
+                                            <td>Trident</td>
+                                            <td>Password</td>
+                                            <td>Opera for Wii</td>
+                                            <td>Wii</td>
+                                            <td>-</td>
+                                            <td>A</td>
+                                            <td></td>
+                                            <td><p class="roleChange">user</p></td>
+                                            <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                            </tr>
+                                            </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <th>Account ID</th>
+                                                <th>Role</th>
+                                                <th>Username</th>
+                                                <th>Fullname</th>
+                                                <th>Password</th>
+                                                <th>Dayofbirth</th>
+                                                <th>Sex</th>
+                                                <th>Email</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+
+                                <!-- /.card -->
+                                </div>
+                                <!-- /.col-md-6 -->
+                            </div>
+                            <!-- /.row -->
+                            </div>
+                            <!-- /.container-fluid -->
+                        </div>
+                        <!-- /.content -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./js/category.js"></script>    
+    <script src="./js/dialog.js"></script>
+    <!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="./anotherTheme/static/js/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="./anotherTheme/static/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="./anotherTheme/static/js/adminlte.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="./anotherTheme/static/js/jquery.dataTables.min.js"></script>
+<script src="./anotherTheme/static/js/dataTables.bootstrap4.min.js"></script>
+<script src="./anotherTheme/static/js/dataTables.responsive.min.js"></script>
+<script src="./anotherTheme/static/js/responsive.bootstrap4.min.js"></script>
+<script>
+  $("#accounts").DataTable({
+    "paging": true,
+    "lengthChange": false,
+    "searching": true,
+    "ordering": true,
+    "info": true,
+    "autoWidth": true,
+    "responsive": true,
+  });
+
+</script>
+</body>
+</html>
