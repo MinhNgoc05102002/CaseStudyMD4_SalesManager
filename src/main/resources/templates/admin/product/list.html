@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,12 +49,12 @@
                 </div>
                 <div class="header__user col ">
                     <div class="header__user-login">
-                        <a href="login.html" class="header__user-link"><span>Login</span><i
+                        <a href="/login" class="header__user-link"><span>Login</span><i
                                 class="fas fa-sign-in-alt"></i></a>
                     </div>
 
                     <div class="header__user-register">
-                        <a href="register.html" class="header__user-link"><span>Register</span><i
+                        <a href="/register" class="header__user-link"><span>Register</span><i
                                 class="fas fa-user-plus"></i></a>
                     </div>
                 </div>
@@ -79,25 +79,25 @@
 
                         <ul class="left__nav-menu">
                             <li class="left__nav-item">
-                                <a href="./admin_product.html" class="left__nav-link now">
+                                <a href="/product/list" class="left__nav-link now">
                                     <i class="fas fa-leaf"></i>
                                     Product
                                 </a>
                             </li>
                             <li class="left__nav-item">
-                                <a href="./admin_category.html" class="left__nav-link">
+                                <a href="/category" class="left__nav-link">
                                     <i class="fas fa-table"></i>
                                     Category
                                 </a>
                             </li>
                             <li class="left__nav-item">
-                                <a href="./admin_account.html" class="left__nav-link">
+                                <a href="/account" class="left__nav-link">
                                     <i class="fas fa-users"></i>
                                     Account
                                 </a>
                             </li>
                             <li class="left__nav-item">
-                                <a href="" class="left__nav-link">
+                                <a href="/order" class="left__nav-link">
                                     <i class="fas fa-wallet"></i>
                                     Order
                                 </a>
@@ -149,43 +149,30 @@
                                                     <th></th>
                                                 </tr>
                                                 </thead>
+
+
                                                 <tbody>
-                                                <tr>
-                                                    <td>Tridenttttt</td>
-                                                    <td>Internet
-                                                        Explorer 4.0
-                                                    </td>
-                                                    <td>Win 95+</td>
-                                                    <td> 4</td>
-                                                    <td>X</td>
+                                                <tr th:each="product, state:${products}">
+                                                    <td th:text="${product.id}"></td>
+                                                    <td th:text="${product.name}"></td>
+                                                    <td th:text="${product.priceIn}"></td>
+                                                    <td th:text="${product.priceOut}"></td>
+                                                    <td th:text="${product.description}"></td>
                                                     <td>Category1, category2</td>
-                                                    <td>30</td>
-                                                    <td style="background-image: url(/assets/img/Perennials/ArumFern.jpg);
-                                                    background-size: contain;
-                                                    background-position: center;
-                                                    background-repeat: no-repeat;"></td>
+                                                    <td th:text="${product.quantity}"></td>
+
+                                                    <td>
+                                                        <img th:src="@{${product.image}}" alt=""
+                                                             style="width: 80px; height: 60px;">
+                                                    </td>
+
+
                                                     <td><p class="editIcon"
                                                            onclick="showUpdateProduct('a', 'a', 'a', 'a', 'a', 'a', 'a', 'a')">
                                                         <i class="fas fa-edit"></i></p></td>
                                                     <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
                                                 </tr>
-                                                <tr>
-                                                    <td>Prestooooo</td>
-                                                    <td>Opera 8.5</td>
-                                                    <td>Win 95+ / OSX.2+</td>
-                                                    <td>-</td>
-                                                    <td>A</td>
-                                                    <td>Category1, category2</td>
-                                                    <td>30</td>
-                                                    <td style="background-image: url(/assets/img/Perennials/ArumFern.jpg);
-                                                    background-size: contain;
-                                                    background-position: center;
-                                                    background-repeat: no-repeat;"></td>
-                                                    <td><p class="editIcon"
-                                                           onclick="showUpdateProduct('b', 'b', 'b', 'b', 'a', 'a', 'a', 'a')">
-                                                        <i class="fas fa-edit"></i></p></td>
-                                                    <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
-                                                </tr>
+
 
                                                 </tbody>
                                                 <tfoot>
