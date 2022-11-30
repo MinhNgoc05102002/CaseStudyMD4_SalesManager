@@ -1,0 +1,206 @@
+
+.product__title {
+   font-size: 1.8rem;
+   margin: 0 0 20px;
+   padding-bottom: 10px;
+   color:rgb(108, 108, 108);
+   font-weight: 500;
+   border-bottom: 1px solid rgb(210, 210, 210);
+   margin-top: 10px;
+}
+.product__title-link {
+   text-decoration: none;
+   color:rgb(108, 108, 108);
+}
+.product__title-icon {
+   font-size: 14px;
+}
+.big__img {
+   padding-top: 100%;
+   margin: 10px 0;
+   background-position: center;
+   background-size: cover;
+}
+.product__left-content {
+   margin: 0 10px;
+}
+.product__left-content-name {
+   font-size: 40px;
+}
+.product__left__rating {
+   margin-top: 10px;
+   font-size: 14px;
+   display: flex;
+   justify-content: left;
+   flex-direction: row-reverse;
+}
+
+.product__left__rating input{
+   display: none;
+}
+
+.product__left__rating label{
+   font-size: 1.8rem;
+   color: lightgray;
+   margin: 0 5px;
+   text-shadow: 1px 1px #bbb;
+   cursor: pointer;
+   transform: rotateZ(0deg);
+   transition: all .2s linear;
+}
+
+.product__left__rating input:checked ~ label{
+   color: yellow;
+}
+
+.product__left__rating input:not(:checked) ~ label:hover{
+   transform: rotateZ(30deg);
+}
+
+.product__left__rating input:not(:checked) ~ label:hover,
+.product__left__rating input:not(:checked) ~ label:hover ~ label{
+   color: yellow;
+}
+.product__left-content-info {
+   font-size: 18px;
+   display: flex;
+   justify-content: space-between;
+}
+
+.product__left-price {
+   margin: 10px 0px;
+}
+.product__left-price-current {
+   font-size: 30px;
+   font-weight: bolder;
+   color: #91b959;
+}
+.product__left-price-old {
+   margin-left: 20px;
+   font-size: 20px;
+   text-decoration: line-through;
+}
+.product__left-content-text {
+   padding-top: 20px;
+   padding-bottom: 20px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+   border-top: 2px dashed grey;
+   border-bottom: 2px dashed grey;
+   font-size: 16px;
+}
+.product__left-content-option {
+   font-size: 18px;
+   font-weight: bolder;
+}
+.choose-box {
+   margin: 10px 0px;
+   width: 100%;
+   height: 35px;
+   font-size: 16px;
+}
+.product__left-content-add {
+   font-size: 20px;
+   line-height: 50px;
+   text-align: center;
+   /* justify-content: space-between; */
+}
+.product__left-content-buy {
+   background-color: black;
+   color: white;
+   font-size: 20px;
+   line-height: 50px;
+   margin: 5px 0;
+}
+.product__left-content-buy:hover {
+   background-color: #91b959;
+}
+
+.product__left-detail {
+   margin: 10px 0;
+}
+.product__left-detail-title {
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: bold;
+   text-transform: uppercase;
+   font-size: 20px;
+   margin: 10px 0;
+   padding: 20px 0;
+   border-bottom: 2px dashed grey;
+}
+.product__left-detail-title:hover {
+   color: #91b959;
+}
+.product__left-detail__content {
+   font-size: 16px;
+   border-bottom: 2px dashed grey;
+   padding: 20px 0;
+   display: none;
+}
+.product__left-detail__content-info-icon {
+   color: black;
+   margin: 0 3px;
+   font-size: 14px;
+}
+.product__left-detail__content-info-icon:hover {
+   color: #91b959;
+}
+#exchange-policy, #product-info {
+   display: none;
+}
+#product-info:checked~.product__left-detail__content{
+      display: block;
+}
+#exchange-policy:checked~.product__left-detail__content{
+   display: block;
+}
+/* relative product */
+.relative-product {
+   margin: 50px 0;
+   text-align: center;
+}
+.relative-product__title {
+   font-size: 30px;
+   font-weight: bolder;
+   border-bottom: 2px dashed grey;
+   padding: 10px;
+   margin: 30px 10px;
+}
+/* product */
+.relative-product__item {
+   margin-bottom: 10px;
+   text-align: center;
+   text-decoration: none;
+   color: black;
+   transition: 0.3s;
+}
+ 
+.relative-product__item:hover {
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.relative-product__item__img {
+   position: relative;
+   padding-top: 100%;
+   background-repeat: no-repeat;
+   /* background-size: contain; */
+   background-size: cover;
+   background-position: center;
+}
+.relative-product__item__name {
+   margin: 10px;
+   font-size: 18px;
+}
+.relative-product__item__price {
+   margin-bottom: 10px;
+}
+.relative-product__item__price-current {
+   font-size: 20px;
+   color: #91b959;
+}
+.relative-product__item__price-old {
+   font-size: 14px;
+   text-decoration: line-through;
+}.buy{
+   text-decoration: none;
+}

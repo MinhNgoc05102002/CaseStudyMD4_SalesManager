@@ -1,0 +1,76 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+.container {
+    margin-top: 20px;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+.aboutUs__title {
+    font-size: 1.8rem;
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+    color:rgb(108, 108, 108);
+    font-weight: 500;
+    border-bottom: 1px solid rgb(210, 210, 210);
+}
+.aboutUs__title-icon {
+    font-size: 14px;
+}
+.our-story__title {
+    font-size: 54px;
+    font-family: 'Dancing Script', cursive;
+    margin: 0 15px 15px;
+}
+.our-story__content {
+    font-size: 18px;
+    margin-left: 15px;
+}
+.our-team__title {
+    font-size: 54px;
+    font-weight: 600;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+}
+.our-team__title-line {
+    display: inline-block;
+    font-size: 120px;
+    color: green;
+}
+.our-team__content {
+     margin:auto;
+     margin-top: 20px;
+     margin-bottom: 20px;
+}
+.our-team__content-slogan {
+    font-size: 18px;
+    text-align: center;
+}
+.our-team__member {
+    margin: auto;
+    text-align: center;  
+}
+.our-team__member-img {
+    height: background-height;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+.our-team__member-image {
+    margin-bottom: 15px;
+    transition: 0.3s;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+.our-team__member-image:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.our-team__member-info {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+.member__icon {
+    color: black;
+    font-size: 14px;
+    margin: 5px;
+}
