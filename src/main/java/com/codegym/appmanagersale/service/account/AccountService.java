@@ -65,4 +65,18 @@ public class AccountService implements IAccountService {
         auth.add(new SimpleGrantedAuthority(account.getUserRole()));
         return new org.springframework.security.core.userdetails.User(account.getUsername(), account.getPassword(), auth);
     }
+
+    @Override
+    public Account findByUsername(String username) {
+        try {
+            Account account = accountRepository.findByUsername(username);
+            if (account == null) {
+                throw new Exception("Account not found!");
+            }
+            return account;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
 }

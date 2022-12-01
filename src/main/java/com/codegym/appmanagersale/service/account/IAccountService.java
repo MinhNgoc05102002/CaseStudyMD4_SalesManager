@@ -5,4 +5,5 @@ import com.codegym.appmanagersale.service.IGeneralService;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface IAccountService extends UserDetailsService, IGeneralService<Account> {
+    Account findByUsername(String username);
 }

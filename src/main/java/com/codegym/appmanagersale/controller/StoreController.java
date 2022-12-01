@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/store")
 public class StoreController {
-
     @Autowired
     private IProductService productService;
 

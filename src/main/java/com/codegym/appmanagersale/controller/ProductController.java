@@ -1,8 +1,8 @@
 package com.codegym.appmanagersale.controller;
 
-import com.codegym.appmanagersale.model.CategoryWithProduct;
 import com.codegym.appmanagersale.model.Product;
 import com.codegym.appmanagersale.repository.ICategoryWithProduct;
+import com.codegym.appmanagersale.service.account.IAccountService;
 import com.codegym.appmanagersale.service.category.ICategoryService;
 import com.codegym.appmanagersale.service.product.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-import java.util.Set;
 
 @Controller
 @RequestMapping("/products")
@@ -23,6 +22,9 @@ public class ProductController {
 
     @Autowired
     private ICategoryService categoryService;
+
+    @Autowired
+    private IAccountService accountService;
 
     @Autowired
     private ICategoryWithProduct categoryWithProduct;
