@@ -1,5 +1,6 @@
 package com.codegym.appmanagersale.controller;
 
+import com.codegym.appmanagersale.repository.ICategoryWithProduct;
 import com.codegym.appmanagersale.service.category.ICategoryService;
 import com.codegym.appmanagersale.service.product.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class StoreController {
 
     @Autowired
     private ICategoryService categoryService;
+
+    @Autowired
+    private ICategoryWithProduct categoryWithProduct;
     @GetMapping("")
     public ModelAndView showStore() {
         ModelAndView modelAndView = new ModelAndView("/user/store");
@@ -36,7 +40,8 @@ public class StoreController {
     @GetMapping("/productDetail/{id}")
     public ModelAndView showProductDetail(@PathVariable int id) {
         ModelAndView modelAndView = new ModelAndView("/user/productDetail");
-        modelAndView.addObject("product", productService.findById((long) id));
+        modelAndView.addObject("product", productService.findById((long) id).get());
+        modelAndView.addObject("categories", categoryWithProduct.findAllByProductId((long) id));
         return modelAndView;
     }
 }

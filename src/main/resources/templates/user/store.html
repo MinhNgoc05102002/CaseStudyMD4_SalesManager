@@ -368,7 +368,7 @@
                     </p>
                 </div>
                 <!-- sale off 1 -->
-                <a class="sale_off-item col l-3 m-6 c-6" href="product.html" th:each="product, state:${products}">
+                <a class="sale_off-item col l-3 m-6 c-6" th:href="@{/store/productDetail/{id}(id=${product.id})}" th:each="product, state:${products}">
                     <div data-aos="fade-up" data-aos-delay="100" class="sale_off-item__img" th:style="'background-image: url(' + ${product.image} + ');'">
                     </div>
                     <p class="sale_off-item__name" th:text="${product.name}"></p>
