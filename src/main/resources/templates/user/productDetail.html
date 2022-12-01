@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="/assets/css/base.css">
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/footer.css">
-  <link rel="stylesheet" href="/assets/src/css/product.css">
+  <link rel="stylesheet" href="/assets/css/product.css">
 
 </head>
 <body>
@@ -164,21 +164,21 @@
       <div class="row">
         <div class="product__right col l-6 m-6 c-12">
           <div class="product__right-img">
-            <div class="big__img" style="background-image: url(../img/AllProduct/daisy.jpg);">
+            <div class="big__img" th:style="'background-image: url(' + ${product.image} + ');'">
 
             </div>
             <div class="small__img row">
-              <img src="../img/AllProduct/daisy.jpg" alt="" class="small__img-detail col l-3 m-3 c-3">
-              <img src="../img/AllProduct/daisy2.jpg" alt="" class="small__img-detail col l-3 m-3 c-3">
-              <img src="../img/AllProduct/daisy3.jpg" alt="" class="small__img-detail col l-3 m-3 c-3">
-              <img src="../img/AllProduct/daisy.jpg" alt="" class="small__img-detail col l-3 m-3 c-3">
+              <img th:src="@{${product.image}}" alt="" class="small__img-detail col l-3 m-3 c-3">
+              <img th:src="@{${product.image}}" alt="" class="small__img-detail col l-3 m-3 c-3">
+              <img th:src="@{${product.image}}" alt="" class="small__img-detail col l-3 m-3 c-3">
+              <img th:src="@{${product.image}}" alt="" class="small__img-detail col l-3 m-3 c-3">
             </div>
           </div>
         </div>
 
         <div class="product__left col l-6 m-6 c-12">
           <div class="product__left-content">
-            <h2 class="product__left-content-name">Daisy</h2>
+            <h2 class="product__left-content-name" th:text="${product.name}">Daisy</h2>
             <div class="product__left__action">
               <div class="product__left__rating">
                 <input type="radio" name="produce1" id="1__star5" value="5">
@@ -194,41 +194,31 @@
               </div>
             </div>
             <div class="product__left-content-info">
-              <p class="product__left-content-code">Code: <b>A61043</b></p>
+<!--              <p class="product__left-content-code">Code: <b>A61043</b></p>-->
               <p class="product__left-content-status">Status: <b>Best Seller</b></p>
             </div>
             <div class="product__left-price">
-              <span class="product__left-price-current">$20.34</span>
-              <span class="product__left-price-old">$24.45</span>
+              <span class="product__left-price-current" th:text="${product.priceOut}">$20.34</span>
+              <span class="product__left-price-old" th:text="${product.priceIn}">$24.45</span>
             </div>
             <div class="product__left-content-text">
-              <p>When turned into a herb, Shasta Daisy is often used to help with aches and pains, also with liver disorders, and can also help with fevers. Shasta daisies bloom over an extended period, from early summer until fall, forming tidy clumps. The bright flowers contrast nicely with the dark green foliage and will liven up any garden bed. Also suitable for cutting! </p>
+              <p th:text="${product.description}">When turned into a herb, Shasta Daisy is often used to help with aches and pains, also with liver disorders, and can also help with fevers. Shasta daisies bloom over an extended period, from early summer until fall, forming tidy clumps. The bright flowers contrast nicely with the dark green foliage and will liven up any garden bed. Also suitable for cutting! </p>
             </div>
             <div class="product__left-content-option row">
-              <div class="product__left-content-option-choose col l-5 m-5 c-5">
-                <p class="choose-title">SIZE</p>
-                <form action="">
-                  <select class="choose-box" name="" id="">
-                    <option value="">Small</option>
-                    <option value="">Medium </option>
-                    <option value="">Big</option>
-                    <option value="">Random</option>
-                  </select>
-                </form>
-              </div>
               <div class="product__left-content-option-choose col l-5 l-o-2 m-5 c-5">
                 <p class="choose-title">QUANTITY</p>
                 <form action="">
-                  <select class="choose-box" name="" id="">
-                    <option value="">1</option>
-                    <option value="">2 </option>
-                    <option value="">3</option>
-                    <option value="">4</option>
-                    <option value="">5</option>
-                    <option value="">6 </option>
-                    <option value="">7</option>
-                    <option value="">8</option>
-                  </select>
+                  <input class="choose-box" type="text">
+<!--                  <select class="choose-box" name="" id="">-->
+<!--                    <option value="">1</option>-->
+<!--                    <option value="">2 </option>-->
+<!--                    <option value="">3</option>-->
+<!--                    <option value="">4</option>-->
+<!--                    <option value="">5</option>-->
+<!--                    <option value="">6 </option>-->
+<!--                    <option value="">7</option>-->
+<!--                    <option value="">8</option>-->
+<!--                  </select>-->
                 </form>
               </div>
             </div>

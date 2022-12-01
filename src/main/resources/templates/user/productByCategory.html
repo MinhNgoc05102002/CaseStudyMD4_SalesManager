@@ -12,9 +12,9 @@
     <link rel="icon" href="../../static/assets/img/Home/logo.png">
     <link rel="stylesheet" href="/assets/Grid layout/grid.css">
     <link rel="stylesheet" href="/assets/css/base.css">
-    <link rel="stylesheet" href=/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/src/css/footer.css">
-    <link rel="stylesheet" href="/assets/src/css/category.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+    <link rel="stylesheet" href="/assets/css/category.css">
 </head>
 <body>
 <div class="app">
@@ -172,28 +172,10 @@
                                     All
                                 </a>
                             </li>
-                            <li class="left__nav-item">
-                                <a href="categoryIndoor.html" class="left__nav-link">
+                            <li class="left__nav-item" th:each="category, state:${categories}">
+                                <a href="categoryIndoor.html" class="left__nav-link" th:text="${category.name}">
                                     <i class="fas fa-chevron-right"></i>
                                     Indoor Living
-                                </a>
-                            </li>
-                            <li class="left__nav-item">
-                                <a href="categoryPerennials.html" class="left__nav-link">
-                                    <i class="fas fa-chevron-right"></i>
-                                    Perennials
-                                </a>
-                            </li>
-                            <li class="left__nav-item">
-                                <a href="categoryGift.html" class="left__nav-link">
-                                    <i class="fas fa-chevron-right"></i>
-                                    Plant for Gift
-                                </a>
-                            </li>
-                            <li class="left__nav-item">
-                                <a href="" class="left__nav-link">
-                                    <i class="fas fa-chevron-right"></i>
-                                    Garden Tools
                                 </a>
                             </li>
                         </ul>
@@ -247,7 +229,7 @@
                         <div class="grid">
                             <div class="row">
                                 <!--  -->
-                                <a class="home__product-item col l-4 m-4 c-6" href="product.html" th:each="product, state:${products}">
+                                <a class="home__product-item col l-4 m-4 c-6" th:each="product, state:${products}" th:href="@{/store/productDetail/{id}(id=${product.id})}" >
                                     <div class="home__product-item__img" th:style="'background-image: url(' + ${product.image} + ');'">
                                     </div>
 <!--                                    <div class="home__product-item__action">-->
@@ -413,3 +395,4 @@
 <script src="/assets/js/category.js"></script>
 </body>
 </html>
+

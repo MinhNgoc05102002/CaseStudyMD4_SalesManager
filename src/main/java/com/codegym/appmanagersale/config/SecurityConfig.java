@@ -32,13 +32,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.formLogin().loginPage(("/login"))
                 .usernameParameter("username")
                 .passwordParameter("password");
+
         http.formLogin().defaultSuccessUrl("/store").failureUrl("/login?error");
 
         http.logout().logoutSuccessUrl("/login");
 
         http.exceptionHandling().accessDeniedPage("/access-denied");
 
-        http.authorizeRequests().antMatchers("/login", "/logout", "/home", "/register", "/store", "/assets/**").permitAll()
+        http.authorizeRequests().antMatchers("/login", "/logout", "/home", "/register", "/store/**", "/assets/**").permitAll()
                 .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
                 .anyRequest().authenticated();
         http.csrf().disable();
