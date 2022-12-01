@@ -79,13 +79,13 @@
 
                         <ul class="left__nav-menu">
                             <li class="left__nav-item">
-                                <a href="/product/list" class="left__nav-link now">
+                                <a href="/products" class="left__nav-link now">
                                     <i class="fas fa-leaf"></i>
                                     Product
                                 </a>
                             </li>
                             <li class="left__nav-item">
-                                <a href="/category" class="left__nav-link">
+                                <a href="/categories" class="left__nav-link">
                                     <i class="fas fa-table"></i>
                                     Category
                                 </a>
@@ -158,7 +158,12 @@
                                                     <td th:text="${product.priceIn}"></td>
                                                     <td th:text="${product.priceOut}"></td>
                                                     <td th:text="${product.description}"></td>
-                                                    <td>Category1, category2</td>
+                                                    <td>
+                                                        <span th:each="categoryOfProudct, state: ${product.categoryWithProducts}">
+                                                            <span th:text="${categoryOfProudct.category.name}"></span>
+                                                            <span th:if="${state.last == false}">,</span>
+                                                        </span>
+                                                    </td>
                                                     <td th:text="${product.quantity}"></td>
 
                                                     <td>

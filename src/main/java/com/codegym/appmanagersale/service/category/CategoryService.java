@@ -1,11 +1,13 @@
 package com.codegym.appmanagersale.service.category;
 
 import com.codegym.appmanagersale.model.Category;
+import com.codegym.appmanagersale.model.CategoryWithProduct;
 import com.codegym.appmanagersale.repository.ICategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class CategoryService implements ICategoryService {
