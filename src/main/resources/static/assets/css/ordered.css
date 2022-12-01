@@ -1,0 +1,18 @@
+.table {
+    display: block;
+    margin: auto;
+    font-size: 18px;
+}
+.ordertable__header {
+    font-size: 30px;
+    text-align: center;
+    margin: 30px;
+}
+.btnNhanHang {
+    text-decoration: none;
+    background-color: #d7dcdb;
+    /* color: white; */
+    padding: 5px;
+    border: 1px solid #d7dcdb;
+    border-radius: 3px;
+}
