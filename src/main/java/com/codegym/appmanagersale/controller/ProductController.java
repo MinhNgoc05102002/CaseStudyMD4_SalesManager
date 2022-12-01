@@ -8,8 +8,11 @@ import com.codegym.appmanagersale.service.product.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -52,5 +55,21 @@ public class ProductController {
         modelAndView.addObject("product", new Product());
         modelAndView.addObject("categories", categoryService.findAll());
         return modelAndView;
+    }
+
+    @PostMapping("/edit/{id}")
+    private String editProduct(@PathVariable Long id, RedirectAttributes redirect) {
+        Product product = productService.findById(id).get();
+        try {
+            if (productService.save(product)) {
+                redirect.addFlashAttribute("message", "Modified product successfully!");
+            } else {
+                redirect.addFlashAttribute("message", "Modified product failed!");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            redirect.addFlashAttribute("message", "Product name already exists");
+        }
+        return "redirect:/products";
     }
 }

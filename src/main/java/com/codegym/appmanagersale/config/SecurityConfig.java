@@ -43,7 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.exceptionHandling().accessDeniedPage("/access-denied");
 
-        http.authorizeRequests().antMatchers("/login", "/logout", "/home", "/register", "/store", "/assets/**").permitAll()
+        http.authorizeRequests().antMatchers("/login", "/logout", "/home", "/register", "/store/**", "/assets/**").permitAll()
                 .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
                 .anyRequest().authenticated();
         http.csrf().disable();
