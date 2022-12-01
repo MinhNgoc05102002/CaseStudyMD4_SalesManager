@@ -46,6 +46,10 @@ public class Product {
     @OneToMany(mappedBy = "product")
     List<CategoryWithProduct> categoryWithProducts;
 
+    public List<CategoryWithProduct> getCategoryWithProducts() {
+        return categoryWithProducts;
+    }
+
     @OneToMany(mappedBy = "product")
     Set<OrderDetail> orderDetails;
 

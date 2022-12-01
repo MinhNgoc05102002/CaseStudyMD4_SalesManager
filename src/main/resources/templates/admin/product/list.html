@@ -91,13 +91,13 @@
                                 </a>
                             </li>
                             <li class="left__nav-item">
-                                <a href="/account" class="left__nav-link">
+                                <a href="/accounts" class="left__nav-link">
                                     <i class="fas fa-users"></i>
                                     Account
                                 </a>
                             </li>
                             <li class="left__nav-item">
-                                <a href="/order" class="left__nav-link">
+                                <a href="/orders" class="left__nav-link">
                                     <i class="fas fa-wallet"></i>
                                     Order
                                 </a>
@@ -173,8 +173,9 @@
 
 
                                                     <td><p class="editIcon"
-                                                           onclick="showUpdateProduct('a', 'a', 'a', 'a', 'a', 'a', 'a', 'a')">
+                                                           th:attr="onclick=|showUpdateProduct('${product.id}','${product.name}','${product.priceIn}','${product.priceOut}' ,'${product.description}','${product.quantity}','${product.image}', 'a')|">
                                                         <i class="fas fa-edit"></i></p></td>
+
                                                     <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
                                                 </tr>
 
