@@ -79,25 +79,25 @@
 
                         <ul class="left__nav-menu">
                             <li class="left__nav-item">
-                                <a href="/product/list" class="left__nav-link now">
+                                <a href="/products" class="left__nav-link now">
                                     <i class="fas fa-leaf"></i>
                                     Product
                                 </a>
                             </li>
                             <li class="left__nav-item">
-                                <a href="/category" class="left__nav-link">
+                                <a href="/categories" class="left__nav-link">
                                     <i class="fas fa-table"></i>
                                     Category
                                 </a>
                             </li>
                             <li class="left__nav-item">
-                                <a href="/account" class="left__nav-link">
+                                <a href="/accounts" class="left__nav-link">
                                     <i class="fas fa-users"></i>
                                     Account
                                 </a>
                             </li>
                             <li class="left__nav-item">
-                                <a href="/order" class="left__nav-link">
+                                <a href="/orders" class="left__nav-link">
                                     <i class="fas fa-wallet"></i>
                                     Order
                                 </a>
@@ -107,6 +107,9 @@
                                     <i class="fas fa-plus"></i>
                                     More
                                 </a>
+                            </li>
+                            <li th:if="${message}">
+                                <p th:text="${message}"></p>
                             </li>
                         </ul>
 
@@ -150,14 +153,19 @@
                                                     <td th:text="${category.id}"></td>
                                                     <td th:text="${category.name}"></td>
                                                     <td th:text="${category.description}"></td>
-                                                    <td><p class="editIcon"
-                                                           onclick="showUpdateCategory('Trident', 'internet', 'doewfdhwougfewòe')">
-                                                        <i class="fas fa-edit"></i></p></td>
-                                                    <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+
+
+                                                    <td>
+                                                        <p class="editIcon"
+                                                           th:attr="onclick=|showUpdateCategory('${category.id}','${category.name}','${category.description} ')|">
+                                                            <i class="fas fa-edit"></i></p></td>
+
+
+                                                    <td><a class="delIcon"
+                                                           th:href="@{/categories/delete/__${category.id}__}"><i
+                                                            class="fas fa-times"></i></a></td>
                                                 </tr>
                                                 </tbody>
-
-
                                                 <tfoot>
                                                 <tr>
                                                     <th>Category ID</th>
@@ -196,16 +204,16 @@
         <span class="close" onclick="closeAddCate()"><i class="fas fa-times"></i></span>
         <h2>Update Category</h2>
 
-        <form action="" method="post">
+        <form action="/categories/create" method="post" th:object="${category}">
             <input id="categoryID" type="text" style="display: none" name="categoryID">
             <table class="edit_table" style="border: 5px solid white">
                 <tr>
                     <td><p for="name_category_input">Category name</p></td>
-                    <td><input name="name" id="name_category_input" type="text"></td>
+                    <td><input th:field="*{name}" id="name_category_input" type="text"></td>
                 </tr>
                 <tr>
                     <td style="vertical-align: center"><p for="category_description">Description</p></td>
-                    <td><textarea name="description" id="category_description"></textarea></td>
+                    <td><textarea th:field="*{description}" id="category_description"></textarea></td>
                 </tr>
             </table>
             <div class="modal-button" style="text-align: center;">

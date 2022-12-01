@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -43,7 +44,11 @@ public class Product {
     private String status;
 
     @OneToMany(mappedBy = "product")
-    Set<CategoryWithProduct> categoryWithProducts;
+    List<CategoryWithProduct> categoryWithProducts;
+
+    public List<CategoryWithProduct> getCategoryWithProducts() {
+        return categoryWithProducts;
+    }
 
     @OneToMany(mappedBy = "product")
     Set<OrderDetail> orderDetails;
