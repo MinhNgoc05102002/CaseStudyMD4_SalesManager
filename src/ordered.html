@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../src/css/category.css"> 
     <link rel="stylesheet" href="../src/css/admin.css">
     <link rel="stylesheet" href="../src/css/cart.css">
-    
+    <link rel="stylesheet" href="../src/css/order.css">
 </head>
 <body>
     
@@ -142,160 +142,40 @@
         </div>
         <!-- Header end -->
 
-        <!-- Start cart -->
-
-        <div class="cart">
-            <div class="grid wide">
-                <div class="cart__button row">
-                    <h2 class="cart__header col l-o-1">Your cart</h2>
-                    <!-- <div class="cart__button-selectall "></div> -->
-                    <div class="cart__button-buynow col l-o-6">
-                        <button onclick="showModalOrder()">Buynow</button>
-                        <button onclick="showModalOrder()">History</button>
-                    </div>
-                </div>
-                <hr class="cart__header-bottom">
-                <div class="cart__body grid">
-                    <div class="cart__body-item row">
-                        <div class="cart-check col l-o-1"></div>
-                        <div class="cart-img col l-2">
-                            <img src="../img//AllProduct/Fittonia.jpg" alt="">
-                        </div>
-                        <div class="cart-info col l-6">
-                            <label for="buynow" class="info-text">
-                                <p class="info-name">Fittonia promia from England</p>
-                                <p class="info-price">$20.00</p>
-                            </label>
-                                
-                            <div class="cart-numberChange">
-                                <div class="minus" onclick="minusNumber('1')">-</div>
-                                <div id="1" class="cart-number">3</div>
-                                <div class="plus" onclick="plusNumber(1)">+</div>
-                            </div>
-                        </div>
-                        <div class="cart-button col l-1">
-                            <div></div>
-                            <button>Delete</button>
-                        </div>
-                    </div>
-                    <div class="end-item"></div>
-                    <div class="cart__body-item row">
-                        <div class="cart-check col l-o-1"></div>
-                        <div class="cart-img col l-2">
-                            <img src="../img//AllProduct/Fittonia.jpg" alt="">
-                        </div>
-                        <div class="cart-info col l-6">
-                            <label for="buynow" class="info-text">
-                                <p class="info-name">Fittonia promia from England</p>
-                                <p class="info-price">$20.00</p>
-                            </label>
-                                
-                            <div class="cart-numberChange">
-                                <div class="minus" onclick="minusNumber('1')">-</div>
-                                <div id="1" class="cart-number">3</div>
-                                <div class="plus" onclick="plusNumber(1)">+</div>
-                            </div>
-                        </div>
-                        <div class="cart-button col l-1">
-                            <div></div>
-                            <button>Delete</button>
-                        </div>
-                    </div>
-                    <div class="end-item"></div>
-                    <div class="cart__body-item row">
-                        <div class="cart-check col l-o-1"></div>
-                        <div class="cart-img col l-2">
-                            <img src="../img//AllProduct/Fittonia.jpg" alt="">
-                        </div>
-                        <label for="buynow" class="cart-info col l-6">
-                            <div class="info-text">
-                                <p class="info-name">Fittonia promia from England</p>
-                                <p class="info-price">$20.00</p>
-                            </div>
-                                
-                            <div class="cart-numberChange">
-                                <div class="minus">-</div>
-                                <div class="cart-number">3</div>
-                                <div class="plus">+</div>
-                            </div>
-                        </label>
-                        <div class="cart-button col l-1">
-                            <div></div>
-                            <button>Delete</button>
-                        </div>
-                    </div>
-                    <div class="end-item"></div>
-                </div>
+        <div class="grid wide">
+            <h2 class="ordertable__header">Order History</h2>
+            <div class="row ordertable">
+                <table class="table">
+                    <tr class="heading_table">
+                        <th style="border-radius: 5px 0 0 0;">OrderID</th>
+                        <th>Date</th>
+                        <th>Address</th>
+                        <th>Total price</th>
+                        <th>Status</th>
+                        <th style="border-radius: 0 5px 0 0;"></th>
+                    </tr>
+                    <tr class="body_table">
+                        <td>1</td>
+                        <td>Lifestyle</td>
+                        <td>lifestyle blogs to wellnesving a better life. </td>
+                        <td>200000</td>
+                        <td style="text-align: center"><a class="btnNhanHang" href="">Đã nhận hàng</a></td>
+                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                    </tr>
+                    <tr class="body_table">
+                        <td>1</td>
+                        <td>Lifestyle</td>
+                        <td>lifestyle blogs to  aspects of living a better life. </td>
+                        <td>200000</td>
+                        <td style="text-align: center"><a class="btnNhanHang" href="">Đã nhận hàng</a></td>
+                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                    </tr>
+                </table>
             </div>
         </div>
-
-        <!-- End cart -->
-
-        <!-- Start order -->
-        <div id="modalOrder" class="modal">
         
-            <!-- Modal content -->
-            <div class="modal-content">
-                <!-- <span class="close" onclick="closeOrder()"><i class="fas fa-times"></i></span> -->
-                <h2>Order infomation</h2>
-                <form action="" method="post">
-                    <div class="productOrder grid">
-                        <div class="productOrder-item row">
-                            <div class="productOrder-item-img col l-3">
-                                <img src="../img//AllProduct/Fittonia.jpg" alt="">
-                            </div>
-                            <div class="productOrder-item-info col l-7">
-                                <div class="productOrder-item-info-text">
-                                    <p class="productOrder-item-info-name">Fittonia promia from England</p>
-                                    <p class="productOrder-item-info-price">$20.00</p>
-                                </div>
-                                <div class="productOrder-item-number">
-                                    Number: <div id="1" class="item-number">3</div>
-                                </div>
-                            </div>
-                            <div class="item-totalPrice col l-2">
-                                <div></div>
-                                <div>20.00</div>
-                            </div>
-                        </div>
-                        <hr>
-                        
-                        <div class="productOrder-item row">
-                            <div class="productOrder-item-img col l-3">
-                                <img src="../img//AllProduct/Fittonia.jpg" alt="">
-                            </div>
-                            <div class="productOrder-item-info col l-7">
-                                <div class="productOrder-item-info-text">
-                                    <p class="productOrder-item-info-name">Fittonia promia from England</p>
-                                    <p class="productOrder-item-info-price">$20.00</p>
-                                </div>
-                                <div class="productOrder-item-number">
-                                    Number: <div id="1" class="item-number">3</div>
-                                </div>
-                            </div>
-                            <div class="item-totalPrice col l-2">
-                                <div></div>
-                                <div>20.00</div>
-                            </div>
-                        </div>
-                        <hr>
-                    </div>
-                    
-                    <div class="productOrder-totalPrice">
-                        Total: <div class="orderTotalPrice">40.00</div>
-                    </div>
-                    <div class="order-address">
-                        <label for="order-address">Address:</label>
-                        <textarea name="description" id="order-address"></textarea>
-                    </div>
-                    <div class="modal-button" style="text-align: center;">
-                        <input class="ok" id="addCategoryButton" type="submit" value="Order">
-                        <input class="cancel" type="button" value="Cancel" onclick="closeOrder()">
-                    </div>
-                </form>
-            </div>
-        </div>
-        <!-- End order -->
+
+        <!-- Start ordered table -->
         
         <footer class="footer">
             <div class="grid wide">

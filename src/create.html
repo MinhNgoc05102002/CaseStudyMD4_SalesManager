@@ -61,10 +61,6 @@
             </div>
         </div>
 
-        
-        <!-- Header end -->
-
-
         <div class="">
             <div class="manager">
 
@@ -94,13 +90,13 @@
                                     </a>
                                 </li>
                                 <li class="left__nav-item">
-                                    <a  href="" class="left__nav-link">
+                                    <a href="./admin_order.html" class="left__nav-link">
                                         <i class="fas fa-wallet"></i>
                                         Order
                                     </a>
                                 </li>
                                 <li class="left__nav-item">
-                                    <a for="more_manager" href="" class="left__nav-link">
+                                    <a  href="" class="left__nav-link">
                                         <i class="fas fa-plus"></i>
                                         More
                                     </a>
@@ -119,82 +115,6 @@
                             <div class="row">
                                 <div class="col-12">
 
-                                <!-- Product table -->                                        
-                                <div class="card product__manager">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Products</h3>
-                                        <button id="addnewProduct" onclick="showUpdateProduct('', '', '', '', '', '', '', '')" class="addnew">Addnew product</button>
-                                    </div>
-                                    <!-- /.card-header -->
-                                    <div class="card-body">
-
-                                    <table id="products" class="table table-bordered table-striped">
-                                        <thead>
-                                        <tr>
-                                        <th>Product ID</th>
-                                        <th>Name</th>
-                                        <th>Price in</th>
-                                        <th>Price out</th>
-                                        <th>Description</th>
-                                        <th>Category</th>
-                                        <th>Number</th>
-                                        <th>Image</th>
-                                        <th></th>
-                                        <th></th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                        <td>Tridenttttt</td>
-                                        <td>Internet
-                                            Explorer 4.0
-                                        </td>
-                                        <td>Win 95+</td>
-                                        <td> 4</td>
-                                        <td>X</td>
-                                        <td>Category1, category2</td>
-                                        <td>30</td>
-                                        <td>
-                                            <img style="width: 60px;" src="../img/Perennials/ArumFern.jpg" alt="">            
-                                        </td>
-                                        <td><p class="editIcon" onclick="showUpdateProduct('a', 'a', 'a', 'a', 'a', 'a', 'a', 'a')"><i class="fas fa-edit"></i></p></td>
-                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                        <td>Prestooooo</td>
-                                        <td>Opera 8.5</td>
-                                        <td>Win 95+ / OSX.2+</td>
-                                        <td>-</td>
-                                        <td>A</td>
-                                        <td>Category1, category2</td>
-                                        <td>30</td>
-                                        <td>
-                                            <img style="width: 60px;" src="../img/Perennials/ArumFern.jpg" alt="">            
-                                        </td>
-                                        <td><p class="editIcon" onclick="showUpdateProduct('b', 'b', 'b', 'b', 'a', 'a', 'a', 'a')"><i class="fas fa-edit"></i></p></td>
-                                        <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
-                                        </tr>
-                                        
-                                        </tbody>
-                                        <tfoot>
-                                        <tr>
-                                            <th>Product ID</th>
-                                            <th>Name</th>
-                                            <th>Price in</th>
-                                            <th>Price out</th>
-                                            <th>Description</th>
-                                            <th>Category</th>
-                                            <th>Number</th>
-                                            <th>Image</th>
-                                            <th></th>
-                                            <th></th>
-                                        </tr>
-                                        </tfoot>
-                                    </table>
-                                    </div>
-                                    <!-- /.card-body -->
-                                </div>
-
                                 <!-- /.card -->
                                 </div>
                                 <!-- /.col-md-6 -->
@@ -209,14 +129,14 @@
                 </div>
             </div>
         </div>
+        <!-- Header end -->
 
     </div>
 
-    <div id="modalProduct" class="modal">
+    <div style="display: block;" id="modalProduct" class="modal">
         
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close" onclick="closeAddProduct()"><i class="fas fa-times"></i></span>
             <h2>Update product</h2>
             
             <form action="" method="post">
@@ -263,9 +183,9 @@
                     </tr>
                 </table>
                 <div class="modal-button" style="text-align: center;">
-                    <input class="ok" id="editProductButton" type="submit" value="Edit">
-                    <input class="ok" id="addProductButton" type="submit" value="Addnew">
-                    <input class="cancel" type="button" value="Cancel" onclick="closeAddProduct()">
+                    <!-- <input class="ok" id="editProductButton" type="submit" value="Edit"> -->
+                    <input class="ok" id="addProductButton" type="submit" value="Add new product">
+                    <a style="color:white; padding: 7px; border-radius: 3px;" class="cancel" href="">Cancel</a>
                 </div>
             </form>
         </div>
@@ -287,7 +207,8 @@
 <script src="./anotherTheme/static/js/dataTables.responsive.min.js"></script>
 <script src="./anotherTheme/static/js/responsive.bootstrap4.min.js"></script>
 <script>
-  $("#products").DataTable({
+
+  $("#categories").DataTable({
     "paging": true,
     "lengthChange": false,
     "searching": true,
