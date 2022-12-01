@@ -190,7 +190,6 @@
                                 </label>
                             </div>
                             <input type="text" placeholder="Eg: abc" id="Name" class="Name-input" name="username">
-                            <div class="massage">error</div>
                         </div>
                         <div class="Password">
                             <div class="fix">
@@ -200,10 +199,23 @@
                             </div>
                             <input type="password" class="Password-input" placeholder="Password" id="Password"
                                    name="password">
-                            <div class="massage">error</div>
                             <h2 th:if="${param.error}">
-                                Invalid username and password.
+                                <input type="hidden" id="status" value="fail">
                             </h2>
+
+
+                            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                            <script>
+                                const status = document.getElementById("status").value;
+                                if (status == "fail") {
+                                    swal(
+                                        'Fail',
+                                        'Username or password is incorrect',
+                                        'error'
+                                    )
+                                }
+                            </script>
+
                         </div>
                     </div>
                     <div>

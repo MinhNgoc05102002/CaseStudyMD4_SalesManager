@@ -33,13 +33,12 @@ public class AccountController {
 
     @PostMapping("/register")
     public ModelAndView registerAccount(@ModelAttribute("account") Account account) {
-        ModelAndView modelAndView;
-        if (accountService.save(account)) {
-            modelAndView = new ModelAndView("/login");
-            modelAndView.addObject("message", "Register successfully!");
-        } else {
-            modelAndView = new ModelAndView("/register");
-            modelAndView.addObject("message", "Register failed!");
+        ModelAndView modelAndView = new ModelAndView("/register");
+        try {
+            if (accountService.save(account)) throw new Exception("Register failed");
+            modelAndView.addObject("message", "success");
+        } catch (Exception e) {
+            modelAndView.addObject("message", "failed");
             modelAndView.addObject("account", new Account());
         }
         return modelAndView;
