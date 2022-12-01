@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -136,7 +136,7 @@
 
                         <div class="nav__produce">
                             <ul class="nav__produce-list">
-                                <li class="nav__produce-item"><a href="categoryAll.html"
+                                <li class="nav__produce-item"><a href="/store/showAllProducts"
                                                                  class="nav__produce-link">All</a></li>
                                 <li class="nav__produce-item"><a href="categoryIndoor.html" class="nav__produce-link">Indoor
                                     Living</a></li>
@@ -368,47 +368,15 @@
                     </p>
                 </div>
                 <!-- sale off 1 -->
-                <a class="sale_off-item col l-3 m-6 c-6" href="product.html">
-                    <div data-aos="fade-up" data-aos-delay="100" class="sale_off-item__img" style="background-image: url(/assets/img/PlantForGift/mixSenda.jpg);">
+                <a class="sale_off-item col l-3 m-6 c-6" href="product.html" th:each="product, state:${products}">
+                    <div data-aos="fade-up" data-aos-delay="100" class="sale_off-item__img" th:style="'background-image: url(' + ${product.image} + ');'">
                     </div>
-                    <p class="sale_off-item__name">Senda</p>
+                    <p class="sale_off-item__name" th:text="${product.name}"></p>
                     <div class="sale_off-item__price">
-                        <span class="sale_off-item__price">$20.34</span>
+                        <span class="sale_off-item__price" th:text="${product.priceOut}"></span>
                         <span class="sale_off-item__percent">SALE 50%</span>
                     </div>
 
-                </a>
-                <!-- sale off 2 -->
-                <a class="sale_off-item col l-3 m-6 c-6" href="#">
-                    <div data-aos="fade-up" data-aos-delay="300" class="sale_off-item__img" style="background-image: url(/assets/img/PlantForGift/nhadam.jpg);">
-                    </div>
-                    <p class="sale_off-item__name">Nha dam</p>
-                    <div class="sale_off-item__price">
-                        <span class="sale_off-item__price">$20.34</span>
-                        <span class="sale_off-item__percent">SALE 50%</span>
-                    </div>
-
-                </a>
-                <!-- sale off 3 -->
-                <a class="sale_off-item col l-3 m-6 c-6" href="#">
-                    <div data-aos="fade-up" data-aos-delay="600" class="sale_off-item__img" style="background-image: url(/assets/img/PlantForGift/xuongrongTru.jpg);">
-                    </div>
-                    <p class="sale_off-item__name">Xuong dragon</p>
-                    <div class="sale_off-item__price">
-                        <span class="sale_off-item__price">$20.34</span>
-                        <span class="sale_off-item__percent">SALE 50%</span>
-                    </div>
-
-                </a>
-                <!-- sale off 4 -->
-                <a class="sale_off-item col l-3 m-6 c-6" href="product.html">
-                    <div data-aos="fade-up" data-aos-delay="800" class="sale_off-item__img" style="background-image: url(/assets/img/PlantForGift/boygif.jpg);">
-                    </div>
-                    <p class="sale_off-item__name">Boygif</p>
-                    <div class="sale_off-item__price">
-                        <span class="sale_off-item__price">$20.34</span>
-                        <span class="sale_off-item__percent">SALE 50%</span>
-                    </div>
                 </a>
             </div>
 
