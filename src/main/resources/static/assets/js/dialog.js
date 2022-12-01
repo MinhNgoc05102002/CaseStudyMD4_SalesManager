@@ -94,8 +94,7 @@ function showUpdateCategory(cateID, name, description) {
         editButton.style.display = 'none';
         addButton.style.display = 'inline';
     } else {
-
-        // document.getElementById('content_blog_input').value = content
+        document.getElementById("form_category").action = "/categories/edit/" + id;
         addButton.style.display = 'none';
         editButton.style.display = 'inline';
     }

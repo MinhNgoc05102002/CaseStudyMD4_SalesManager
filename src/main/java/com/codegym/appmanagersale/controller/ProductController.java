@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import org.springframework.web.bind.annotation.*;
+
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -56,6 +59,7 @@ public class ProductController {
         modelAndView.addObject("categories", categoryService.findAll());
         return modelAndView;
     }
+
     @PostMapping("/save")
     public String save(Product product, RedirectAttributes redirect) {
         try {
@@ -108,4 +112,31 @@ public class ProductController {
         }
         return "redirect:/products";
     }
+
+    @GetMapping("/edit/{id}")
+    public ModelAndView showEditForm(@PathVariable Long id) {
+        ModelAndView modelAndView = new ModelAndView("/admin/product/edit");
+        modelAndView.addObject("product", productService.findById(id));
+        modelAndView.addObject("categories", categoryService.findAll());
+        return modelAndView;
+    }
+
+    @PostMapping("/edit")
+    public ModelAndView editProduct(@ModelAttribute("product") Product product) {
+        ModelAndView modelAndView = new ModelAndView("/admin/product/edit");
+        try {
+            if (productService.save(product)) {
+                modelAndView.addObject("message", "Modified product successfully!");
+            } else {
+                modelAndView.addObject("message", "Modified product failed!");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            modelAndView.addObject("message", "Product name already exists");
+        }
+        modelAndView.addObject("product", product);
+        modelAndView.addObject("categories", categoryService.findAll());
+        return modelAndView;
+    }
+
 }

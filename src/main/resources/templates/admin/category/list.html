@@ -204,7 +204,7 @@
         <span class="close" onclick="closeAddCate()"><i class="fas fa-times"></i></span>
         <h2>Update Category</h2>
 
-        <form action="/categories/create" method="post" th:object="${category}">
+        <form action="/categories/create" method="post" th:object="${category}" id="form_category">
             <input id="categoryID" type="text" style="display: none" name="categoryID">
             <table class="edit_table" style="border: 5px solid white">
                 <tr>

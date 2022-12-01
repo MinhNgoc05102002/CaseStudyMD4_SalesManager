@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Giỏ hàng</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../font/fontawesome-free-5.15.2-web/css/all.min.css">
-    <link rel="icon" href="../img/home/logo.png">
-    <link rel="stylesheet" href="../Grid layout/grid.css">
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="../src/css/footer.css">
-    <link rel="stylesheet" href="../src/css/category.css">
-    <link rel="stylesheet" href="../src/css/admin.css">
-    <link rel="stylesheet" href="../src/css/cart.css">
+    <link rel="stylesheet" href="/assets/font/fontawesome-free-5.15.2-web/css/all.min.css">
+    <link rel="icon" href="/assets/img/Home/logo.png">
+    <link rel="stylesheet" href="/assets/Grid layout/grid.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+    <link rel="stylesheet" href="/assets/css/category.css">
+    <link rel="stylesheet" href="/assets/css/admin.css">
+    <link rel="stylesheet" href="/assets/css/cart.css">
+
 </head>
 <body>
 
@@ -148,26 +149,30 @@
             <div class="cart__button row">
                 <h2 class="cart__header col l-o-1">Your cart</h2>
                 <!-- <div class="cart__button-selectall "></div> -->
-                <div class="cart__button-buynow col l-o-6">
+                <div class="cart__button-buynow col l-o-5">
                     <button onclick="showModalOrder()">Buynow</button>
+                    <button onclick="showModalOrder()">History</button>
                 </div>
             </div>
             <hr class="cart__header-bottom">
             <div class="cart__body grid">
-                <div class="cart__body-item row">
-                    <div class="cart-check col l-o-1"><input name="buynow" id="buynow" type="checkbox"></div>
+
+
+                <div class="cart__body-item row" th:each="cart, state:${carts}">
+                    <div class="cart-check col l-o-1"></div>
+
                     <div class="cart-img col l-2">
-                        <img src="../img//AllProduct/Fittonia.jpg" alt="">
+                        <img th:src="@{${cart.product.image}}" alt="">
                     </div>
                     <div class="cart-info col l-6">
-                        <label for="buynow" class="info-text">
-                            <p class="info-name">Fittonia promia from England</p>
-                            <p class="info-price">$20.00</p>
+                        <label class="info-text">
+                            <p class="info-name" th:text="${cart.product.name}">></p>
+                            <p class="info-price" th:text="${cart.product.priceOut}"></p>
                         </label>
 
                         <div class="cart-numberChange">
                             <div class="minus" onclick="minusNumber('1')">-</div>
-                            <div id="1" class="cart-number">3</div>
+                            <div class="cart-number"><span th:text="${cart.quantity}"></span></div>
                             <div class="plus" onclick="plusNumber(1)">+</div>
                         </div>
                     </div>
@@ -175,54 +180,10 @@
                         <div></div>
                         <button>Delete</button>
                     </div>
+                    <div class="end-item" style="margin-top: 15px;"></div>
                 </div>
-                <div class="end-item"></div>
-                <div class="cart__body-item row">
-                    <div class="cart-check col l-o-1"><input name="buynow" id="buynow" type="checkbox"></div>
-                    <div class="cart-img col l-2">
-                        <img src="../img//AllProduct/Fittonia.jpg" alt="">
-                    </div>
-                    <div class="cart-info col l-6">
-                        <label for="buynow" class="info-text">
-                            <p class="info-name">Fittonia promia from England</p>
-                            <p class="info-price">$20.00</p>
-                        </label>
 
-                        <div class="cart-numberChange">
-                            <div class="minus" onclick="minusNumber('1')">-</div>
-                            <div id="1" class="cart-number">3</div>
-                            <div class="plus" onclick="plusNumber(1)">+</div>
-                        </div>
-                    </div>
-                    <div class="cart-button col l-1">
-                        <div></div>
-                        <button>Delete</button>
-                    </div>
-                </div>
-                <div class="end-item"></div>
-                <div class="cart__body-item row">
-                    <div class="cart-check col l-o-1"><input name="buynow" id="buynow" type="checkbox"></div>
-                    <div class="cart-img col l-2">
-                        <img src="../img//AllProduct/Fittonia.jpg" alt="">
-                    </div>
-                    <label for="buynow" class="cart-info col l-6">
-                        <div class="info-text">
-                            <p class="info-name">Fittonia promia from England</p>
-                            <p class="info-price">$20.00</p>
-                        </div>
 
-                        <div class="cart-numberChange">
-                            <div class="minus">-</div>
-                            <div class="cart-number">3</div>
-                            <div class="plus">+</div>
-                        </div>
-                    </label>
-                    <div class="cart-button col l-1">
-                        <div></div>
-                        <button>Delete</button>
-                    </div>
-                </div>
-                <div class="end-item"></div>
             </div>
         </div>
     </div>
@@ -240,7 +201,7 @@
                 <div class="productOrder grid">
                     <div class="productOrder-item row">
                         <div class="productOrder-item-img col l-3">
-                            <img src="../img//AllProduct/Fittonia.jpg" alt="">
+                            <img src="/assets/img/AllProduct/Fittonia.jpg" alt="">
                         </div>
                         <div class="productOrder-item-info col l-7">
                             <div class="productOrder-item-info-text">
@@ -260,7 +221,7 @@
 
                     <div class="productOrder-item row">
                         <div class="productOrder-item-img col l-3">
-                            <img src="../img//AllProduct/Fittonia.jpg" alt="">
+                            <img src="/assets/img/AllProduct/Fittonia.jpg" alt="">
                         </div>
                         <div class="productOrder-item-info col l-7">
                             <div class="productOrder-item-info-text">
@@ -299,7 +260,7 @@
         <div class="grid wide">
             <div class="row">
                 <div class="col l-4 m-12 c-12 footer__info">
-                    <img class="footer__logo" src="../img/logo.webp" alt="logo">
+                    <img class="footer__logo" src="/assets/img/logo.webp" alt="logo">
                     <p class="footer__info-item">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur at doloremque libero sed cumque et, animi perspiciat</p>
                     <p class="footer__info-item">Address: 70 Dong Anh, Lien Ha 15, District 11, Ha Noi City</p>
                 </div>
@@ -391,10 +352,11 @@
             </div>
         </div>
     </footer>
-
 </div>
-<script src="./js/category.js"></script>
-<script src="./js/loginregister.js"></script>
-<script src="./js/cart.js"></script>
+
+<script src="/assets/js/category.js"></script>
+<script src="/assets/js/loginregister.js"></script>
+<script src="/assets/js/cart.js"></script>
+
 </body>
 </html>
