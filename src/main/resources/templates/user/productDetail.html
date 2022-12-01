@@ -61,7 +61,7 @@
               <i class="fas fa-search"></i>
             </div>
 
-            <button class=""><a href=""><i class="header__cart-icon fas fa-cart-plus"></i></a></button>
+            <button class=""><a href="/"><i class="header__cart-icon fas fa-cart-plus"></i></a></button>
 
             <label for="nav-mobile-input" class="nav__bars-btn">
               <i class="fas fa-bars"></i>
@@ -206,25 +206,34 @@
             <div class="product__left-content-option row">
               <div class="product__left-content-option-choose col l-5 m-5 c-5">
                 <p class="choose-title">QUANTITY</p>
-                <form action="">
-                  <input class="choose-box" type="text">
-<!--                  <select class="choose-box" name="" id="">-->
-<!--                    <option value="">1</option>-->
-<!--                    <option value="">2 </option>-->
-<!--                    <option value="">3</option>-->
-<!--                    <option value="">4</option>-->
-<!--                    <option value="">5</option>-->
-<!--                    <option value="">6 </option>-->
-<!--                    <option value="">7</option>-->
-<!--                    <option value="">8</option>-->
-<!--                  </select>-->
+                <form th:action="@{/store/cart/__${product.id}__}" id="form_addToCart" method="post">
+                  <input class="choose-box" type="text" name="quantity">
+                  <!--                  <select class="choose-box" name="" id="">-->
+                  <!--                    <option value="">1</option>-->
+                  <!--                    <option value="">2 </option>-->
+                  <!--                    <option value="">3</option>-->
+                  <!--                    <option value="">4</option>-->
+                  <!--                    <option value="">5</option>-->
+                  <!--                    <option value="">6 </option>-->
+                  <!--                    <option value="">7</option>-->
+                  <!--                    <option value="">8</option>-->
+                  <!--                  </select>-->
+                  <p th:if="${message}">
+                    <span th:text="${message}">Message</span>
+                  </p>
                 </form>
               </div>
-              <a class="col l-6 m-12 c-12 buy" href="./register.html">
+              <span class="col l-6 m-12 c-12 buy" onclick="addToCart()">
                 <div style="text-align: center; margin-top: 20px;" class="product__left-content-buy">
                   ADD TO CART
                 </div>
-              </a>
+              </span>
+
+              <script>
+                function addToCart() {
+                  document.getElementById("form_addToCart").submit();
+                }
+              </script>
 
             </div>
 

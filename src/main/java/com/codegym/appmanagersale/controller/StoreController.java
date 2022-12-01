@@ -1,14 +1,20 @@
 package com.codegym.appmanagersale.controller;
 
+import com.codegym.appmanagersale.model.Account;
+import com.codegym.appmanagersale.model.Cart;
+import com.codegym.appmanagersale.model.Product;
 import com.codegym.appmanagersale.repository.ICategoryWithProduct;
+import com.codegym.appmanagersale.service.account.IAccountService;
+import com.codegym.appmanagersale.service.cart.ICartService;
 import com.codegym.appmanagersale.service.category.ICategoryService;
 import com.codegym.appmanagersale.service.product.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.security.Principal;
 
 @Controller
 @RequestMapping("/store")
@@ -20,7 +26,13 @@ public class StoreController {
     private ICategoryService categoryService;
 
     @Autowired
+    private IAccountService accountService;
+    @Autowired
     private ICategoryWithProduct categoryWithProduct;
+
+    @Autowired
+    private ICartService cartService;
+
     @GetMapping("")
     public ModelAndView showStore() {
         ModelAndView modelAndView = new ModelAndView("/user/store");
@@ -43,4 +55,24 @@ public class StoreController {
         modelAndView.addObject("categories", categoryWithProduct.findAllByProductId((long) id));
         return modelAndView;
     }
+
+    @PostMapping("/cart/{id}")
+    public ModelAndView addToCart(@RequestParam Integer quantity, @PathVariable Long id) {
+        try {
+            Product product = productService.findById(id).get();
+            Principal principal = SecurityContextHolder.getContext().getAuthentication();
+            String username = principal.getName();
+            Account account = accountService.findByUsername(username);
+            Cart cart = new Cart();
+            cart.setAccount(account);
+            cart.setQuantity(quantity);
+            cart.setProduct(product);
+            cartService.save(cart);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new ModelAndView("redirect:/store/productDetail/" + id);
+    }
+
+
 }
