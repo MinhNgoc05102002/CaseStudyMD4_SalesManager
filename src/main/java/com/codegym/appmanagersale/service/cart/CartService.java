@@ -1,10 +1,12 @@
 package com.codegym.appmanagersale.service.cart;
 
 import com.codegym.appmanagersale.model.Cart;
+import com.codegym.appmanagersale.model.Product;
 import com.codegym.appmanagersale.repository.ICartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -42,5 +44,10 @@ public class CartService implements ICartService {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public List<Cart> findAllByAccountId(Long id) {
+        return cartRepository.findAllByAccountId(id);
     }
 }

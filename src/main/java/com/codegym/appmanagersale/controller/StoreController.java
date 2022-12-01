@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.security.Principal;
+import java.util.List;
 
 @Controller
 @RequestMapping("/store")
@@ -60,9 +61,7 @@ public class StoreController {
     public ModelAndView addToCart(@RequestParam Integer quantity, @PathVariable Long id) {
         try {
             Product product = productService.findById(id).get();
-            Principal principal = SecurityContextHolder.getContext().getAuthentication();
-            String username = principal.getName();
-            Account account = accountService.findByUsername(username);
+            Account account = getUserCurrent();
             Cart cart = new Cart();
             cart.setAccount(account);
             cart.setQuantity(quantity);
@@ -74,5 +73,18 @@ public class StoreController {
         return new ModelAndView("redirect:/store/productDetail/" + id);
     }
 
+    @GetMapping("/show-cart")
+    public ModelAndView showCart() {
+        ModelAndView modelAndView = new ModelAndView("/user/cart");
+        Account account = getUserCurrent();
+        List<Cart> carts = cartService.findAllByAccountId(account.getId());
+        modelAndView.addObject("carts", carts);
+        return modelAndView;
+    }
 
+    public Account getUserCurrent() {
+        Principal principal = SecurityContextHolder.getContext().getAuthentication();
+        String username = principal.getName();
+        return accountService.findByUsername(username);
+    }
 }
