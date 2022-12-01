@@ -126,10 +126,13 @@
                                     <div class="card product__manager">
                                         <div class="card-header">
                                             <h3 class="card-title">Products</h3>
-                                            <button id="addnewProduct"
-                                                    onclick="showUpdateProduct('', '', '', '', '', '', '', '')"
+                                            <p style="color: red" th:if="${message}">
+                                                <p style="font-size: 18px;" th:text="${message}"></p>
+                                            </p>
+                                            <a id="addnewProduct"
+                                                    href="/products/create"
                                                     class="addnew">Addnew product
-                                            </button>
+                                            </a>
                                         </div>
                                         <!-- /.card-header -->
                                         <div class="card-body">
@@ -168,18 +171,18 @@
 
                                                     <td>
                                                         <img th:src="@{${product.image}}" alt=""
-                                                             style="width: 80px; height: 60px;">
+                                                             style="width: 80px;">
                                                     </td>
 
 
-<!--                                                    <td>-->
-<!--                                                        <a th:href="@{/products/edit/__${product.id}__}">-->
-<!--                                                            <i class="fas fa-edit"></i>-->
-<!--                                                        </a>-->
-<!--                                                    </td>-->
-<!--                                                    <td><a class="delIcon"-->
-<!--                                                           th:href="@{/products/delete/__${product.id}__}"><i-->
-<!--                                                            class="fas fa-times"></i></a></td>-->
+                                                    <td>
+                                                        <a th:href="@{/products/edit/__${product.id}__}">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                    </td>
+                                                    <td><a class="delIcon"
+                                                           th:href="@{/products/delete/__${product.id}__}"><i
+                                                            class="fas fa-times"></i></a></td>
                                                 </tr>
 
 
@@ -262,12 +265,10 @@
                     <td><p>Category</p></td>
                     <td>
                         <div class="cate">
-
-                            <input class="catechoice" type="checkbox" name="cate1" id="cate1">
-                            <label for="cate1" class="labelCate">cate1_name</label>
-
-                            <input class="catechoice" type="checkbox" name="cate2" id="cate2">
-                            <label for="cate2" class="labelCate">cate2_name</label>
+                            <span th:each="category, state:${categories}">
+                                <input class="catechoice" type="checkbox" th:name="${category.id}" th:id="${category.id}">
+                                <label th:for="${category.id}" class="labelCate" th:text="${category.name}">cate1_name</label>
+                            </span>
                         </div>
                     </td>
                 </tr>

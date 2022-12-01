@@ -1,10 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh mục sản phẩm</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/cssfamily=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/assets/anotherTheme/static/css/fontawesome.all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/assets/anotherTheme/static/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/anotherTheme/static/css/responsive.bootstrap4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/assets/anotherTheme/static/css/adminlte.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/font/fontawesome-free-5.15.2-web/css/all.min.css">
+    <link rel="icon" href="/assets/img/Home/logo.png">
+    <link rel="stylesheet" href="/assets/Grid%20layout/grid.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+    <link rel="stylesheet" href="/assets/css/category.css">
+    <link rel="stylesheet" href="/assets/css/admin.css">
+
 </head>
 <body>
+<div class="app">
+    <div class="loader__wrap">
+        <i class="loader">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </i>
+    </div>
 
+    <!-- Header start -->
+    <div class="header">
+        <div class="header__top grid">
+            <div class="header__top-head hide-on-mobile-tablet row">
+                <div class="header__logo col l-2">
+                    <a href="home.html" class="header__logo-link"><img src="/assets/img/logo.webp" alt=""></a>
+                </div>
+                <div class="header__user col ">
+                    <div class="header__user-login">
+                        <a href="/login" class="header__user-link"><span>Login</span><i
+                                class="fas fa-sign-in-alt"></i></a>
+                    </div>
+
+                    <div class="header__user-register">
+                        <a href="/register" class="header__user-link"><span>Register</span><i
+                                class="fas fa-user-plus"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Header end -->
+
+
+    <div class="">
+        <div class="manager">
+
+            <!-- category & product -->
+            <div class="row">
+                <!-- navbar -->
+                <div class="left__nav-container col l-2 hide-on-mobile-tablet">
+                    <div class="left__nav">
+
+                        <ul class="left__nav-menu">
+                            <li class="left__nav-item">
+                                <a href="/products" class="left__nav-link">
+                                    <i class="fas fa-leaf"></i>
+                                    Product
+                                </a>
+                            </li>
+                            <li class="left__nav-item">
+                                <a href="/categories" class="left__nav-link">
+                                    <i class="fas fa-table"></i>
+                                    Category
+                                </a>
+                            </li>
+                            <li class="left__nav-item">
+                                <a href="/account" class="left__nav-link">
+                                    <i class="fas fa-users"></i>
+                                    Account
+                                </a>
+                            </li>
+                            <li class="left__nav-item">
+                                <a href="/order" class="left__nav-link">
+                                    <i class="fas fa-wallet"></i>
+                                    Order
+                                </a>
+                            </li>
+                            <li class="left__nav-item">
+                                <a for="more_manager" href="" class="left__nav-link">
+                                    <i class="fas fa-plus"></i>
+                                    More
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div style="display: block;" id="modalProduct" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <h2>Update product</h2>
+
+        <form th:action="@{/products/update}" method="post" th:object="${product}">
+            <img class="img_dialog" id="add_product_image" width="400px" src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png"
+                 alt="product image">
+            <input id="productID" type="text" style="display: none">
+            <table class="edit_table" style="border: 5px solid white">
+                <tr>
+                    <td><p for="image_product_input">Product image</p></td>
+                    <td><input name="imageSource" id="image_product_input" type="text" onchange="changeImageSource(this.value);" th:field="*{image}"></td>
+                </tr>
+                <tr>
+                    <td><p for="name_product_input" >Product name</p></td>
+                    <td><input name="name" id="name_product_input" type="text" th:field="*{name}"></td>
+                </tr>
+                <tr>
+                    <td><p for="price_in">Price in</p></td>
+                    <td><input name="price" id="price_in" type="text" th:field="*{priceIn}"></td>
+                </tr>
+                <tr>
+                    <td><p for="price_out">Price out</p></td>
+                    <td><input name="price" id="price_out" type="text" th:field="*{priceOut}"></td>
+                </tr>
+                <tr>
+                    <td><p for="product_number">Number</p></td>
+                    <td><input name="number" id="product_number" type="text" th:field="*{quantity}"></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: center"><p for="product_description" >Description</p></td>
+                    <td><textarea name="description" id="product_description" th:field="*{description}"></textarea></td>
+                </tr>
+            </table>
+            <div class="modal-button" style="text-align: center;">
+                 <input class="ok" id="editProductButton" type="submit" value="Edit product">
+<!--                <input class="ok" id="addProductButton" type="submit" value="Add new product">-->
+                <a style="color:white; padding: 7px; border-radius: 3px;" class="cancel" href="/products">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/assets/js/category.js"></script>
+<script src="/assets/js/dialog.js"></script>
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="/assets/anotherTheme/static/js/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/assets/anotherTheme/static/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/assets/anotherTheme/static/js/adminlte.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="/assets/anotherTheme/static/js/jquery.dataTables.min.js"></script>
+<script src="/assets/anotherTheme/static/js/dataTables.bootstrap4.min.js"></script>
+<script src="/assets/anotherTheme/static/js/dataTables.responsive.min.js"></script>
+<script src="/assets/anotherTheme/static/js/responsive.bootstrap4.min.js"></script>
+<script>
+    $("#products").DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": true,
+        "ordering": true,
+        "info": true,
+        "autoWidth": true,
+        "responsive": true,
+    });
+</script>
 </body>
 </html>
