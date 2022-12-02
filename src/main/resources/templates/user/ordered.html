@@ -159,8 +159,8 @@
           <td th:text="${order.createdAt}"></td>
           <td th:text="${order.address}"></td>
           <td>Total price</td>
-          <td style="text-align: center"><a class="btnNhanHang" href="/store/${order.id}/delivered" th:text="${order.status}"></a></td>
-          <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+          <td style="text-align: center"><a class="btnNhanHang" th:href="@{/store/delivered/__${order.id}__}" th:text="${order.status}"></a></td>
+          <td><a class="delIcon" th:href="@{/store/cancel/__${order.id}__}"><i class="fas fa-times"></i></a></td>
         </tr>
 
       </table>

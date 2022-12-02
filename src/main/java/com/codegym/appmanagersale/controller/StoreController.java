@@ -19,6 +19,7 @@ import javax.servlet.http.HttpSession;
 import java.security.Principal;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/store")
@@ -137,6 +138,24 @@ public class StoreController {
             e.printStackTrace();
         }
         return "redirect:/store/show-cart";
+    }
+
+    @GetMapping("/delivered/{id}")
+    public String delivered(@PathVariable Long id, RedirectAttributes redirect) {
+        Optional<Order> order = orderService.findById(id);
+        if(!order.get().getStatus().equals("CANCELLED")) {
+            order.get().setStatus("DELIVERED");
+            orderService.save(order.get());
+        }
+        return "redirect:/store/show-history";
+    }
+
+    @GetMapping("/cancel/{id}")
+    public String cancel(@PathVariable Long id, RedirectAttributes redirect) {
+        Optional<Order> order = orderService.findById(id);
+        order.get().setStatus("CANCELLED");
+        orderService.save(order.get());
+        return "redirect:/store/show-history";
     }
 
     public Account getUserCurrent() {
