@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.HttpSession;
 import java.security.Principal;
 import java.util.List;
+import java.util.Objects;
 
 @Controller
 @RequestMapping("/store")
@@ -80,16 +81,7 @@ public class StoreController {
             cart.setAccount(account);
             cart.setQuantity(quantity);
             cart.setProduct(product);
-
-            List<Cart> carts = cartService.findAllByAccountId(account.getId());
-            for (Cart cart1 : carts) {
-                if (cart1.getProduct().getId() == id) {
-                    cart1.setQuantity(cart1.getQuantity() + quantity);
-                    cartService.save(cart1);
-                    return new ModelAndView("redirect:/store/cart");
-                }
-            }
-
+            cartService.save(cart);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/assets/css/category.css">
   <link rel="stylesheet" href="/assets/css/admin.css">
   <link rel="stylesheet" href="/assets/css/cart.css">
-  <link rel="stylesheet" href="/assets/css/order.css">
+  <link rel="stylesheet" href="/assets/css/ordered.css">
 </head>
 <body>
 
@@ -158,8 +158,8 @@
           <td th:text="${order.id}">200000</td>
           <td th:text="${order.createdAt}"></td>
           <td th:text="${order.address}"></td>
-          <td th:text="${order}">Total price</td>
-          <td style="text-align: center"><a class="btnNhanHang" href="">Đã nhận hàng</a></td>
+          <td>Total price</td>
+          <td style="text-align: center"><a class="btnNhanHang" href="/store/${order.id}/delivered" th:text="${order.status}"></a></td>
           <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
         </tr>
 
