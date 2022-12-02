@@ -41,8 +41,9 @@ public class AccountController {
     public ModelAndView registerAccount(@ModelAttribute("account") Account account) {
         ModelAndView modelAndView = new ModelAndView("/register");
         try {
-            if (accountService.save(account)) throw new Exception("Register failed");
+            if (!accountService.save(account)) throw new Exception("Register failed");
             modelAndView.addObject("message", "success");
+            modelAndView.setViewName("/login");
         } catch (Exception e) {
             modelAndView.addObject("message", "failed");
             modelAndView.addObject("account", new Account());
