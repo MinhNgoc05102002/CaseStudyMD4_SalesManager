@@ -36,8 +36,11 @@ public class Order {
     @OneToMany(mappedBy = "order")
     Set<OrderDetail> orderDetails;
 
+    private String status;
+
     @PrePersist
     public void preCreate() {
         createdAt = new Date();
+        status = CONFIRMED;
     }
 }
