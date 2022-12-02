@@ -95,6 +95,11 @@ public class StoreController {
         Account account = getUserCurrent();
         accountCurrent = account;
         List<Cart> carts = cartService.findAllByAccountId(account.getId());
+        long total = 0;
+        for (Cart cart : carts) {
+            total += cart.getQuantity() * cart.getProduct().getPriceOut();
+        }
+        modelAndView.addObject("total", total);
         modelAndView.addObject("carts", carts);
         return modelAndView;
     }

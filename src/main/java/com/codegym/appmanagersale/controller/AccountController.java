@@ -83,10 +83,13 @@ public class AccountController {
     @GetMapping("/accounts/{role}/update/{id}")
     public String updateRoleAccount(@PathVariable String role, @PathVariable Long id, RedirectAttributes redirect) {
         Account account = accountService.findById(id).get();
-        if (role.equals("ROLE_ADMIN"))
-            account.setUserRole("ROLE_USER");
-        else
-            account.setUserRole("ROLE_ADMIN");
+        Account accountCurrent = getUserCurrent();
+        if (account.getId()  != accountCurrent.getId()) {
+            if (role.equals("ROLE_ADMIN"))
+                account.setUserRole("ROLE_USER");
+            else
+                account.setUserRole("ROLE_ADMIN");
+        }
         if (accountService.save(account)) {
             redirect.addFlashAttribute("message", "Update role successfully!");
         } else {

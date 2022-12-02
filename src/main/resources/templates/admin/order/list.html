@@ -160,12 +160,12 @@
                                                 <tbody>
                                                 <tr th:each="order, state:${orders}">
                                                     <td th:text="${order.id}"></td>
-                                                    <td th:text="${order.createAt}"></td>
+                                                    <td th:text="${order.createdAt}"></td>
                                                     <td th:text="${order.address}"></td>
                                                     <td th:text="${order.account.id}"></td>
                                                     <td th:text="${order.status}"></td>
                                                     <td><p class="editIcon"><i class="fas fa-eye"></i></p></td>
-                                                    <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
+                                                    <td><a class="delIcon" th:href="@{/orders/__${order.id}__/delete}"><i class="fas fa-times"></i></a></td>
                                                 </tr>
                                                 </tbody>
                                                 <tfoot>
