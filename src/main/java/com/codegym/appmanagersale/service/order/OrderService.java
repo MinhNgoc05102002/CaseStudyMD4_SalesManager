@@ -31,7 +31,7 @@ public class OrderService implements IOrderService {
         try {
             Order order = orderRepository.findById(id).orElse(null);
             if (order == null) {
-                throw new Exception("Category not found!");
+                throw new Exception("Order not found!");
             }
             return Optional.of(order); // Optional.ofNullable(order);
         } catch (Exception e) {
@@ -43,7 +43,7 @@ public class OrderService implements IOrderService {
     @Override
     public Boolean save(Order order) {
         try {
-            if (order == null) throw new Exception("Order is null");
+            if (order == null) throw new Exception("Order is null!");
             orderRepository.save(order);
             return true;
         } catch (Exception e) {

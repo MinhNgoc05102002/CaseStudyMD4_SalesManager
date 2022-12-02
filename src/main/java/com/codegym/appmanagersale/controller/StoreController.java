@@ -1,18 +1,19 @@
 package com.codegym.appmanagersale.controller;
 
-import com.codegym.appmanagersale.model.Account;
-import com.codegym.appmanagersale.model.Cart;
-import com.codegym.appmanagersale.model.Product;
+import com.codegym.appmanagersale.model.*;
 import com.codegym.appmanagersale.repository.ICategoryWithProduct;
+import com.codegym.appmanagersale.repository.IOrderDetailRepository;
 import com.codegym.appmanagersale.service.account.IAccountService;
 import com.codegym.appmanagersale.service.cart.ICartService;
 import com.codegym.appmanagersale.service.category.ICategoryService;
+import com.codegym.appmanagersale.service.order.IOrderService;
 import com.codegym.appmanagersale.service.product.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
 import java.security.Principal;
@@ -22,6 +23,8 @@ import java.util.Objects;
 @Controller
 @RequestMapping("/store")
 public class StoreController {
+
+    private Account accountCurrent = null;
     @Autowired
     private IProductService productService;
 
@@ -35,6 +38,12 @@ public class StoreController {
 
     @Autowired
     private ICartService cartService;
+
+    @Autowired
+    private IOrderService orderService;
+
+    @Autowired
+    private IOrderDetailRepository orderDetailRepository;
 
     @GetMapping("")
     public ModelAndView showStore() {
@@ -83,9 +92,51 @@ public class StoreController {
     public ModelAndView showCart() {
         ModelAndView modelAndView = new ModelAndView("/user/cart");
         Account account = getUserCurrent();
+        accountCurrent = account;
         List<Cart> carts = cartService.findAllByAccountId(account.getId());
         modelAndView.addObject("carts", carts);
         return modelAndView;
+    }
+
+    @GetMapping("/show-history")
+    public ModelAndView showHistory() {
+        ModelAndView modelAndView = new ModelAndView("/user/ordered");
+        Account account = getUserCurrent();
+        accountCurrent = account;
+        List<Order> orders = orderService.findAllByAccountId(account.getId());
+        modelAndView.addObject("orders", orders);
+        return modelAndView;
+    }
+
+    @PostMapping("/order")
+    public String order(@RequestParam String orderAddress, RedirectAttributes redirect) {
+        ModelAndView modelAndView = new ModelAndView();
+        try {
+
+            List<Cart> carts = cartService.findAllByAccountId(accountCurrent.getId());
+
+            Order order = new Order();
+            order.setAccount(accountCurrent);
+            order.setAddress(orderAddress);
+            orderService.save(order);
+
+            OrderDetail orderDetail = new OrderDetail();
+            for (Cart cart:carts) {
+                orderDetail = new OrderDetail();
+                orderDetail.setProduct(cart.getProduct());
+                orderDetail.setQuantity(cart.getQuantity());
+                orderDetail.setOrder(order);
+                orderDetail.setPrice(cart.getProduct().getPriceOut());
+                orderDetailRepository.save(orderDetail);
+                cartService.remove(cart.getId());
+            }
+
+            redirect.addFlashAttribute("message", "Order successfully!");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "redirect:/store/show-cart";
     }
 
     public Account getUserCurrent() {
