@@ -3,17 +3,23 @@ package com.codegym.appmanagersale.service.order;
 import com.codegym.appmanagersale.model.Category;
 import com.codegym.appmanagersale.model.Order;
 import com.codegym.appmanagersale.repository.IOrderRepository;
+import com.codegym.appmanagersale.service.orderdetail.IOrderDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional
 public class OrderService implements IOrderService {
 
     @Autowired
     private IOrderRepository orderRepository;
+
+    @Autowired
+    private IOrderDetailService orderDetailService;
 
     @Override
     public Iterable<Order> findAll() {
