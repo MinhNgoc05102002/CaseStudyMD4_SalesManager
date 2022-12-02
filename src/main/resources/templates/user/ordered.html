@@ -2,35 +2,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giỏ hàng</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ hàng</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/font/fontawesome-free-5.15.2-web/css/all.min.css">
-    <link rel="icon" href="/assets/img/Home/logo.png">
-    <link rel="stylesheet" href="/assets/Grid layout/grid.css">
-    <link rel="stylesheet" href="/assets/css/base.css">
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/footer.css">
-    <link rel="stylesheet" href="/assets/css/category.css">
-    <link rel="stylesheet" href="/assets/css/admin.css">
-    <link rel="stylesheet" href="/assets/css/cart.css">
-    <link rel="stylesheet" href="/assets/css/ordered.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/font/fontawesome-free-5.15.2-web/css/all.min.css">
+  <link rel="icon" href="/assets/img/Home/logo.png">
+  <link rel="stylesheet" href="/assets/Grid layout/grid.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/footer.css">
+  <link rel="stylesheet" href="/assets/css/category.css">
+  <link rel="stylesheet" href="/assets/css/admin.css">
+  <link rel="stylesheet" href="/assets/css/cart.css">
+  <link rel="stylesheet" href="/assets/css/ordered.css">
 </head>
 <body>
 
 <div class="app">
-    <div class="loader__wrap">
-        <i class="loader">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-        </i>
-    </div>
+  <div class="loader__wrap">
+    <i class="loader">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </i>
+  </div>
 
   <!-- Header start -->
   <div class="header">
@@ -74,33 +74,33 @@
             <a href="/store" class="header__logo-link"><img src="/assets/img/logo.webp" alt=""></a>
           </div>
 
-                    <div class="header__search hide-on-mobile-tablet">
-                        <input type="text" placeholder="Search here...">
-                        <button>
-                            <a href="" class="header__search-link"><i class="header__search-icon fas fa-search"></i></a>
-                        </button>
-                    </div>
+          <div class="header__search hide-on-mobile-tablet">
+            <input type="text" placeholder="Search here...">
+            <button>
+              <a href="" class="header__search-link"><i class="header__search-icon fas fa-search"></i></a>
+            </button>
+          </div>
 
-                    <div class="header__cart">
-                        <div class="header__search-on-tablet">
-                            <i class="fas fa-search"></i>
-                        </div>
+          <div class="header__cart">
+            <div class="header__search-on-tablet">
+              <i class="fas fa-search"></i>
+            </div>
 
             <button class=""><a href="/store/show-cart"><i class="header__cart-icon fas fa-cart-plus"></i></a></button>
 
-                        <label for="nav-mobile-input" class="nav__bars-btn">
-                            <i class="fas fa-bars"></i>
-                        </label>
+            <label for="nav-mobile-input" class="nav__bars-btn">
+              <i class="fas fa-bars"></i>
+            </label>
 
-                        <input type="checkbox" hidden name="" class="nav__input" id="nav-mobile-input">
+            <input type="checkbox" hidden name="" class="nav__input" id="nav-mobile-input">
 
 
-                        <label for="nav-mobile-input" class="nav__overlay"></label>
+            <label for="nav-mobile-input" class="nav__overlay"></label>
 
-                        <div class="navbar__mobile">
-                            <label for="nav-mobile-input" class="nav__mobile-close">
-                                <i class="fas fa-times"></i>
-                            </label>
+            <div class="navbar__mobile">
+              <label for="nav-mobile-input" class="nav__mobile-close">
+                <i class="fas fa-times"></i>
+              </label>
 
               <ul class="nav__mobile-list">
                 <li class="nav__mobile-item"><a class="nav__mobile-link" href="/store">Home</a></li>
@@ -139,8 +139,11 @@
                           href="">Manager</a></li>
               </ul>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
   <div class="header__bottom hide-on-mobile-tablet">
     <div class="grid wide">
@@ -172,7 +175,8 @@
         </ul>
       </div>
     </div>
-    <!-- Header end -->
+  </div>
+  <!-- Header end -->
 
     <div class="grid wide">
         <h2 class="ordertable__header">Order History</h2>

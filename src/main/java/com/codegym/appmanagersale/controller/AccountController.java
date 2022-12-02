@@ -104,4 +104,9 @@ public class AccountController {
         String username = principal.getName();
         return accountService.findByUsername(username);
     }
+
+    @GetMapping("/access-denied")
+    public String errorPage(){
+        return "/Access-Denied";
+    }
 }
