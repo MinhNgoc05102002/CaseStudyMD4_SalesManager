@@ -38,7 +38,9 @@ public class AccountService implements IAccountService {
 
     @Override
     public Boolean save(Account account) {
-        account.setPassword(passwordEncoder.encode(account.getPassword()));
+        if (account.getPassword().length() < 20) {
+            account.setPassword(passwordEncoder.encode(account.getPassword()));
+        }
         try {
             accountRepository.save(account);
             return true;

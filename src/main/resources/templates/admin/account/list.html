@@ -145,8 +145,7 @@
                                         <!-- /.card-header -->
                                         <div class="card-body">
 
-                                            <table id="accounts" class="table table-bordered table-striped"
-                                                   th:each="account, state:${accounts}">
+                                            <table id="accounts" class="table table-bordered table-striped">
                                                 <thead>
                                                 <tr>
                                                     <th>Account ID</th>
@@ -159,7 +158,7 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
+                                                <tr th:each="account, state:${accounts}">
                                                     <td th:text="${account.id}"></td>
                                                     <td th:text="${account.username}"></td>
                                                     <td th:text="${account.fullName}"></td>
@@ -168,7 +167,8 @@
                                                     <td><a class="roleChange admin"
                                                            th:href="@{/accounts/__${account.userRole}__/update/__${account.id}__}"
                                                            th:text="${account.userRole}"></a></td>
-                                                    <td><a class="delIcon" th:href="@{/accounts/__${account.id}__/delete}"><i
+                                                    <td><a class="delIcon"
+                                                           th:href="@{/accounts/__${account.id}__/delete}"><i
                                                             class="fas fa-times"></i></a></td>
                                                 </tr>
                                                 </tbody>
