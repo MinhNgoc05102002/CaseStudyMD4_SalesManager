@@ -129,17 +129,10 @@
                                     </div>
                                 </li>
                                 <li class="nav__mobile-item"><a class="nav__mobile-link" href="">News</a></li>
-                                <!--                                <input type="hidden" id="role" th:value="${account.userRole}">-->
-                                <!--                                <li class="nav__mobile-item" th:if="${account.userRole == 'ROLE_ADMIN'}">-->
-                                <!--                                    <a-->
-                                <!--                                            class="nav__mobile-link"-->
-                                <!--                                            href="">Manager</a></li>-->
-                                <!--                                <script>-->
-                                <!--                                    if (document.getElementById("role").value == "ROLE_ADMIN") {-->
-                                <!--                                        document.write("<li class=\"nav__mobile-item\"><a class=\"nav__mobile-link\" href=\"/admin\">Manager</a></li>");-->
-                                <!--                                    } else-->
-                                <!--                                        document.write("<li class=\"nav__mobile-item\"><a class=\"nav__mobile-link\" href=\"/user\">Contact</a></li>");-->
-                                <!--                                </script>-->
+                                <li class="nav__mobile-item" th:if="${account.userRole == 'ROLE_ADMIN'}">
+                                    <a
+                                            class="nav__mobile-link"
+                                            href="">Manager</a></li>
                             </ul>
                         </div>
                     </div>
@@ -174,7 +167,7 @@
                         </div>
                     </li>
                     <li class="nav__item"><a href="" class="nav__item-link">News</a></li>
-                    <li class="nav__item"><a href="" class="nav__item-link">Contact</a></li>
+                    <li class="nav__item" th:if="${account.userRole=='ROLE_ADMIN'}"><a href="/admin" class="nav__item-link">Manager</a></li>
                 </ul>
             </div>
         </div>

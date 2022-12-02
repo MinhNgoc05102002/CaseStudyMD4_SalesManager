@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,15 +49,27 @@
                     <a href="home.html" class="header__logo-link"><img src="/assets/img/logo.webp" alt=""></a>
                 </div>
                 <div class="header__user col ">
-                    <div class="header__user-login">
-                        <a href="/login" class="header__user-link"><span>Login</span><i
-                                class="fas fa-sign-in-alt"></i></a>
-                    </div>
+                     <span th:if="${account!=null}">
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/" class="header__user-link"><span th:text="${account.fullName}"></span></a>
+                            </span>
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/logout" class="header__user-link"><span>Logout</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </span>
 
-                    <div class="header__user-register">
-                        <a href="/register" class="header__user-link"><span>Register</span><i
-                                class="fas fa-user-plus"></i></a>
-                    </div>
+                        </span>
+
+                    <span th:if="${account==null}">
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/login" class="header__user-link"><span>Login</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </span>
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/register" class="header__user-link"><span>Register</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </span>
+                        </span>
                 </div>
 
             </div>
@@ -117,7 +130,6 @@
     </div>
 
 </div>
-
 
 
 <script src="/assets/js/category.js"></script>
