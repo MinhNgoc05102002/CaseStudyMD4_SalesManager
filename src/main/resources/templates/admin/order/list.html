@@ -152,16 +152,18 @@
                                                     <th>Date</th>
                                                     <th>Address</th>
                                                     <th>Account ID</th>
+                                                    <th>Status</th>
                                                     <th>Order Detail</th>
                                                     <th>Delete</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
+                                                <tr th:each="order, state:${orders}">
+                                                    <td th:text="${order.id}"></td>
+                                                    <td th:text="${order.createAt}"></td>
+                                                    <td th:text="${order.address}"></td>
+                                                    <td th:text="${order.account.id}"></td>
+                                                    <td th:text="${order.status}"></td>
                                                     <td><p class="editIcon"><i class="fas fa-eye"></i></p></td>
                                                     <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
                                                 </tr>
@@ -171,6 +173,7 @@
                                                     <th>Order ID</th>
                                                     <th>Date</th>
                                                     <th>Address</th>
+                                                    <th>Status</th>
                                                     <th>Account ID</th>
                                                     <th>Order Detail</th>
                                                     <th>Delete</th>
