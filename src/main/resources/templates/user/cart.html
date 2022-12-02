@@ -197,44 +197,24 @@
         <div class="modal-content">
             <!-- <span class="close" onclick="closeOrder()"><i class="fas fa-times"></i></span> -->
             <h2>Order infomation</h2>
-            <form action="" method="post">
-                <div class="productOrder grid">
+            <form th:action="@{/store}" method="post">
+                <div class="productOrder grid" th:each="cart, state:${carts}">
                     <div class="productOrder-item row">
                         <div class="productOrder-item-img col l-3">
                             <img src="/assets/img/AllProduct/Fittonia.jpg" alt="">
                         </div>
                         <div class="productOrder-item-info col l-7">
                             <div class="productOrder-item-info-text">
-                                <p class="productOrder-item-info-name">Fittonia promia from England</p>
-                                <p class="productOrder-item-info-price">$20.00</p>
+                                <p class="productOrder-item-info-name" th:text="${cart.product.name}">Fittonia promia from England</p>
+                                <p class="productOrder-item-info-price" th:text="${cart.product.priceOut}">$20.00</p>
                             </div>
                             <div class="productOrder-item-number">
-                                Number: <div id="1" class="item-number">3</div>
+                                Number: <div th:text="${cart.quantity}" class="item-number">3</div>
                             </div>
                         </div>
                         <div class="item-totalPrice col l-2">
                             <div></div>
-                            <div>20.00</div>
-                        </div>
-                    </div>
-                    <hr>
-
-                    <div class="productOrder-item row">
-                        <div class="productOrder-item-img col l-3">
-                            <img src="/assets/img/AllProduct/Fittonia.jpg" alt="">
-                        </div>
-                        <div class="productOrder-item-info col l-7">
-                            <div class="productOrder-item-info-text">
-                                <p class="productOrder-item-info-name">Fittonia promia from England</p>
-                                <p class="productOrder-item-info-price">$20.00</p>
-                            </div>
-                            <div class="productOrder-item-number">
-                                Number: <div id="1" class="item-number">3</div>
-                            </div>
-                        </div>
-                        <div class="item-totalPrice col l-2">
-                            <div></div>
-                            <div>20.00</div>
+                            <div  th:text="${cart.product.priceOut * cart.quantity}">20.00</div>
                         </div>
                     </div>
                     <hr>
