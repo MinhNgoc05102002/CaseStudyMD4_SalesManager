@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,15 +39,28 @@
                         <a href="" class="header__social-link"><i class="fab fa-linkedin"></i></a>
                     </div>
                     <div class="header__user">
-                        <div class="header__user-login">
-                            <a href="/login" class="header__user-link"><span>Login</span><i
-                                    class="fas fa-sign-in-alt"></i></a>
-                        </div>
+                        <span th:if="${account!=null}">
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/" class="header__user-link"><span th:text="${account.fullName}"></span></a>
+                            </span>
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/logout" class="header__user-link"><span>Logout</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </span>
 
-                        <div class="header__user-register">
-                            <a href="/register" class="header__user-link"><span>Register</span><i
-                                    class="fas fa-user-plus"></i></a>
-                        </div>
+                        </span>
+
+                        <span th:if="${account==null}">
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/login" class="header__user-link"><span>Login</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </span>
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/register" class="header__user-link"><span>Register</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </span>
+                        </span>
+
                     </div>
                 </div>
 
@@ -84,7 +98,7 @@
                             </label>
 
                             <ul class="nav__mobile-list">
-                                <li class="nav__mobile-item"><a class="nav__mobile-link" href="home.html">Home</a></li>
+                                <li class="nav__mobile-item"><a class="nav__mobile-link" href="/store">Home</a></li>
                                 <li class="nav__mobile-item"><a class="nav__mobile-link" href="aboutus.html">About
                                     us</a></li>
                                 <li class="nav__mobile-item">
@@ -96,7 +110,8 @@
                                     <div class="nav__mobile-product">
                                         <ul class="nav__mobile-product-list">
                                             <li class="nav__mobile-product-item"><a class="nav__mobile-product-link"
-                                                                                    href="categoryAll.html">All</a></li>
+                                                                                    href="/store/showAllProducts">All</a>
+                                            </li>
                                             <li class="nav__mobile-product-item"><a class="nav__mobile-product-link"
                                                                                     href="categoryIndoor.html">Indoor
                                                 Living</a></li>
@@ -113,7 +128,10 @@
                                     </div>
                                 </li>
                                 <li class="nav__mobile-item"><a class="nav__mobile-link" href="">News</a></li>
-                                <li class="nav__mobile-item"><a class="nav__mobile-link" href="">Contact</a></li>
+                                <li class="nav__mobile-item" th:if="${account.userRole == 'ROLE_ADMIN'}">
+                                    <a
+                                            class="nav__mobile-link"
+                                            href="">Manager</a></li>
                             </ul>
                         </div>
                     </div>
@@ -126,7 +144,7 @@
         <div class="grid wide">
             <div class="navbar">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="home.html" class="nav__item-link">Home</a></li>
+                    <li class="nav__item"><a href="/store" class="nav__item-link">Home</a></li>
                     <li class="nav__item"><a href="aboutus.html" class="nav__item-link">About us</a></li>
                     <li class="nav__item">
                         <a href="" class="nav__item-link">Product<i class="fas fa-chevron-down"
@@ -148,7 +166,9 @@
                         </div>
                     </li>
                     <li class="nav__item"><a href="" class="nav__item-link">News</a></li>
-                    <li class="nav__item"><a href="" class="nav__item-link">Contact</a></li>
+                    <li class="nav__item" th:if="${account.userRole=='ROLE_ADMIN'}"><a href="/admin"
+                                                                                       class="nav__item-link">Manager</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -229,26 +249,29 @@
                         <div class="grid">
                             <div class="row">
                                 <!--  -->
-                                <a class="home__product-item col l-4 m-4 c-6" th:each="product, state:${products}" th:href="@{/store/productDetail/{id}(id=${product.id})}" >
-                                    <div class="home__product-item__img" th:style="'background-image: url(' + ${product.image} + ');'">
+                                <a class="home__product-item col l-4 m-4 c-6" th:each="product, state:${products}"
+                                   th:href="@{/store/productDetail/{id}(id=${product.id})}">
+                                    <div class="home__product-item__img"
+                                         th:style="'background-image: url(' + ${product.image} + ');'">
                                     </div>
-<!--                                    <div class="home__product-item__action">-->
-<!--                                        <div class="home__product-item__rating">-->
-<!--                                            <input type="radio" name="produce1" id="1__star5" value="5">-->
-<!--                                            <label for="1__star5" class="fas fa-star"></label>-->
-<!--                                            <input type="radio" name="produce1" id="1__star4" value="4">-->
-<!--                                            <label for="1__star4" class="fas fa-star"></label>-->
-<!--                                            <input type="radio" name="produce1" id="1__star3" value="3">-->
-<!--                                            <label for="1__star3" class="fas fa-star"></label>-->
-<!--                                            <input type="radio" name="produce1" id="1__star2" value="2">-->
-<!--                                            <label for="1__star2" class="fas fa-star"></label>-->
-<!--                                            <input type="radio" name="produce1" id="1__star1" value="1">-->
-<!--                                            <label for="1__star1" class="fas fa-star"></label>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                    <!--                                    <div class="home__product-item__action">-->
+                                    <!--                                        <div class="home__product-item__rating">-->
+                                    <!--                                            <input type="radio" name="produce1" id="1__star5" value="5">-->
+                                    <!--                                            <label for="1__star5" class="fas fa-star"></label>-->
+                                    <!--                                            <input type="radio" name="produce1" id="1__star4" value="4">-->
+                                    <!--                                            <label for="1__star4" class="fas fa-star"></label>-->
+                                    <!--                                            <input type="radio" name="produce1" id="1__star3" value="3">-->
+                                    <!--                                            <label for="1__star3" class="fas fa-star"></label>-->
+                                    <!--                                            <input type="radio" name="produce1" id="1__star2" value="2">-->
+                                    <!--                                            <label for="1__star2" class="fas fa-star"></label>-->
+                                    <!--                                            <input type="radio" name="produce1" id="1__star1" value="1">-->
+                                    <!--                                            <label for="1__star1" class="fas fa-star"></label>-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
                                     <p class="home__product-item__name" th:text="${product.name}"></p>
                                     <div class="home__product-item__price">
-                                        <span class="home__product-item__price-current" th:text="${product.priceOut}"></span>
+                                        <span class="home__product-item__price-current"
+                                              th:text="${product.priceOut}"></span>
                                         <span class="home__product-item__price-old" th:text="${product.priceIn}"></span>
                                     </div>
                                 </a>
@@ -299,7 +322,8 @@
             <div class="row">
                 <div class="col l-4 m-12 c-12 footer__info">
                     <img class="footer__logo" src="/assets/img/logo.webp" alt="logo">
-                    <p class="footer__info-item">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur at doloremque libero sed cumque et, animi perspiciat</p>
+                    <p class="footer__info-item">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur at
+                        doloremque libero sed cumque et, animi perspiciat</p>
                     <p class="footer__info-item">Address: 70 Dong Anh, Lien Ha 15, District 11, Ha Noi City</p>
                 </div>
                 <div class="col l-2 m-6 c-12">

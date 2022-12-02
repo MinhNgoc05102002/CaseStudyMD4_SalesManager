@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
 import java.security.Principal;
 import java.util.List;
 
@@ -48,6 +49,8 @@ public class StoreController {
         ModelAndView modelAndView = new ModelAndView("/user/productByCategory");
         modelAndView.addObject("categories", categoryService.findAll());
         modelAndView.addObject("products", productService.findAll());
+        Account account = getUserCurrent();
+        modelAndView.addObject("account", account);
         return modelAndView;
     }
 
