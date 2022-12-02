@@ -75,12 +75,12 @@ public class ProductController {
         return "redirect:/products";
     }
 
-    @GetMapping("/edit/{id}")
-    public ModelAndView showEditForm(@PathVariable int id) {
-        ModelAndView modelAndView = new ModelAndView("/admin/product/edit");
-        modelAndView.addObject("product", productService.findById((long) id));
-        return modelAndView;
-    }
+//    @GetMapping("/edit/{id}")
+//    public ModelAndView showEditForm(@PathVariable int id) {
+//        ModelAndView modelAndView = new ModelAndView("/admin/product/edit");
+//        modelAndView.addObject("product", productService.findById((long) id));
+//        return modelAndView;
+//    }
 
     @PostMapping("/update")
     public String update(Product product, RedirectAttributes redirect) {

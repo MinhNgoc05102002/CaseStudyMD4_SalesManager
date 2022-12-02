@@ -41,10 +41,14 @@
                     </div>
                     <div class="header__user">
                         <span th:if="${account!=null}">
-                            <div class="header__user-login" sec:authorize="isAuthenticated()">
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/" class="header__user-link"><span th:text="${account.fullName}"></span></a>
+                            </span>
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
                                 <a href="/logout" class="header__user-link"><span>Logout</span><i
                                         class="fas fa-sign-in-alt"></i></a>
-                            </div>
+                            </span>
+
                         </span>
 
                         <span th:if="${account==null}">
@@ -107,7 +111,8 @@
                                     <div class="nav__mobile-product">
                                         <ul class="nav__mobile-product-list">
                                             <li class="nav__mobile-product-item"><a class="nav__mobile-product-link"
-                                                                                    href="/store/showAllProducts">All</a></li>
+                                                                                    href="/store/showAllProducts">All</a>
+                                            </li>
                                             <li class="nav__mobile-product-item"><a class="nav__mobile-product-link"
                                                                                     href="categoryIndoor.html">Indoor
                                                 Living</a></li>
@@ -248,21 +253,24 @@
 
             <div class="home_product row">
                 <a class="home__product-banner col l-4 m-4 c-4" href="#new_product">
-                    <div data-aos="flip-up" href="#" class="home__product-banner__img" style="background-image: url(/assets/img/Home/new_product.png);">
+                    <div data-aos="flip-up" href="#" class="home__product-banner__img"
+                         style="background-image: url(/assets/img/Home/new_product.png);">
                         <h2 class="home__product-banner__title">New product</h2>
                         <p class="home__product-banner__content">Up to 50%</p>
                         <p class="home__product-banner__now">SHOP NOW</p>
                     </div>
                 </a>
                 <a class="home__product-banner col l-4 m-4 c-4" href="#sale_off">
-                    <div data-aos="flip-up" href="#" class="home__product-banner__img" style="background-image: url(/assets/img/Home/sale_off.png);">
+                    <div data-aos="flip-up" href="#" class="home__product-banner__img"
+                         style="background-image: url(/assets/img/Home/sale_off.png);">
                         <h2 class="home__product-banner__title">Sale off</h2>
                         <p class="home__product-banner__content">Up to 50%</p>
                         <p class="home__product-banner__now">SHOP NOW</p>
                     </div>
                 </a>
                 <a class="home__product-banner col l-4 m-4 c-4" href="#best_seller">
-                    <div data-aos="flip-up" href="#" class="home__product-banner__img" style="background-image: url(/assets/img/Home/best_seller.png);">
+                    <div data-aos="flip-up" href="#" class="home__product-banner__img"
+                         style="background-image: url(/assets/img/Home/best_seller.png);">
                         <h2 class="home__product-banner__title">Best seller</h2>
                         <p class="home__product-banner__content">Up to 50%</p>
                         <p class="home__product-banner__now">SHOP NOW</p>
@@ -276,7 +284,8 @@
                 <a class="home_services_item_ col l-4 m-4 c-12" href="#">
                     <div data-aos="zoom-in" class="home_services_item one">
                         <div class="home_services_item_img">
-                            <img src="https://template.hasthemes.com/pronia/pronia/assets/images/shipping/icon/car.png" alt="">
+                            <img src="https://template.hasthemes.com/pronia/pronia/assets/images/shipping/icon/car.png"
+                                 alt="">
                         </div>
                         <div class="home_sevices_item-content">
                             <div class="home_services_item_title">
@@ -292,7 +301,8 @@
                 <a class="home_services_item_ col l-4 m-4 c-12" href="#">
                     <div data-aos="zoom-in" class="home_services_item two">
                         <div class="home_services_item_img">
-                            <img src="https://template.hasthemes.com/pronia/pronia/assets/images/shipping/icon/card.png" alt="">
+                            <img src="https://template.hasthemes.com/pronia/pronia/assets/images/shipping/icon/card.png"
+                                 alt="">
                         </div>
                         <div class="home_sevices_item-content">
                             <div class="home_services_item_title">
@@ -308,7 +318,9 @@
                 <a class="home_services_item_ col l-4 m-4 c-12" href="#">
                     <div data-aos="zoom-in" class="home_services_item three">
                         <div class="home_services_item_img">
-                            <img style="width: 100%;" src="https://template.hasthemes.com/pronia/pronia/assets/images/shipping/icon/service.png" alt="">
+                            <img style="width: 100%;"
+                                 src="https://template.hasthemes.com/pronia/pronia/assets/images/shipping/icon/service.png"
+                                 alt="">
                         </div>
                         <div class="home_sevices_item-content">
                             <div class="home_services_item_title">
@@ -328,12 +340,14 @@
                     <h1>New product</h1>
                     <hr>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam neque cum reprehenderit illo veritatis odit! <br><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam neque cum reprehenderit illo
+                        veritatis odit! <br><br>
                     </p>
                 </div>
                 <!-- new products 1 -->
                 <a class="new_product-item col l-3 m-6 c-6" href="product.html">
-                    <div data-aos="zoom-out-up" data-aos-delay="100" class="new_product-item__img" style="background-image: url(/assets/img/PlantForGift/hamaCactus.jpg);">
+                    <div data-aos="zoom-out-up" data-aos-delay="100" class="new_product-item__img"
+                         style="background-image: url(/assets/img/PlantForGift/hamaCactus.jpg);">
                     </div>
                     <p class="new_product-item__name">Hama Cactus</p>
                     <div class="new_product-item__price">
@@ -345,7 +359,8 @@
                 </a>
                 <!-- new products 2 -->
                 <a class="new_product-item col l-3 m-6 c-6" href="product.html">
-                    <div data-aos="zoom-out-up" data-aos-delay="300" class="new_product-item__img" style="background-image: url(/assets/img/PlantForGift/littleGirl.jpg);">
+                    <div data-aos="zoom-out-up" data-aos-delay="300" class="new_product-item__img"
+                         style="background-image: url(/assets/img/PlantForGift/littleGirl.jpg);">
                     </div>
                     <p class="new_product-item__name">Little girl</p>
                     <div class="new_product-item__price">
@@ -356,7 +371,8 @@
                 </a>
                 <!-- new products 3 -->
                 <a class="new_product-item col l-3 m-6 c-6" href="product.html">
-                    <div data-aos="zoom-out-up" data-aos-delay="600" class="new_product-item__img" style="background-image: url(/assets/img/PlantForGift/miniCastus.jpg);">
+                    <div data-aos="zoom-out-up" data-aos-delay="600" class="new_product-item__img"
+                         style="background-image: url(/assets/img/PlantForGift/miniCastus.jpg);">
                     </div>
                     <p class="new_product-item__name">Mini Castus</p>
                     <div class="new_product-item__price">
@@ -367,7 +383,8 @@
                 </a>
                 <!-- new products 4 -->
                 <a class="new_product-item col l-3 m-6 c-6" href="product.html">
-                    <div data-aos="zoom-out-up" data-aos-delay="800" class="new_product-item__img" style="background-image: url(/assets/img/PlantForGift/mixgif.jpg);">
+                    <div data-aos="zoom-out-up" data-aos-delay="800" class="new_product-item__img"
+                         style="background-image: url(/assets/img/PlantForGift/mixgif.jpg);">
                     </div>
                     <p class="new_product-item__name">Mixgif</p>
                     <div class="new_product-item__price">
@@ -383,12 +400,15 @@
                     <h1>Sale off</h1>
                     <hr>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam neque cum reprehenderit illo veritatis odit! <br><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam neque cum reprehenderit illo
+                        veritatis odit! <br><br>
                     </p>
                 </div>
                 <!-- sale off 1 -->
-                <a class="sale_off-item col l-3 m-6 c-6" th:href="@{/store/productDetail/{id}(id=${product.id})}" th:each="product, state:${products}">
-                    <div data-aos="fade-up" data-aos-delay="100" class="sale_off-item__img" th:style="'background-image: url(' + ${product.image} + ');'">
+                <a class="sale_off-item col l-3 m-6 c-6" th:href="@{/store/productDetail/{id}(id=${product.id})}"
+                   th:each="product, state:${products}">
+                    <div data-aos="fade-up" data-aos-delay="100" class="sale_off-item__img"
+                         th:style="'background-image: url(' + ${product.image} + ');'">
                     </div>
                     <p class="sale_off-item__name" th:text="${product.name}"></p>
                     <div class="sale_off-item__price">
@@ -405,12 +425,14 @@
                     <h1>Best seller</h1>
                     <hr>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam neque cum reprehenderit illo veritatis odit! <br><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam neque cum reprehenderit illo
+                        veritatis odit! <br><br>
                     </p>
                 </div>
                 <!-- best seller 1 -->
                 <a class="best_seller-item col l-3 m-6 c-6" href="#">
-                    <div data-aos="fade-right" data-aos-delay="100" class="best_seller-item__img" style="background-image: url(/assets/img/PlantForGift/cayquat.jpg);">
+                    <div data-aos="fade-right" data-aos-delay="100" class="best_seller-item__img"
+                         style="background-image: url(/assets/img/PlantForGift/cayquat.jpg);">
                     </div>
                     <p class="best_seller-item__name">Cay quat</p>
                     <div class="best_seller-item__price">
@@ -421,7 +443,8 @@
                 </a>
                 <!-- best seller 2 -->
                 <a class="best_seller-item col l-3 m-6 c-6" href="#">
-                    <div data-aos="fade-right" data-aos-delay="300" class="best_seller-item__img" style="background-image: url(/assets/img/PlantForGift/mixgif5.jpg);">
+                    <div data-aos="fade-right" data-aos-delay="300" class="best_seller-item__img"
+                         style="background-image: url(/assets/img/PlantForGift/mixgif5.jpg);">
                     </div>
                     <p class="best_seller-item__name">Mixgif</p>
                     <div class="best_seller-item__price">
@@ -432,7 +455,8 @@
                 </a>
                 <!-- best seller 3 -->
                 <a class="best_seller-item col l-3 m-6 c-6" href="#">
-                    <div data-aos="fade-right" data-aos-delay="600" class="best_seller-item__img" style="background-image: url(/assets/img/PlantForGift/shorthair.jpg);">
+                    <div data-aos="fade-right" data-aos-delay="600" class="best_seller-item__img"
+                         style="background-image: url(/assets/img/PlantForGift/shorthair.jpg);">
                     </div>
                     <p class="best_seller-item__name">Short hair</p>
                     <div class="best_seller-item__price">
@@ -443,7 +467,8 @@
                 </a>
                 <!-- best seller 4 -->
                 <a class="best_seller-item col l-3 m-6 c-6" href="#">
-                    <div data-aos="fade-right" data-aos-delay="800" class="best_seller-item__img" style="background-image: url(/assets/img/PlantForGift/combo.jpg);">
+                    <div data-aos="fade-right" data-aos-delay="800" class="best_seller-item__img"
+                         style="background-image: url(/assets/img/PlantForGift/combo.jpg);">
                     </div>
                     <p class="best_seller-item__name">Con bo</p>
                     <div class="best_seller-item__price">
@@ -466,12 +491,13 @@
                      data-aos-duration="2000"
                      class="feedback_item col l-4 m-4 c-4"
                 >
-                    <div  class="feedback_item_img" style="background-image: url(/assets/img/blog2.webp);">
+                    <div class="feedback_item_img" style="background-image: url(/assets/img/blog2.webp);">
                     </div>
                     <div class="feedback_item_info">
                         <span class="feedback_item_info_name">Minh Duc Tran</span>
                         <p class="feedback_item_info_comment">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem totam eveniet nulla fuga doloremque. Voluptas nam illum tempora minus veniam!
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem totam eveniet nulla fuga
+                            doloremque. Voluptas nam illum tempora minus veniam!
                         </p>
                     </div>
                 </div>
@@ -487,7 +513,9 @@
                     <div class="feedback_item_info">
                         <span class="feedback_item_info_name">Minh Ngoc</span>
                         <p class="feedback_item_info_comment">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate sit ullam mollitia accusamus. Explicabo ex est ea facere nisi unde rerum, natus nam? Eveniet accusantium eos nobis voluptas sequi. Porro.
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate sit ullam mollitia
+                            accusamus. Explicabo ex est ea facere nisi unde rerum, natus nam? Eveniet accusantium eos
+                            nobis voluptas sequi. Porro.
                         </p>
                     </div>
                 </div>
@@ -497,12 +525,14 @@
                      data-aos-duration="2000"
                      class="feedback_item col l-4 m-4 c-4"
                 >
-                    <div class="feedback_item_img" style="background-image: url(https://template.hasthemes.com/lukani/lukani/assets/img/blog/blog1.jpg);">
+                    <div class="feedback_item_img"
+                         style="background-image: url(https://template.hasthemes.com/lukani/lukani/assets/img/blog/blog1.jpg);">
                     </div>
                     <div class="feedback_item_info">
                         <span class="feedback_item_info_name">Thinh Nam</span>
                         <p class="feedback_item_info_comment last_p">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dignissimos sequi in architecto iure, ducimus culpa iusto sit a non!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dignissimos sequi in
+                            architecto iure, ducimus culpa iusto sit a non!
                             <br>Thank you very much!
                         </p>
                     </div>
@@ -517,7 +547,8 @@
             <div class="row">
                 <div class="col l-4 m-12 c-12 footer__info">
                     <img class="footer__logo" src="/assets/img/logo.webp" alt="logo">
-                    <p class="footer__info-item">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur at doloremque libero sed cumque et, animi perspiciat</p>
+                    <p class="footer__info-item">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur at
+                        doloremque libero sed cumque et, animi perspiciat</p>
                     <p class="footer__info-item">Address: 70 Dong Anh, Lien Ha 15, District 11, Ha Noi City</p>
                 </div>
                 <div class="col l-2 m-6 c-12">
@@ -614,16 +645,15 @@
     </button>
 
 </div>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/23500/nextparticle-documentation.js"></script>
-    <script src="https://nextparticle.nextco.de/nextparticle.min.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/23500/nextparticle-interaction.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/category.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/23500/nextparticle-documentation.js"></script>
+<script src="https://nextparticle.nextco.de/nextparticle.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/23500/nextparticle-interaction.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/category.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 
 
 </body>
