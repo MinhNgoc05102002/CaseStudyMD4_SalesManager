@@ -1,10 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh mục sản phẩm</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/cssfamily=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/assets/anotherTheme/static/css/fontawesome.all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/assets/anotherTheme/static/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/anotherTheme/static/css/responsive.bootstrap4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/assets/anotherTheme/static/css/adminlte.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/font/fontawesome-free-5.15.2-web/css/all.min.css">
+    <link rel="icon" href="/assets/img/Home/logo.png">
+    <link rel="stylesheet" href="/assets/Grid%20layout/grid.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+    <link rel="stylesheet" href="/assets/css/category.css">
+    <link rel="stylesheet" href="/assets/css/admin.css">
+
 </head>
 <body>
+<div class="app">
+    <div class="loader__wrap">
+        <i class="loader">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </i>
+    </div>
 
+    <!-- Header start -->
+    <div class="header">
+        <div class="header__top grid">
+            <div class="header__top-head hide-on-mobile-tablet row">
+                <div class="header__logo col l-2">
+                    <a href="/store" class="header__logo-link"><img src="/assets/img/logo.webp" alt=""></a>
+                </div>
+                <div class="header__user col ">
+                     <span th:if="${account!=null}">
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/" class="header__user-link"><span th:text="${account.fullName}"></span></a>
+                            </span>
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/logout" class="header__user-link"><span>Logout</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </span>
+
+                        </span>
+
+                    <span th:if="${account==null}">
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/login" class="header__user-link"><span>Login</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </span>
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/register" class="header__user-link"><span>Register</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </span>
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Header end -->
+
+
+    <div class="">
+        <div class="manager">
+
+            <!-- category & product -->
+            <div class="row">
+                <!-- navbar -->
+                <div class="left__nav-container col l-2 hide-on-mobile-tablet">
+                    <div class="left__nav">
+
+                        <ul class="left__nav-menu">
+                            <li class="left__nav-item">
+                                <a href="/products" class="left__nav-link now">
+                                    <i class="fas fa-leaf"></i>
+                                    Product
+                                </a>
+                            </li>
+                            <li class="left__nav-item">
+                                <a href="/categories" class="left__nav-link">
+                                    <i class="fas fa-table"></i>
+                                    Category
+                                </a>
+                            </li>
+                            <li class="left__nav-item">
+                                <a href="/accounts" class="left__nav-link">
+                                    <i class="fas fa-users"></i>
+                                    Account
+                                </a>
+                            </li>
+                            <li class="left__nav-item">
+                                <a href="/orders" class="left__nav-link">
+                                    <i class="fas fa-wallet"></i>
+                                    Order
+                                </a>
+                            </li>
+                            <li class="left__nav-item">
+                                <a for="more_manager" href="" class="left__nav-link">
+                                    <i class="fas fa-plus"></i>
+                                    More
+                                </a>
+                            </li>
+                            <li th:if="${message}">
+                                <p th:text="${message}"></p>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <!-- product -->
+                <div class="right__content col l-10 m-12 c-12">
+
+                    <!-- Main content -->
+                    <div class="content">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                    <!-- Account table -->
+                                    <div class="card account__manager">
+                                        <div class="card-header">
+                                            <h3 class="card-title">Account</h3>
+                                        </div>
+                                        <!-- /.card-header -->
+                                        <div class="card-body">
+
+                                            <table id="accounts" class="table table-bordered table-striped"
+                                                   th:each="account, state:${accounts}">
+                                                <thead>
+                                                <tr>
+                                                    <th>Account ID</th>
+                                                    <th>Username</th>
+                                                    <th>Fullname</th>
+                                                    <th>Password</th>
+                                                    <th>Email</th>
+                                                    <th>Role</th>
+                                                    <th>Delete</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td th:text="${account.id}"></td>
+                                                    <td th:text="${account.username}"></td>
+                                                    <td th:text="${account.fullName}"></td>
+                                                    <td th:text="${account.password}"></td>
+                                                    <td th:text="${account.email}"></td>
+                                                    <td><a class="roleChange admin"
+                                                           th:href="@{/accounts/__${account.userRole}__/update/__${account.id}__}"
+                                                           th:text="${account.userRole}"></a></td>
+                                                    <td><a class="delIcon" th:href="@{/accounts/__${account.id}__/delete}"><i
+                                                            class="fas fa-times"></i></a></td>
+                                                </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                <tr>
+                                                    <th>Account ID</th>
+                                                    <th>Username</th>
+                                                    <th>Fullname</th>
+                                                    <th>Password</th>
+                                                    <th>Email</th>
+                                                    <th>Role</th>
+                                                    <th>Delete</th>
+                                                </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                        <!-- /.card-body -->
+                                    </div>
+
+                                    <!-- /.card -->
+                                </div>
+                                <!-- /.col-md-6 -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.container-fluid -->
+                    </div>
+                    <!-- /.content -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="/assets/js/category.js"></script>
+<script src="/assets/js/dialog.js"></script>
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="/assets/anotherTheme/static/js/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/assets/anotherTheme/static/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/assets/anotherTheme/static/js/adminlte.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="/assets/anotherTheme/static/js/jquery.dataTables.min.js"></script>
+<script src="/assets/anotherTheme/static/js/dataTables.bootstrap4.min.js"></script>
+<script src="/assets/anotherTheme/static/js/dataTables.responsive.min.js"></script>
+<script src="/assets/anotherTheme/static/js/responsive.bootstrap4.min.js"></script>
+<script>
+    $("#products").DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": true,
+        "ordering": true,
+        "info": true,
+        "autoWidth": true,
+        "responsive": true,
+    });
+</script>
 </body>
 </html>

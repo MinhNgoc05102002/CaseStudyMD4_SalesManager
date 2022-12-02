@@ -1,24 +1,33 @@
 package com.codegym.appmanagersale.controller;
 
+import com.codegym.appmanagersale.model.Account;
 import com.codegym.appmanagersale.model.Category;
+import com.codegym.appmanagersale.service.account.IAccountService;
 import com.codegym.appmanagersale.service.category.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.security.Principal;
 
 @Controller
 @RequestMapping("/categories")
 public class CategoryController {
     @Autowired
     private ICategoryService categoryService;
+    @Autowired
+    private IAccountService accountService;
 
     @GetMapping("")
     private ModelAndView showCategory() {
         ModelAndView modelAndView = new ModelAndView("/admin/category/list");
         modelAndView.addObject("category", new Category());
         modelAndView.addObject("categories", categoryService.findAll());
+        Account account = getUserCurrent();
+        modelAndView.addObject("account", account);
         return modelAndView;
     }
 
@@ -68,5 +77,10 @@ public class CategoryController {
             redirect.addFlashAttribute("message", "Category is being used or does not exist");
         }
         return "redirect:/categories";
+    }
+    public Account getUserCurrent() {
+        Principal principal = SecurityContextHolder.getContext().getAuthentication();
+        String username = principal.getName();
+        return accountService.findByUsername(username);
     }
 }

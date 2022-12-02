@@ -1,11 +1,13 @@
 package com.codegym.appmanagersale.controller;
 
+import com.codegym.appmanagersale.model.Account;
 import com.codegym.appmanagersale.model.Product;
 import com.codegym.appmanagersale.repository.ICategoryWithProduct;
 import com.codegym.appmanagersale.service.account.IAccountService;
 import com.codegym.appmanagersale.service.category.ICategoryService;
 import com.codegym.appmanagersale.service.product.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -41,6 +44,8 @@ public class ProductController {
         List<Product> products = (List<Product>) productService.findAll();
         modelAndView.addObject("products", productService.findAll());
         modelAndView.addObject("categories", categoryService.findAll());
+        Account account = getUserCurrent();
+        modelAndView.addObject("account", account);
         for (Product product : products) {
             setCategoryForProduct(product);
         }
@@ -75,12 +80,12 @@ public class ProductController {
         return "redirect:/products";
     }
 
-//    @GetMapping("/edit/{id}")
-//    public ModelAndView showEditForm(@PathVariable int id) {
-//        ModelAndView modelAndView = new ModelAndView("/admin/product/edit");
-//        modelAndView.addObject("product", productService.findById((long) id));
-//        return modelAndView;
-//    }
+    @GetMapping("/edit/{id}")
+    public ModelAndView showEditForm(@PathVariable int id) {
+        ModelAndView modelAndView = new ModelAndView("/admin/product/edit");
+        modelAndView.addObject("product", productService.findById((long) id));
+        return modelAndView;
+    }
 
     @PostMapping("/update")
     public String update(Product product, RedirectAttributes redirect) {
@@ -113,14 +118,6 @@ public class ProductController {
         return "redirect:/products";
     }
 
-    @GetMapping("/edit/{id}")
-    public ModelAndView showEditForm(@PathVariable Long id) {
-        ModelAndView modelAndView = new ModelAndView("/admin/product/edit");
-        modelAndView.addObject("product", productService.findById(id));
-        modelAndView.addObject("categories", categoryService.findAll());
-        return modelAndView;
-    }
-
     @PostMapping("/edit")
     public ModelAndView editProduct(@ModelAttribute("product") Product product) {
         ModelAndView modelAndView = new ModelAndView("/admin/product/edit");
@@ -139,4 +136,9 @@ public class ProductController {
         return modelAndView;
     }
 
+    public Account getUserCurrent() {
+        Principal principal = SecurityContextHolder.getContext().getAuthentication();
+        String username = principal.getName();
+        return accountService.findByUsername(username);
+    }
 }
