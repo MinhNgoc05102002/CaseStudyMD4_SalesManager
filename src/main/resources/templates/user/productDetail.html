@@ -1,4 +1,6 @@
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,21 +34,34 @@
             <a href="" class="header__social-link"><i class="fab fa-linkedin"></i></a>
           </div>
           <div class="header__user">
-            <div class="header__user-login">
-              <a href="/login" class="header__user-link"><span>Login</span><i
-                      class="fas fa-sign-in-alt"></i></a>
-            </div>
+                        <span th:if="${account!=null}">
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/" class="header__user-link"><span th:text="${account.fullName}"></span></a>
+                            </span>
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/logout" class="header__user-link"><span>Logout</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </span>
 
-            <div class="header__user-register">
-              <a href="/register" class="header__user-link"><span>Register</span><i
-                      class="fas fa-user-plus"></i></a>
-            </div>
+                        </span>
+
+            <span th:if="${account==null}">
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/login" class="header__user-link"><span>Login</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </span>
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/register" class="header__user-link"><span>Register</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </span>
+                        </span>
+
           </div>
         </div>
 
         <div class="header__top-body">
           <div class="header__logo">
-            <a href="home.html" class="header__logo-link"><img src="/assets/img/logo.webp" alt=""></a>
+            <a href="/store" class="header__logo-link"><img src="/assets/img/logo.webp" alt=""></a>
           </div>
 
           <div class="header__search hide-on-mobile-tablet">
@@ -78,7 +93,7 @@
               </label>
 
               <ul class="nav__mobile-list">
-                <li class="nav__mobile-item"><a class="nav__mobile-link" href="home.html">Home</a></li>
+                <li class="nav__mobile-item"><a class="nav__mobile-link" href="/store">Home</a></li>
                 <li class="nav__mobile-item"><a class="nav__mobile-link" href="aboutus.html">About
                   us</a></li>
                 <li class="nav__mobile-item">
@@ -90,7 +105,8 @@
                   <div class="nav__mobile-product">
                     <ul class="nav__mobile-product-list">
                       <li class="nav__mobile-product-item"><a class="nav__mobile-product-link"
-                                                              href="categoryAll.html">All</a></li>
+                                                              href="/store/showAllProducts">All</a>
+                      </li>
                       <li class="nav__mobile-product-item"><a class="nav__mobile-product-link"
                                                               href="categoryIndoor.html">Indoor
                         Living</a></li>
@@ -107,7 +123,10 @@
                   </div>
                 </li>
                 <li class="nav__mobile-item"><a class="nav__mobile-link" href="">News</a></li>
-                <li class="nav__mobile-item"><a class="nav__mobile-link" href="">Contact</a></li>
+                <li class="nav__mobile-item" th:if="${account.userRole == 'ROLE_ADMIN'}">
+                  <a
+                          class="nav__mobile-link"
+                          href="">Manager</a></li>
               </ul>
             </div>
           </div>
@@ -120,7 +139,7 @@
     <div class="grid wide">
       <div class="navbar">
         <ul class="nav__list">
-          <li class="nav__item"><a href="home.html" class="nav__item-link">Home</a></li>
+          <li class="nav__item"><a href="/store" class="nav__item-link">Home</a></li>
           <li class="nav__item"><a href="aboutus.html" class="nav__item-link">About us</a></li>
           <li class="nav__item">
             <a href="" class="nav__item-link">Product<i class="fas fa-chevron-down"
@@ -142,7 +161,7 @@
             </div>
           </li>
           <li class="nav__item"><a href="" class="nav__item-link">News</a></li>
-          <li class="nav__item"><a href="" class="nav__item-link">Contact</a></li>
+          <li class="nav__item" th:if="${account.userRole=='ROLE_ADMIN'}"><a href="/admin" class="nav__item-link">Manager</a></li>
         </ul>
       </div>
     </div>

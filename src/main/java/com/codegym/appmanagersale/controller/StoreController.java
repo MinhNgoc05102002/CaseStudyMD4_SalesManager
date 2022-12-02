@@ -70,6 +70,8 @@ public class StoreController {
         ModelAndView modelAndView = new ModelAndView("/user/productDetail");
         modelAndView.addObject("product", productService.findById((long) id).get());
         modelAndView.addObject("categories", categoryWithProduct.findAllByProductId((long) id));
+        Account account = getUserCurrent();
+        modelAndView.addObject("account", account);
         return modelAndView;
     }
 
@@ -94,6 +96,7 @@ public class StoreController {
         ModelAndView modelAndView = new ModelAndView("/user/cart");
         Account account = getUserCurrent();
         accountCurrent = account;
+        modelAndView.addObject("account", account);
         List<Cart> carts = cartService.findAllByAccountId(account.getId());
         long total = 0;
         for (Cart cart : carts) {
@@ -108,6 +111,7 @@ public class StoreController {
     public ModelAndView showHistory() {
         ModelAndView modelAndView = new ModelAndView("/user/ordered");
         Account account = getUserCurrent();
+        modelAndView.addObject("account", account);
         accountCurrent = account;
         List<Order> orders = orderService.findAllByAccountId(account.getId());
         modelAndView.addObject("orders", orders);
@@ -117,6 +121,7 @@ public class StoreController {
     @PostMapping("/order")
     public String order(@RequestParam String orderAddress, RedirectAttributes redirect) {
         ModelAndView modelAndView = new ModelAndView();
+        Account account = getUserCurrent();
         try {
 
             List<Cart> carts = cartService.findAllByAccountId(accountCurrent.getId());

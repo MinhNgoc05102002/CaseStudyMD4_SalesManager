@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,19 +44,34 @@
                         <a href="" class="header__social-link"><i class="fab fa-linkedin"></i></a>
                     </div>
                     <div class="header__user">
-                        <div class="header__user-login">
-                            <a href="login.html" class="header__user-link"><span>Login</span><i class="fas fa-sign-in-alt"></i></a>
-                        </div>
+                        <span th:if="${account!=null}">
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/" class="header__user-link"><span th:text="${account.fullName}"></span></a>
+                            </span>
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/logout" class="header__user-link"><span>Logout</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </span>
 
-                        <div class="header__user-register">
-                            <a href="register.html" class="header__user-link"><span>Register</span><i class="fas fa-user-plus"></i></a>
-                        </div>
+                        </span>
+
+                        <span th:if="${account==null}">
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/login" class="header__user-link"><span>Login</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </span>
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/register" class="header__user-link"><span>Register</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </span>
+                        </span>
+
                     </div>
                 </div>
 
                 <div class="header__top-body">
                     <div class="header__logo">
-                        <a href="home.html" class="header__logo-link"><img src="../img/logo.webp" alt=""></a>
+                        <a href="/store" class="header__logo-link"><img src="/assets/img/logo.webp" alt=""></a>
                     </div>
 
                     <div class="header__search hide-on-mobile-tablet">
@@ -70,7 +86,7 @@
                             <i class="fas fa-search"></i>
                         </div>
 
-                        <button class=""><a href=""><i class="header__cart-icon fas fa-cart-plus"></i></a></button>
+                        <button class=""><a href="/store/show-cart"><i class="header__cart-icon fas fa-cart-plus"></i></a></button>
 
                         <label for="nav-mobile-input" class="nav__bars-btn">
                             <i class="fas fa-bars"></i>
@@ -87,8 +103,9 @@
                             </label>
 
                             <ul class="nav__mobile-list">
-                                <li class="nav__mobile-item"><a class="nav__mobile-link" href="home.html">Home</a></li>
-                                <li class="nav__mobile-item"><a class="nav__mobile-link" href="aboutus.html">About us</a></li>
+                                <li class="nav__mobile-item"><a class="nav__mobile-link" href="/store">Home</a></li>
+                                <li class="nav__mobile-item"><a class="nav__mobile-link" href="aboutus.html">About
+                                    us</a></li>
                                 <li class="nav__mobile-item">
                                     <input type="checkbox" hidden class="nav__input-product" id="nav__product-id">
                                     <label for="nav__product-id" class="nav__mobile-link">
@@ -97,16 +114,29 @@
                                     </label>
                                     <div class="nav__mobile-product">
                                         <ul class="nav__mobile-product-list">
-                                            <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryAll.html">All</a></li>
-                                            <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryIndoor.html">Indoor Living</a></li>
-                                            <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryPerennials.html">Perennials</a></li>
-                                            <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryGift.html">Plant for Gift</a></li>
-                                            <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryAll.html">Garden Tools</a></li>
+                                            <li class="nav__mobile-product-item"><a class="nav__mobile-product-link"
+                                                                                    href="/store/showAllProducts">All</a>
+                                            </li>
+                                            <li class="nav__mobile-product-item"><a class="nav__mobile-product-link"
+                                                                                    href="categoryIndoor.html">Indoor
+                                                Living</a></li>
+                                            <li class="nav__mobile-product-item"><a class="nav__mobile-product-link"
+                                                                                    href="categoryPerennials.html">Perennials</a>
+                                            </li>
+                                            <li class="nav__mobile-product-item"><a class="nav__mobile-product-link"
+                                                                                    href="categoryGift.html">Plant for
+                                                Gift</a></li>
+                                            <li class="nav__mobile-product-item"><a class="nav__mobile-product-link"
+                                                                                    href="categoryAll.html">Garden
+                                                Tools</a></li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="nav__mobile-item"><a class="nav__mobile-link" href="">News</a></li>
-                                <li class="nav__mobile-item"><a class="nav__mobile-link" href="">Contact</a></li>
+                                <li class="nav__mobile-item" th:if="${account.userRole == 'ROLE_ADMIN'}">
+                                    <a
+                                            class="nav__mobile-link"
+                                            href="">Manager</a></li>
                             </ul>
                         </div>
                     </div>
@@ -119,23 +149,29 @@
         <div class="grid wide">
             <div class="navbar">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="home.html" class="nav__item-link">Home</a></li>
+                    <li class="nav__item"><a href="/store" class="nav__item-link">Home</a></li>
                     <li class="nav__item"><a href="aboutus.html" class="nav__item-link">About us</a></li>
                     <li class="nav__item">
-                        <a href="" class="nav__item-link">Product<i class="fas fa-chevron-down" id="nav__produce-icon"></i></a>
+                        <a href="" class="nav__item-link">Product<i class="fas fa-chevron-down"
+                                                                    id="nav__produce-icon"></i></a>
 
                         <div class="nav__produce">
                             <ul class="nav__produce-list">
-                                <li class="nav__produce-item"><a href="categoryAll.html" class="nav__produce-link">All</a></li>
-                                <li class="nav__produce-item"><a href="categoryIndoor.html" class="nav__produce-link">Indoor Living</a></li>
-                                <li class="nav__produce-item"><a href="categoryPerennials.html" class="nav__produce-link">Perennials</a></li>
-                                <li class="nav__produce-item"><a href="categoryGift.html" class="nav__produce-link">Plant for Gift</a></li>
-                                <li class="nav__produce-item"><a href="categoryAll.html" class="nav__produce-link">Garden Tools</a></li>
+                                <li class="nav__produce-item"><a href="/store/showAllProducts"
+                                                                 class="nav__produce-link">All</a></li>
+                                <li class="nav__produce-item"><a href="categoryIndoor.html" class="nav__produce-link">Indoor
+                                    Living</a></li>
+                                <li class="nav__produce-item"><a href="categoryPerennials.html"
+                                                                 class="nav__produce-link">Perennials</a></li>
+                                <li class="nav__produce-item"><a href="categoryGift.html" class="nav__produce-link">Plant
+                                    for Gift</a></li>
+                                <li class="nav__produce-item"><a href="categoryAll.html" class="nav__produce-link">Garden
+                                    Tools</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav__item"><a href="" class="nav__item-link">News</a></li>
-                    <li class="nav__item"><a href="" class="nav__item-link">Contact</a></li>
+                    <li class="nav__item" th:if="${account.userRole=='ROLE_ADMIN'}"><a href="/admin" class="nav__item-link">Manager</a></li>
                 </ul>
             </div>
         </div>
