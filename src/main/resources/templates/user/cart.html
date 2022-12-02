@@ -151,8 +151,11 @@
                 <!-- <div class="cart__button-selectall "></div> -->
                 <div class="cart__button-buynow col l-o-5">
                     <button onclick="showModalOrder()">Buynow</button>
-                    <button onclick="showModalOrder()">History</button>
+                    <a href="">History</a>
                 </div>
+            </div>
+            <div style="color: red" th:if="${message}">
+                <p style="font-size: 18px;" th:text="${message}"></p>
             </div>
             <hr class="cart__header-bottom">
             <div class="cart__body grid">
@@ -197,7 +200,7 @@
         <div class="modal-content">
             <!-- <span class="close" onclick="closeOrder()"><i class="fas fa-times"></i></span> -->
             <h2>Order infomation</h2>
-            <form th:action="@{/store}" method="post">
+            <form th:action="@{/store/order}" method="post">
                 <div class="productOrder grid" th:each="cart, state:${carts}">
                     <div class="productOrder-item row">
                         <div class="productOrder-item-img col l-3">
@@ -225,7 +228,7 @@
                 </div>
                 <div class="order-address">
                     <label for="order-address">Address:</label>
-                    <textarea name="description" id="order-address"></textarea>
+                    <textarea th:name="orderAddress" id="order-address"></textarea>
                 </div>
                 <div class="modal-button" style="text-align: center;">
                     <input class="ok" id="addCategoryButton" type="submit" value="Order">
