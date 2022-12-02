@@ -97,6 +97,16 @@ public class StoreController {
         return modelAndView;
     }
 
+    @GetMapping("/show-history")
+    public ModelAndView showHistory() {
+        ModelAndView modelAndView = new ModelAndView("/user/ordered");
+        Account account = getUserCurrent();
+        accountCurrent = account;
+        List<Cart> carts = cartService.findAllByAccountId(account.getId());
+        modelAndView.addObject("carts", carts);
+        return modelAndView;
+    }
+
     @PostMapping("/order")
     public String order(@RequestParam String orderAddress, RedirectAttributes redirect) {
         ModelAndView modelAndView = new ModelAndView();
