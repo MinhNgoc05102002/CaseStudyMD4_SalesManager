@@ -114,6 +114,14 @@ public class StoreController {
         modelAndView.addObject("account", account);
         accountCurrent = account;
         List<Order> orders = orderService.findAllByAccountId(account.getId());
+        for (Order order : orders) {
+            List<OrderDetail> orderDetails = orderDetailRepository.findAllByOrderId(order.getId());
+            long total = 0;
+            for (OrderDetail orderDetail : orderDetails) {
+                total += orderDetail.getQuantity() * orderDetail.getProduct().getPriceOut();
+            }
+            order.setTotal(total);
+        }
         modelAndView.addObject("orders", orders);
         return modelAndView;
     }
@@ -123,16 +131,13 @@ public class StoreController {
         ModelAndView modelAndView = new ModelAndView();
         Account account = getUserCurrent();
         try {
-
             List<Cart> carts = cartService.findAllByAccountId(accountCurrent.getId());
-
             Order order = new Order();
             order.setAccount(accountCurrent);
             order.setAddress(orderAddress);
             orderService.save(order);
-
             OrderDetail orderDetail = new OrderDetail();
-            for (Cart cart:carts) {
+            for (Cart cart : carts) {
                 orderDetail = new OrderDetail();
                 orderDetail.setProduct(cart.getProduct());
                 orderDetail.setQuantity(cart.getQuantity());
@@ -140,6 +145,9 @@ public class StoreController {
                 orderDetail.setPrice(cart.getProduct().getPriceOut());
                 orderDetailRepository.save(orderDetail);
                 cartService.remove(cart.getId());
+                Product product = cart.getProduct();
+                product.setQuantity(product.getQuantity() - cart.getQuantity());
+                productService.save(product);
             }
 
             redirect.addFlashAttribute("message", "Order successfully!");
@@ -153,7 +161,7 @@ public class StoreController {
     @GetMapping("/delivered/{id}")
     public String delivered(@PathVariable Long id, RedirectAttributes redirect) {
         Optional<Order> order = orderService.findById(id);
-        if(!order.get().getStatus().equals("CANCELLED")) {
+        if (!order.get().getStatus().equals("CANCELLED")) {
             order.get().setStatus("DELIVERED");
             orderService.save(order.get());
         }
