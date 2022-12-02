@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/assets/css/category.css">
   <link rel="stylesheet" href="/assets/css/admin.css">
   <link rel="stylesheet" href="/assets/css/cart.css">
-  <link rel="stylesheet" href="/assets/src/css/order.css">
+  <link rel="stylesheet" href="/assets/css/order.css">
 </head>
 <body>
 
@@ -154,22 +154,15 @@
           <th>Status</th>
           <th style="border-radius: 0 5px 0 0;"></th>
         </tr>
-        <tr class="body_table">
-          <td>1</td>
-          <td>Lifestyle</td>
-          <td>lifestyle blogs to wellnesving a better life. </td>
-          <td>200000</td>
+        <tr class="body_table" th:each="order, state:${orders}" >
+          <td th:text="${order.id}">200000</td>
+          <td th:text="${order.createdAt}"></td>
+          <td th:text="${order.address}"></td>
+          <td th:text="${order}">Total price</td>
           <td style="text-align: center"><a class="btnNhanHang" href="">Đã nhận hàng</a></td>
           <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
         </tr>
-        <tr class="body_table">
-          <td>1</td>
-          <td>Lifestyle</td>
-          <td>lifestyle blogs to  aspects of living a better life. </td>
-          <td>200000</td>
-          <td style="text-align: center"><a class="btnNhanHang" href="">Đã nhận hàng</a></td>
-          <td><a class="delIcon" href=""><i class="fas fa-times"></i></a></td>
-        </tr>
+
       </table>
     </div>
   </div>

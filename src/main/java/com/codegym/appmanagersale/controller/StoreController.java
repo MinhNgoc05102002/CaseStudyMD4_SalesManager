@@ -111,8 +111,8 @@ public class StoreController {
         ModelAndView modelAndView = new ModelAndView("/user/ordered");
         Account account = getUserCurrent();
         accountCurrent = account;
-        List<Cart> carts = cartService.findAllByAccountId(account.getId());
-        modelAndView.addObject("carts", carts);
+        List<Order> orders = orderService.findAllByAccountId(account.getId());
+        modelAndView.addObject("orders", orders);
         return modelAndView;
     }
 
