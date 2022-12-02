@@ -126,14 +126,11 @@ public class StoreController {
     public String order(@RequestParam String orderAddress, RedirectAttributes redirect) {
         ModelAndView modelAndView = new ModelAndView();
         try {
-
             List<Cart> carts = cartService.findAllByAccountId(accountCurrent.getId());
-
             Order order = new Order();
             order.setAccount(accountCurrent);
             order.setAddress(orderAddress);
             orderService.save(order);
-
             OrderDetail orderDetail = new OrderDetail();
             for (Cart cart : carts) {
                 orderDetail = new OrderDetail();
@@ -143,6 +140,9 @@ public class StoreController {
                 orderDetail.setPrice(cart.getProduct().getPriceOut());
                 orderDetailRepository.save(orderDetail);
                 cartService.remove(cart.getId());
+                Product product = cart.getProduct();
+                product.setQuantity(product.getQuantity() - cart.getQuantity());
+                productService.save(product);
             }
 
             redirect.addFlashAttribute("message", "Order successfully!");
