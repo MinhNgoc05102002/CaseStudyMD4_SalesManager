@@ -38,6 +38,8 @@ public class StoreController {
     public ModelAndView showStore() {
         ModelAndView modelAndView = new ModelAndView("/user/store");
         modelAndView.addObject("products", productService.findAll());
+        Account account = getUserCurrent();
+        modelAndView.addObject("account", account);
         return modelAndView;
     }
 

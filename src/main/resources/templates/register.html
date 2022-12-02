@@ -118,6 +118,7 @@
                             </ul>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -237,7 +238,9 @@
                                th:field="*{confirmPassword}">
                         <div class="massage">error</div>
 
-                        <h2 th:if="${message != null}"><span th:text="${message}"></span></h2>
+                        <h2 th:if="${message!=null}">
+                            <input type="hidden" id="status" value="${massage}">
+                        </h2>
 
                     </div>
                 </form>
@@ -248,6 +251,25 @@
                 <script>
                     function register() {
                         document.getElementById("form_register").submit();
+                    }
+                </script>
+
+                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                <script>
+                    const status = document.getElementById("status").value;
+                    if (status == "failed") {
+                        swal(
+                            'Fail',
+                            'Register fail',
+                            'error'
+                        )
+                    }
+                    if (status == "success") {
+                        swal(
+                            'Success',
+                            'Register success',
+                            'success'
+                        )
                     }
                 </script>
 

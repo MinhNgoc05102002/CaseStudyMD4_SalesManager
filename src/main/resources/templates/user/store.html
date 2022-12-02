@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,15 +40,24 @@
                         <a href="" class="header__social-link"><i class="fab fa-linkedin"></i></a>
                     </div>
                     <div class="header__user">
-                        <div class="header__user-login">
-                            <a href="/login" class="header__user-link"><span>Login</span><i
-                                    class="fas fa-sign-in-alt"></i></a>
-                        </div>
+                        <span th:if="${account!=null}">
+                            <div class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/logout" class="header__user-link"><span>Logout</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </div>
+                        </span>
 
-                        <div class="header__user-register">
-                            <a href="/register" class="header__user-link"><span>Register</span><i
-                                    class="fas fa-user-plus"></i></a>
-                        </div>
+                        <span th:if="${account==null}">
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/login" class="header__user-link"><span>Login</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </span>
+                            <span class="header__user-login" sec:authorize="isAuthenticated()">
+                                <a href="/register" class="header__user-link"><span>Register</span><i
+                                        class="fas fa-sign-in-alt"></i></a>
+                            </span>
+                        </span>
+
                     </div>
                 </div>
 
@@ -114,7 +124,17 @@
                                     </div>
                                 </li>
                                 <li class="nav__mobile-item"><a class="nav__mobile-link" href="">News</a></li>
-                                <li class="nav__mobile-item"><a class="nav__mobile-link" href="">Contact</a></li>
+                                <!--                                <input type="hidden" id="role" th:value="${account.userRole}">-->
+                                <!--                                <li class="nav__mobile-item" th:if="${account.userRole == 'ROLE_ADMIN'}">-->
+                                <!--                                    <a-->
+                                <!--                                            class="nav__mobile-link"-->
+                                <!--                                            href="">Manager</a></li>-->
+                                <!--                                <script>-->
+                                <!--                                    if (document.getElementById("role").value == "ROLE_ADMIN") {-->
+                                <!--                                        document.write("<li class=\"nav__mobile-item\"><a class=\"nav__mobile-link\" href=\"/admin\">Manager</a></li>");-->
+                                <!--                                    } else-->
+                                <!--                                        document.write("<li class=\"nav__mobile-item\"><a class=\"nav__mobile-link\" href=\"/user\">Contact</a></li>");-->
+                                <!--                                </script>-->
                             </ul>
                         </div>
                     </div>
