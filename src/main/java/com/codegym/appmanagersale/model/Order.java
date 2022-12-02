@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -34,7 +35,10 @@ public class Order {
     private Account account;
 
     @OneToMany(mappedBy = "order")
-    Set<OrderDetail> orderDetails;
+    List<OrderDetail> orderDetails;
+
+    @Transient
+    private long total;
 
     private String status;
 
