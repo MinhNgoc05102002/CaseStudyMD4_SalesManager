@@ -1,9 +1,10 @@
 package com.codegym.appmanagersale.service.order;
 
 import com.codegym.appmanagersale.model.Order;
-import com.codegym.appmanagersale.model.Product;
 import com.codegym.appmanagersale.service.IGeneralService;
 
+import java.util.List;
+
 public interface IOrderService extends IGeneralService<Order> {
-//    Order findByUserId(Long userId);
+    List<Order> findAllByAccountId(Long id);
 }

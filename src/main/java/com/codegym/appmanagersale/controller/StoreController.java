@@ -80,7 +80,16 @@ public class StoreController {
             cart.setAccount(account);
             cart.setQuantity(quantity);
             cart.setProduct(product);
-            cartService.save(cart);
+
+            List<Cart> carts = cartService.findAllByAccountId(account.getId());
+            for (Cart cart1 : carts) {
+                if (cart1.getProduct().getId() == id) {
+                    cart1.setQuantity(cart1.getQuantity() + quantity);
+                    cartService.save(cart1);
+                    return new ModelAndView("redirect:/store/cart");
+                }
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }

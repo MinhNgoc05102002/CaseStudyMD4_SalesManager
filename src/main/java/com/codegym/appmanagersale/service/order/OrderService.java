@@ -1,17 +1,15 @@
 package com.codegym.appmanagersale.service.order;
 
+import com.codegym.appmanagersale.model.Category;
 import com.codegym.appmanagersale.model.Order;
-import com.codegym.appmanagersale.model.Product;
 import com.codegym.appmanagersale.repository.IOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
-@Service
-@Transactional
-public class OrderService implements IOrderService{
+public class OrderService implements IOrderService {
+
     @Autowired
     private IOrderRepository orderRepository;
 
@@ -27,7 +25,7 @@ public class OrderService implements IOrderService{
             if (order == null) {
                 throw new Exception("Order not found!");
             }
-            return Optional.of(order); // Optional.ofNullable(product);
+            return Optional.of(order); // Optional.ofNullable(order);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -41,24 +39,25 @@ public class OrderService implements IOrderService{
             orderRepository.save(order);
             return true;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         return false;
     }
 
     @Override
     public Boolean remove(Long id) {
+        Order order = orderRepository.findById(id).get();
         try {
-            orderRepository.deleteById(id);
+            orderRepository.delete(order);
             return true;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         return false;
     }
 
-//    @Override
-//    public Order findByUserId(Long userId) {
-//        return orderRepository.findByUserId(userId);
-//    }
+    @Override
+    public List<Order> findAllByAccountId(Long id) {
+        return orderRepository.findAllByAccountId(id);
+    }
 }
